@@ -1,0 +1,262 @@
+<div class="adminwrappercls">
+  <app-header></app-header>
+      <div class="main-content-wrap">
+        <mat-card class="generalcls blog" style="padding: 0 !important;">  
+            
+            <mat-card-content class="adm_inner_banner manageblog">
+                <mat-card-title class="adm_inner_title">Newsletter List</mat-card-title>
+                <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </mat-card-content>
+            <mat-card-content class="bred_cram_wrapper">
+                <a mat-list-item routerLinkActive="active"> Dashboard </a>
+                <a mat-list-item routerLinkActive="active"> Manage Website </a>
+                <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/newsletter-list'"> newsletter </a>
+            </mat-card-content>
+            <mat-tab-group class="tabwrapper">
+                  <mat-tab>
+                      <ng-template mat-tab-label>
+                          <h2 class="innertitle2">Newsletter List</h2>
+                      </ng-template>          
+                    <ng-template matTabContent>    
+                      <span class="bloglists">    
+                        
+                        <span class="searchblock">
+
+
+                          <span class="searchblockwrapper">
+                          <h2>Newsletter List</h2>
+
+                        
+                         <span> <button mat-button class="btnorange "
+                          [routerLink]="['/newsletter/add']"><i class="material-icons">add</i> Add
+                          Newsletter</button>
+                         </span>
+
+
+                        </span>
+
+                        </span>
+
+                        <div class="tablediv">
+           
+                        <lib-listing-newsletterlib [config]="newsConfigForm"></lib-listing-newsletterlib>
+                      </div>
+
+                      </span>
+                    </ng-template>
+                  </mat-tab>
+
+
+                  <mat-tab>
+                      <ng-template mat-tab-label>
+                          <h2 class="innertitle2">Subscriber List </h2>
+                      </ng-template>          
+                    <ng-template matTabContent>    
+                      <span class="bloglists">    
+                        
+                        <span class="searchblock">
+
+
+                          <span class="searchblockwrapper">
+                          <h2>Subscriber List</h2>
+
+                    
+                          <span>
+                          <button mat-button class="btnorange"
+                                                [routerLink]="['/subscriber/add']"><i class="material-icons">add</i> Add
+                                                Subscriber</button>
+                          </span>
+
+                        </span>
+
+                        </span>
+           
+                        <div class="tablediv">
+                        <lib-listing-newsletter [config]="subscriptionForm" ></lib-listing-newsletter>
+  
+                      </div>
+                      </span>
+                    </ng-template>
+                  </mat-tab>
+                   
+                         
+               
+
+
+
+               <mat-tab>
+                  <ng-template mat-tab-label>
+                      <h2 class="innertitle2">Subscribers Group List</h2>
+                  </ng-template>          
+                <ng-template matTabContent>    
+                  <span class="bloglists">    
+                    
+                    <span class="searchblock">
+
+
+                      <span class="searchblockwrapper">
+                      <h2>Subscribers Group List</h2>
+
+                      <span> <button mat-button class="btnorange"
+                                                [routerLink]="['/subscriber-group/add']"><i
+                                                    class="material-icons">add</i> Add Subscribers</button></span>
+
+
+                    </span>
+
+                    </span>
+                    <div class="tablediv">
+                    <lib-listing-subcategory [config]="subscriptionCatForm"></lib-listing-subcategory>
+
+                    </div>
+
+                  </span>
+                </ng-template>
+              </mat-tab>
+
+
+              
+
+              <mat-tab>
+                  <ng-template mat-tab-label>
+                      <h2 class="innertitle2">Settings</h2>
+                  </ng-template>          
+                <ng-template matTabContent>    
+                  <span class="bloglists">    
+                    
+                    <span class="searchblock">
+
+
+                      <span class="searchblockwrapper">
+                      <h2>Settings</h2>
+
+                   
+
+
+                    </span>
+
+                    </span>
+       
+                  
+
+
+
+
+                    <div class=" tablediv_Settings">
+                                 
+                        <span class="Settings_tab_block">
+
+
+                                <span class="searchblock">
+                                        <span class="searchblockwrapper">
+                                            <span>
+                                                <h2>Test Email</h2>
+                                            </span>
+                                            <span>
+                                                    <button mat-button class="btnorange"
+                                                    [routerLink]="['/test/add']"><i
+                                                        class="material-icons">add</i> Test Email</button>
+                                            </span>
+                                        </span>
+                                    </span>
+
+                       
+                                    <span class="tablediv">
+
+                            <lib-listing-testemaillib [config]="testEmailConfigForm"></lib-listing-testemaillib>
+
+                            </span>
+
+
+                        </span>
+
+                        <span class="Settings_tab_block">
+
+                                <span class="searchblock">
+                                        <span class="searchblockwrapper">
+                                            <span>
+                                                <h2>Sender Email</h2>
+                                            </span>
+                                            <span>
+                                                    <button mat-button class="btnorange"
+                                                    [routerLink]="['/sender/add']"><i
+                                                        class="material-icons">add</i> Sender Email</button>
+                                            </span>
+                                        </span>
+                                    </span>
+
+                        
+
+                        <span class="tablediv">
+                            <lib-listing-sender [config]="senderConfigForm"></lib-listing-sender>
+                        </span>
+
+                        </span>
+
+                        <span class="clear"></span>
+
+
+                     
+
+
+
+
+                    </div>
+                    <span class="clear"></span>
+                    <span class="setting_formblock">
+                        <form [formGroup]="myformsetting"   name="myformsetting" (ngSubmit)="dosettingSubmit()">
+
+
+                      <label>Send Newsletter reply to the Email Address:</label>
+
+                      <mat-form-field>  
+                      
+                          <input matInput placeholder="Email" [formControl]="myformsetting.controls['email']"  (blur)="inputUntouch(myform,'email')">
+                          <mat-error *ngIf="myformsetting.controls['email'].touched && !myformsetting.controls['email'].valid
+                       && myformsetting.controls['email'].errors.required">
+                              Email field can not be blank</mat-error>
+                            <mat-error *ngIf="!myformsetting.controls['email'].valid && myformsetting.controls['email'].errors.email">Email is
+                                    not valid</mat-error>
+                      
+                      </mat-form-field>
+
+                      <label>Short Newsletters by:</label>
+
+
+                      <mat-radio-group formControlName="floatLabel">
+                        <mat-radio-button value="newest">Newest First</mat-radio-button>
+                        <mat-radio-button value="oldest">Oldest First</mat-radio-button>
+                      
+                      </mat-radio-group>
+
+                      <span class="clear"></span>
+                      <span class="setting_formblock_btngroup">
+                        <button type="submit">Save</button>
+                        <button type="reset">Cancel</button>
+
+
+
+                        <span class="clear"></span>
+                      </span>
+
+                     </form>
+                     </span>
+
+
+                  </span>
+                </ng-template>
+              </mat-tab>
+
+
+
+
+               
+                     
+           </mat-tab-group> 
+
+
+          
+        </mat-card>
+      </div>
+  </div>
+<app-footer></app-footer>

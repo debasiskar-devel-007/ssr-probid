@@ -1,0 +1,170 @@
+<ng-container
+  *ngIf="router.url =='/' || router.url =='/home' || router.url =='/login' || router.url =='/forget-password' || router.url =='/reset-password' || router.url =='/sign-up' || router.url == '/contactus' || router.url == '/service' || router.url == '/servicelist' || router.url == '/testimonial' || router.url == '/testimoniallist' || router.url == '/contactus' || router.url == '/blog' || router.url == '/bloglist' || router.url == '/blogdetail' || router.url == '/basic-inventory-search' || router.url == '/advance-inventory-search' || router.url == '/save-search' || router.url == '/pre-owned' || router.url == '/aboutus' || router.url == '/pre-owned-list' || router.url == '/online-inventory-list' || router.url == '/search-inventory-list' || router.url == '/specials-list' || router.url == '/customer-signup' || router.url == '/salesrep-signup'  || activeroute.snapshot.routeConfig.path == 'blogdetail/:id'">
+  <mat-card class="headertop">
+    <span class="mainwrappercontent">
+      <mat-card-content class="headertopwrapper">
+        <span class="langblock">
+
+          <mat-form-field>
+            <select matNativeControl required>
+              <option value="english">ENGLISH</option>
+              <option value="hindi">Hindi</option>
+              <option value="bengali">Bengali</option>
+            </select>
+          </mat-form-field>
+
+
+        </span>
+        <span class="infoblock">
+          <mat-list role="list">
+            <mat-list-item role="listitem">
+              <img src="../../assets/images/clockicon.png"> MON - SAT 0.00 - 00.00
+            </mat-list-item>
+
+            <mat-list-item role="listitem" class="activedropmenu">
+              <span><a *ngIf="token==''" [routerLink]="['/login']">login</a></span>
+              <span><a *ngIf="token!=''" (click)="logOut()">logout</a></span>
+            </mat-list-item>
+            <mat-list-item role="listitem" class="activedropmenu">
+              <span><a *ngIf="token==''" [routerLink]="['/sign-up']">Register</a></span>
+            </mat-list-item>
+          </mat-list>
+        </span>
+      </mat-card-content>
+    </span>
+  </mat-card>
+
+  <mat-card class="headermiddle">
+    <span class="mainwrappercontent">
+      <mat-card-content class="headermiddlewrapper">
+        <span class="pagelogowrapper" fxFlex><a [routerLink]="['/']"><img src="../../assets/images/logomain.png"
+              class="landinglogoblock1"></a></span>
+        <span class="topcontactinfoblock">
+          <mat-list role="list">
+            <mat-list-item role="listitem">
+              <span class="phoneinfo"><img src="../../assets/images/contacticon.png"> 3300 Sirius Ave #104, <br>Las
+                Vegas
+                NV 89102</span>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <span class="phoneinfo"><img src="../../assets/images/phoneicon.png"> ( 702 ) 979-1227 <br>( 888 )
+                777-5335</span>
+            </mat-list-item>
+          </mat-list>
+        </span>
+      </mat-card-content>
+
+
+    </span>
+  </mat-card>
+
+  <mat-card class="headerbottom vpheaderwrapper">
+    <span class="mainwrappercontent">
+      <span class="homemain">
+        <mat-toolbar color="primary">
+          <mat-toolbar-row>
+            <span class="topmenuiconlogo">
+              <span class="logowrappersml" fxFlex><a [routerLink]="['/']"><img src="../../assets/images/logomain.png"
+                    class="landinglogoblock1"></a></span>
+              <button mat-icon-button (click)="toggleNavbar()" fxShow="true" fxHide.gt-sm>
+                <mat-icon>menu</mat-icon>
+              </button>
+              <span class="menu-spacer"></span>
+            </span>
+
+            <span fxShow="true" class="smlmenudiv" [ngClass]="{ 'show': navbarOpen }">
+              <mat-nav-list fxLayout>
+                <span class="menuwrapper">
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/home']">Home</a>
+                  </mat-list-item>
+                  <!-- <mat-list-item fxFlex routerLinkActive="activemenu">
+                          <a [routerLink]="['/pre-owned-list']">Pre-Owned</a> -->
+                  <!-- <a (click)="openDialog()">Pre-Owned</a> -->
+                  <!-- </mat-list-item> -->
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu1">Inventory</a>
+                    <mat-menu #menu1="matMenu" class="activedropmenu">
+                      <a mat-menu-item routerLinkActive="activemenu"
+                       [routerLink]="['/basic-inventory-search']">Basic
+                        Inventory Search</a>
+                      <a mat-menu-item routerLinkActive="activemenu"
+                        [routerLink]="['/advance-inventory-search']">Advance Inventory Search</a>
+                    </mat-menu>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu">Join Probid</a>
+                    <mat-menu #menu="matMenu" class="activedropmenu">
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/salesrep-signup']">Sign up as
+                        Sales Rep</a>
+                      <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/customer-signup']">Sign up as
+                        Customer</a>
+                    </mat-menu>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <!-- <a [routerLink]="['/aboutus']">About Us</a> -->
+                    <a [routerLink]="['/aboutus']">About Us</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/service']">Service</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/testimonial']">Testimonials</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/bloglist']">Blog</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/contactus']">Contact Us</a>
+                  </mat-list-item>
+                  <mat-list-item *ngIf="userCookies.type == 'admin'" fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/admin-dashboard']">Dashboard</a>
+                  </mat-list-item>
+                  <!-- <mat-list-item *ngIf="userCookies.type == 'user'" fxFlex routerLinkActive="activemenu">
+                            <a [routerLink]="['/admin-dashboard']">Dashboard</a>
+                          </mat-list-item> -->
+                  <mat-list-item *ngIf="userCookies.type == 'salesrep'" fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/rep-dashboard']">Dashboard</a>
+                  </mat-list-item>
+                  <mat-list-item *ngIf="userCookies.type == 'customer'" fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/customer-dashboard']">Dashboard</a>
+                  </mat-list-item>
+                </span>
+              </mat-nav-list>
+            </span>
+            <span class="topsocialblock">
+              <mat-list role="list">
+                <mat-list-item role="listitem">
+                  <!-- <span class="iconwarpper"><i class="fa fa-facebook-f"></i></span> -->
+                  <span class="iconwarpper"><img src="../../../assets/images/socialicon-fb.png"></span>
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                  <!-- <span class="iconwarpper"><i class="fa fa-instagram"></i></span> -->
+                  <span class="iconwarpper"><img src="../../../assets/images/socialicon-insgram.png"></span>
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                  <!-- <span class="iconwarpper"><i class="fa fa-youtube-play"></i></span> -->
+                  <span class="iconwarpper"><img src="../../../assets/images/socialicon-youtube.png"></span>
+                </mat-list-item>
+              </mat-list>
+            </span>
+          </mat-toolbar-row>
+        </mat-toolbar>
+      </span>
+    </span>
+  </mat-card>
+
+</ng-container>
+
+
+
+<ng-container class="adminheaderleftdiv"
+  *ngIf="router.url ==='/service-listing' || router.url ==='/admin-dashboard' || router.url === '/contact-us-dashboard' || router.url === '/rep-dashboard' || router.url === '/add-edit-blogs' || router.url === '/add-edit-blogcat' || router.url === '/blogs/add' || router.url === 'blog-category/add' || router.url === '/customer-dashboard' || router.url === '/blog-management' || router.url === '/commission-report' || router.url === '/inventory-list' || router.url === '/manage-availability' || router.url === '/testimonial-lists-admin'|| router.url === '/commission-list' || router.url === '/customer-list-admin' || router.url === '/customer-list-rep' || router.url === '/manage-commission' || router.url === '/newsletter-list' || router.url === '/sales-report' || router.url === '/salesrep-list-admin' || router.url === '/mysalesrep' || router.url === '/rsvp' || router.url === '/birddog-list' || router.url === '/manage-training' || router.url === '/manage-lessons' || router.url === '/training-center' || router.url === '/training-report' || router.url === '/my-appointment-admin' || router.url === '/my-appointment-user' || router.url === '/my-appointment-rep' || router.url === '/create-new-inventory' || router.url === '/job-ticket' || router.url === '/social-advo-admin' || router.url === '/social-advo-rep' || router.url === '/my-commission' || router.url === '/my-birddog' || router.url === '/book-an-appointment-user' || router.url === '/book-an-appointment-rep' || router.url === '/advance-inventory-search-rep' || router.url === '/basic-inventory-search-rep' || router.url === '/advance-inventory-search-customer' || router.url === '/basic-inventory-search-customer' || router.url === '/communication' || router.url === '/training-center-rep' || router.url === '/manage-type' || router.url === '/manage-make' || router.url === '/manage-model' || router.url === '/manage-year' || router.url === '/admin-add-categories' || router.url === '/tranningcategory' || router.url === '/addtrainings'  || router.url == '/trainingsectionlist' || router.url == '/trainingsection' || router.url == '/my-account' || router.url == '/add-salesrep' || router.url == '/add-customer' || activeroute.snapshot.routeConfig.path == 'editcustomer/:_id' || router.url == '/add-birddog' || activeroute.snapshot.routeConfig.path == 'editsalesrep/:_id' || activeroute.snapshot.routeConfig.path == 'editbirddog/:_id' || router.url == '/service/add' || activeroute.snapshot.routeConfig.path == 'blogs/edit/:_id' || activeroute.snapshot.routeConfig.path == 'service/edit/:_id' || router.url == '/testimonial/add' || activeroute.snapshot.routeConfig.path == 'testimonial/edit/:_id' || router.url == '/save-search' || router.url == '/save-search-customer' || router.url == '/save-search-rep' || router.url == '/rsvp-admin' || router.url == '/rsvp-salesrep' || router.url == '/rsvp-customer' || router.url === '/newsletter/add' || activeroute.snapshot.routeConfig.path == 'newsletter/edit/:_id' || router.url === '/subscriber/add' || activeroute.snapshot.routeConfig.path == 'subscriber/add-group/edit/:_id' || router.url === '/subscriber-group/add' || activeroute.snapshot.routeConfig.path == 'subscriber-group/edit/:_id' || router.url === '/test/add' || activeroute.snapshot.routeConfig.path == 'test/edit/:_id' || router.url === '/sender/add' || activeroute.snapshot.routeConfig.path == 'sender/edit/:_id' || router.url == '/basic-inventory-search-admin' || router.url == '/advance-inventory-search-admin' || router.url == '/save-search-admin'|| router.url==='/blog-category/add' || router.url == '/save-search-castomer' || router.url == '/inventory-detail'|| activeroute.snapshot.routeConfig.path == 'inventory-detail/:id' ||  activeroute.snapshot.routeConfig.path == 'rsvp-detail/:id' ">
+
+  <div class="admcls">
+
+
+    <app-bk-header></app-bk-header>
+    <app-bk-leftdiv></app-bk-leftdiv>
+  </div>
+</ng-container>

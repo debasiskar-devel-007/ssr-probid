@@ -1,0 +1,44 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner contactusbg">
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <h1>CONTACT US</h1>
+    </mat-card-content>
+  </span>
+</mat-card>
+<mat-card class="innerpagetitle">
+  <span class="mainwrappercontent">
+    <mat-card-content class="bred_cram_wrapper">
+      <mat-list class="bred_cram_wrapper_list">
+        <mat-list-item routerLinkActive="active">
+          <a> home </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+        <mat-list-item routerLinkActive="active activebread">
+          <a [routerLink]="'/contactus'"> Contact Us </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </span>
+</mat-card>
+<mat-card class="ptb-35 generalcls contactus">
+  <span class="mainwrappercontent">
+    <mat-card-content class="contactusblockinner">
+      <span class="contactusformblock">
+        <span class="contactusinfoblock">
+          <span class="main-div">
+            <span class="mat-card">
+              <img src="../../assets/images/contactusimageleft.png">
+              <!-- <h2>Get In Touch</h2> -->
+            </span>
+          </span>
+        </span>
+        <lib-contactus [serverUrl]="serverUrl" [addEndpoint]="addEndpoint" [routeingUrl]="routeingUrl"
+          [formTitle]="formTitle" [modaleLogo]="modaleLogo" class="formgenrl contact-form"> </lib-contactus>
+      </span>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+<app-footer></app-footer>

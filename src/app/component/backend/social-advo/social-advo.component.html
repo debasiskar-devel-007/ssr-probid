@@ -1,0 +1,180 @@
+<div class="adminwrappercls">
+  <app-header></app-header>
+      <div class="main-content-wrap">
+
+        <mat-card-content class="adm_inner_banner">
+          <mat-card-title class="adm_inner_title">Social advo</mat-card-title>
+          <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </mat-card-content>
+        <mat-card-content class="bred_cram_wrapper">
+          <a mat-list-item routerLinkActive="active"> Dashboard </a>
+          <a mat-list-item routerLinkActive="active activebread"> Social advo</a>
+        </mat-card-content>
+
+        <mat-card class="generalcls socialadvoblock1" style="padding:0px !important">
+          <span class="mainwrappercontent">
+              <mat-card-title class="sectionheader">Social Advo</mat-card-title>
+              <span class="socialadvolistwarpper">
+                <span class="btnsharewrapper">
+                  <span class="socialmediaheader">
+                    <span class="sharecontent"  *ngIf="profile != '' && profile != null">
+                      <span class="sharecontentimgwrapper">
+                        <img [src]="profile.picture.data.url">
+                      </span>
+                      <span class="sharecontentinfo">
+                        <mat-list role="list">
+                          <mat-list-item role="listitem">
+                            <span class="labelcls">Name:</span>
+                            <span>{{profile.name}}</span>
+                          </mat-list-item>
+                          <mat-list-item role="listitem">
+                            <span class="labelcls">Email:</span>
+                            <span>{{profile.email}}</span>
+                          </mat-list-item>
+                        </mat-list>
+                        <button mat-button class="btnshare btnsharecls txtwhite btnremove" (click)="logoutWithFacebook()"><i class="fa fa-remove"></i></button>
+                      </span>
+                    </span>  
+                    <span class="btnsharewrapper">
+                      <button mat-button class="btnshare btnsharecls txtwhite" (click)="login()"><i class="fa fa-facebook"></i> <span><sub>add</sub>Facebook<sup>now</sup></span></button>
+                    </span> 
+                  </span> 
+                </span>
+
+                <span class="bannerlistwrapper facebookbanner">
+                  <mat-list role="list">
+                    <mat-list-item role="listitem">
+                      <img src="../../../../assets/images/facebookbanner-img1.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite"  (click)="share('facebookbanner-img1.jpg')"><span>Post</span></button>
+                      </span>  
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                      <img src="../../../../assets/images/facebookbanner-img2.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img2.jpg')"><span>Post</span></button>
+                      </span>                      
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                      <img src="../../../../assets/images/facebookbanner-img3.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img3.jpg')"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>
+                    <mat-list-item role="listitem"> 
+                      <img src="../../../../assets/images/facebookbanner-img4.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img4.jpg')"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>
+                    <mat-list-item role="listitem"> 
+                      <img src="../../../../assets/images/facebookbanner-img5.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img5.jpg')"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>
+                    <mat-list-item role="listitem"> 
+                      <img src="../../../../assets/images/facebookbanner-img6.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img6.jpg')"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>
+                    
+                    <mat-list-item role="listitem"> 
+                      <img src="../../../../assets/images/facebookbanner-img7.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img7.jpg')"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>                    
+                    <mat-list-item role="listitem"> 
+                      <img src="../../../../assets/images/facebookbanner-img8.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img8.jpg')"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>                    
+                    <mat-list-item role="listitem"> 
+                      <img src="../../../../assets/images/facebookbanner-img9.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img9.jpg')"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>
+                  </mat-list>
+                  <span class="loadmorewarpper">
+                    <button mat-button class="btnblue">Load More</button>
+                  </span>
+                </span>
+                <span class="btnsharewrapper">
+                  <span class="socialmediaheader">
+                    <span class="sharecontent">
+                      <span class="sharecontentimgwrapper">
+                        <img  src="../../../../assets/images/imguser.jpg">
+                      </span>
+                      <span class="sharecontentinfo">
+                        <mat-list role="list">
+                          <mat-list-item role="listitem">
+                            <span class="labelcls">Name:</span>
+                            <span>sda</span>
+                          </mat-list-item>
+                          <mat-list-item role="listitem">
+                            <span class="labelcls">Email:</span>
+                            <span>sf</span>
+                          </mat-list-item>
+                        </mat-list>
+                        <button mat-button class="btnshare btnsharecls txtwhite btnremove"><i class="fa fa-remove"></i></button>
+                      </span>
+                    </span>  
+                    <span class="btnsharewrapper">
+                      <button mat-button class="btnshare btnsharecls txtwhite"><i class="fa fa-linkedin"></i> <span><sub>add</sub>linkedin<sup>now</sup></span></button>
+                    </span> 
+                  </span> 
+                </span> 
+                <span class="bannerlistwrapper linkedinbanner">
+                  <mat-list role="list">
+                    <mat-list-item role="listitem">
+                      <img src="../../../../assets/images/linkedinbanner-img1.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite"><span  href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdev.probidauto.com%2Fassets%2Fimages%2Flinkedinbanner-img1.jpg">Post</span></button>
+                      </span>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                      <img src="../../../../assets/images/linkedinbanner-img2.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                      <img src="../../../../assets/images/linkedinbanner-img3.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>
+                    <mat-list-item role="listitem"> 
+                      <img src="../../../../assets/images/linkedinbanner-img4.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>
+                    
+                    <mat-list-item role="listitem"> 
+                      <img src="../../../../assets/images/linkedinbanner-img5.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>
+                    <mat-list-item role="listitem"> 
+                      <img src="../../../../assets/images/linkedinbanner-img6.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite"><span>Post</span></button>
+                      </span>
+                    </mat-list-item>
+                  </mat-list>
+                  <span class="loadmorewarpper">
+                    <button mat-button class="btnblue">Load More</button>
+                  </span>
+                </span>
+              </span>  
+          </span>
+        </mat-card>
+      </div>
+  </div>
+<app-footer></app-footer>

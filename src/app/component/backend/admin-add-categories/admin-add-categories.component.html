@@ -1,0 +1,197 @@
+<span class="modalouter_body">
+    <span class="modalouter_wrapper">
+
+            <span class="modalouter_wrapper_inner"  *ngIf="router.url === '/manage-type'">
+                    <h1 mat-dialog-title class="modalttitle">Add Type</h1>
+                    <span class="modalttitlewrapper">
+                            <form [formGroup]="addTypeForm" (ngSubmit)="addTypeSubmit()">
+                        <div mat-dialog-content>
+                            <mat-form-field class="form-group">
+                                <span class="form_floating_div">
+                                    <span class="col-sm-4 formlabel"><label>Name:</label></span>
+                                    <span class="col-sm-8"> <input matInput  formControlName="added_on" placeholder="Name"></span>                               
+                                </span>
+                            </mat-form-field>
+                            <mat-form-field class="form-group">
+                                    <span class="form_floating_div">
+                                        <span class="col-sm-4 formlabel"><label>Type Name:</label></span>
+                                        <span class="col-sm-8"> <input matInput  formControlName="TypeName"></span>                               
+                                    </span>
+                            </mat-form-field>
+                            <mat-form-field class="form-group">
+                                    <span class="form_floating_div">
+                                        <span class="col-sm-4 formlabel"><label>Cars Number:</label></span>
+                                        <span class="col-sm-8"> <input matInput  formControlName="Cars"></span>                               
+                                    </span>
+                            </mat-form-field>
+                            <mat-form-field class="form-group">
+                                    <span class="form_floating_div">
+                                        <span class="col-sm-4 formlabel"><label>Status:</label></span>
+                                        <span class="col-sm-8"> 
+                                                <!-- <mat-label></mat-label> -->
+                                                <mat-select formControlName="status">
+                                                <mat-option >Select an option </mat-option>
+                                                <mat-option value="1">Active </mat-option>
+                                                <mat-option value="0">InActive </mat-option>
+                                                <mat-option value="2">Pending </mat-option>
+                                                </mat-select>
+                                        </span>                               
+                                    </span>    
+                            </mat-form-field>
+                        </div>
+                        <div mat-dialog-actions>
+                            <button mat-button (click)="onNoClick()">No Thanks</button>
+                            <button mat-button>Ok</button>
+                        </div>
+                            </form>
+                    </span>
+
+            </span>
+
+
+            <span class="modalouter_wrapper_inner"  *ngIf="router.url === '/manage-make'">
+                    <h1 mat-dialog-title class="modalttitle">Add Make</h1>
+                    <span class="modalttitlewrapper" >
+                            <form [formGroup]="addMakeform" (ngSubmit)="addMakeSubmit()">
+                        <div mat-dialog-content>
+                            <mat-form-field>
+                                <label>Name:</label>
+                                <input matInput placeholder="Name" formControlName="added_on">
+                            </mat-form-field>
+                            <mat-form-field>
+                                    <label>Make Name:</label>
+                                    <input matInput placeholder="Make Name" formControlName="make_name">
+                                </mat-form-field>
+                            
+                                <mat-form-field>
+                                        <label>Cars Number:</label>
+                                    <input matInput placeholder="Cars Number" formControlName="Cars">
+                                </mat-form-field>
+
+                                <mat-form-field>
+                                        <label>Status:</label>
+                                        <mat-label>Select an option</mat-label>
+                                        <mat-select formControlName="status">
+                                        <mat-option value="1">Active </mat-option>
+                                        <mat-option value="0">InActive </mat-option>
+                                        <mat-option value="2">Pending </mat-option>
+                                        </mat-select>
+                                </mat-form-field>
+                        </div>
+                        <div mat-dialog-actions>
+                            <button mat-button (click)="onNoClick()">No Thanks</button>
+                            <button mat-button>Ok</button>
+                        </div>
+                            </form>
+                    </span>
+            
+            </span>
+
+
+            <span class="modalouter_wrapper_inner"   *ngIf="router.url === '/manage-model'">
+                    <h1 mat-dialog-title class="modalttitle">Add Model</h1>
+                    <span class="modalttitlewrapper">
+                            <form [formGroup]="addModelform" (ngSubmit)="addModelSubmit()">
+                        <div mat-dialog-content>
+                                <mat-form-field>
+                                        <label>Name:</label>
+                                        <input matInput  formControlName="added_on">
+                                    </mat-form-field>
+                            <mat-form-field>
+                                <label>Model Name:</label>
+                                <input matInput formControlName="model_name">
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                    <label>Cars Number:</label>
+                                <input matInput formControlName="Cars">
+                            </mat-form-field>
+
+                            <mat-form-field>                
+                                    <label>Choose Make:</label>
+                                    <mat-label>Select an option</mat-label>
+                                    <mat-select formControlName="make_name">
+                                    <mat-option *ngFor="let item of makeArray" value="{{item.make_name}}">{{item.make_name}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <mat-form-field>                
+                                    <label>Choose Type:</label>
+                                    <mat-label>Select an option</mat-label>
+                                    <mat-select formControlName="type">
+                                    <mat-option *ngFor="let item of typeArray" value="{{item.TypeName}}">{{item.TypeName}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <mat-form-field>                
+                                    <label>Choose Year:</label>
+                                    <mat-label>Select an option</mat-label>
+                                    <mat-select formControlName="year">
+                                    <mat-option *ngFor="let item of typeYear" value="{{item.year}}">{{item.year}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                            <mat-form-field>
+                                    <label>Status:</label>
+                                    <mat-label>Select an option</mat-label>
+                                    <mat-select  formControlName="status">
+                                            <mat-option value="1">Active </mat-option>
+                                            <mat-option value="0">InActive </mat-option>
+                                            <mat-option value="2">Pending </mat-option>
+                                    </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div mat-dialog-actions>
+                            <button mat-button (click)="onNoClick()">No Thanks</button>
+                            <button mat-button>Ok</button>
+                        </div>
+                            </form>
+                    </span>
+            </span>
+
+
+
+
+
+            <span class="modalouter_wrapper_inner"   *ngIf="router.url === '/manage-year'">
+                    <h1 mat-dialog-title class="modalttitle">Add Year</h1>
+                    <span class="modalttitlewrapper">
+                            <form [formGroup]="addyearform" (ngSubmit)="addYearSubmit()">
+                        <div mat-dialog-content>
+                                <mat-form-field>
+                                        <label>Name:</label>
+                                        <input matInput formControlName="added_on">
+                                    </mat-form-field>
+                            <mat-form-field>
+                                <label>Year:</label>
+                                <input matInput formControlName="year">
+                            </mat-form-field>
+                            <mat-form-field>
+                                    <label>Cars Number:</label>
+                                <input matInput formControlName="Cars">
+                            </mat-form-field>
+                            
+                            <mat-form-field>
+                                    <label>Status:</label>
+                                    <mat-label>Select an option</mat-label>
+                                    <mat-select  formControlName="status">
+                                            <mat-option value="1">Active </mat-option>
+                                            <mat-option value="0">InActive </mat-option>
+                                            <mat-option value="2">Pending </mat-option>
+                                    </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div mat-dialog-actions>
+                            <button mat-button (click)="onNoClick()">No Thanks</button>
+                            <button mat-button>Ok</button>
+                        </div>
+                            </form>
+                    </span>
+            
+            
+            </span>
+    </span>
+</span>
+
+
+

@@ -1,0 +1,14 @@
+.Settings_tab_block{ width: 49%; float: left;}
+
+.Settings_tab_block:nth-of-type(2){ float:right;}
+
+
+@media only screen and (max-width: 1199px) {
+    .Settings_tab_block{ width: 100%; float: none;}
+
+    .Settings_tab_block:nth-of-type(2){ float:none;}
+}
+
+
+
+

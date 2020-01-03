@@ -1,0 +1,741 @@
+<app-header></app-header>
+
+<mat-card class="homebanner generalcls" style="padding: 0 !important">    
+    <mat-card-content>
+      
+        <mat-carousel timings="250ms ease-in"
+        [autoplay]="true"
+        interval="5000"
+        color="primary"
+        maxWidth="auto"
+        proportion="25"
+        slides="3"
+        [loop]="true"
+        [hideArrows]="false"
+        [hideIndicators]="false"
+        [useKeyboard]="true"
+        [useMouseWheel]="true"
+        orientation="ltr" >
+        <mat-carousel-slide #matCarouselSlide overlayColor="#00000040" [hideOverlay]="false">      
+            <img class="d-block w-100" src="../../assets/images/probidhome-slide1img.jpg">
+            <div class="carousalinfo">
+                <h1>ProBidAuto</h1>
+                <p>Specify Your Needs, Choose Your Car, And We Will Get It For You. It’s That Easy!! We Make Online Used-Car-Buying Easy And Convenient For You.</p>
+                <div class="righttxt">
+                 <p>Car-Buying Made Easy And Convenient!!</p>
+                </div>
+                <!-- <button mat-flat-button (click)="matCarouselSlide.disabled = !matCarouselSlide.disabled"> Click me! </button> -->
+            </div>
+          
+        </mat-carousel-slide>
+        <mat-carousel-slide #matCarouselSlide overlayColor="#00000040" [hideOverlay]="false">      
+            <img class="d-block w-100" src="../../assets/images/probidhome-slide1img.jpg">
+            <div class="carousalinfo">
+                <h1>ProBidAuto</h1>
+                <p>Specify Your Needs, Choose Your Car, And We Will Get It For You. It’s That Easy!! We Make Online Used-Car-Buying Easy And Convenient For You.</p>
+                <div class="righttxt">
+                 <p>Car-Buying Made Easy And Convenient!!</p>
+                </div>
+                <!-- <button mat-flat-button (click)="matCarouselSlide.disabled = !matCarouselSlide.disabled"> Click me! </button> -->
+            </div>     
+          </mat-carousel-slide>
+          <mat-carousel-slide #matCarouselSlide overlayColor="#00000040" [hideOverlay]="false">
+              <img class="d-block w-100" src="../../assets/images/probidhome-slide1img.jpg">
+              <div class="carousalinfo">
+                  <h1>ProBidAuto</h1>
+                  <p>Specify Your Needs, Choose Your Car, And We Will Get It For You. It’s That Easy!! We Make Online Used-Car-Buying Easy And Convenient For You.</p>
+                  <div class="righttxt">
+                   <p>Car-Buying Made Easy And Convenient!!</p>
+                  </div>
+                  <!-- <button mat-flat-button (click)="matCarouselSlide.disabled = !matCarouselSlide.disabled"> Click me! </button> -->
+              </div>
+          </mat-carousel-slide>
+      </mat-carousel>
+  </mat-card-content>
+</mat-card>
+<mat-card class="innerpagetitle innerpagetitlehome">
+        <span class="mainwrappercontent">
+            <mat-card-content>
+                <h2>Welcome to <span>Probidauto</span></h2>
+            </mat-card-content>
+        </span>
+</mat-card>
+
+<mat-card class="probidhomeblock1 generalcls ptb-40">     
+     <mat-tab-group class="tabwrapper">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <h2>Pre-owned Cars</h2>                
+            </ng-template>          
+          <ng-template matTabContent>    
+            <span class="mainwrappercontent">        
+              <span class="search-sec">                
+                  <h2 class="innertitle2"><img src="../../assets/images/preownedcarsicon.png"> Pre-owned Cars</h2>
+                  <span class="mat-search-bar">
+                      <form class="example-form">
+                          <mat-form-field class="example-full-width">
+                            <span matPrefix></span>
+                            <input type="text" matInput placeholder="Make">
+                            <button mat-button>
+                                <i class="material-icons">
+                                    search
+                                </i>
+                            </button>
+                          </mat-form-field>  
+                          <mat-form-field class="example-full-width">
+                            <span matPrefix></span>
+                            <input type="text" matInput placeholder="Model">
+                            <button mat-button>
+                                <i class="material-icons">
+                                    search
+                                </i>
+                            </button>
+                          </mat-form-field>
+                          <mat-form-field class="example-full-width">
+                            <span matPrefix></span>
+                            <input type="text" matInput placeholder="Year">
+                            <button mat-button>
+                                <i class="material-icons">
+                                    search
+                                </i>
+                            </button>
+                          </mat-form-field>     
+                          <mat-form-field class="example-full-width">
+                            <span matPrefix></span>
+                            <input type="text" matInput placeholder="Type">
+                            <button mat-button>
+                                <i class="material-icons">
+                                    search
+                                </i>
+                            </button>
+                          </mat-form-field>                   
+                        </form>
+                  </span>
+              </span>       
+              <mat-list class="lists">
+                  <mat-list-item> 
+                    <span class="listsimgwrap"><img src="../../assets/images/carsimg1.jpg"></span>
+                    <span class="listsinfo">
+                      <span class="listsinfoprice">
+                          $ 45,000
+                      </span>
+                      <span class="listsinfoaddress">
+                        BMW 535I, NAVI, 2010, SEDAN
+                      </span>
+                    </span> 
+                    <span class="listsbottominfo">
+                        <mat-list class="listsbottom">
+                            <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                            <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                            <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                         </mat-list>
+                    </span> 
+                  </mat-list-item>
+                  <mat-list-item> 
+                      <span class="listsimgwrap"><img src="../../assets/images/carsimg2.jpg"></span>
+                      <span class="listsinfo">
+                        <span class="listsinfoprice">
+                            $ 45,000
+                        </span>
+                        <span class="listsinfoaddress">
+                          BMW 535I, NAVI, 2010, SEDAN
+                        </span>
+                      </span> 
+                      <span class="listsbottominfo">
+                          <mat-list class="listsbottom">
+                              <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                              <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                              <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                           </mat-list>
+                      </span> 
+                  </mat-list-item>
+                  <mat-list-item> 
+                        <span class="listsimgwrap"><img src="../../assets/images/carsimg3.jpg"></span>
+                        <span class="listsinfo">
+                          <span class="listsinfoprice">
+                              $ 45,000
+                          </span>
+                          <span class="listsinfoaddress">
+                            BMW 535I, NAVI, 2010, SEDAN
+                          </span>
+                        </span> 
+                        <span class="listsbottominfo">
+                            <mat-list class="listsbottom">
+                                <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                             </mat-list>
+                        </span> 
+                  </mat-list-item>
+                  <mat-list-item> 
+                          <span class="listsimgwrap"><img src="../../assets/images/carsimg4.jpg"></span>
+                          <span class="listsinfo">
+                            <span class="listsinfoprice">
+                                $ 45,000
+                            </span>
+                            <span class="listsinfoaddress">
+                             BMW 535I, BLUE, 2010, SUV
+                            </span>
+                          </span> 
+                          <span class="listsbottominfo">
+                              <mat-list class="listsbottom">
+                                  <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                  <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                  <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                               </mat-list>
+                          </span> 
+                  </mat-list-item>
+                  <mat-list-item> 
+                            <span class="listsimgwrap"><img src="../../assets/images/carsimg5.jpg"></span>
+                            <span class="listsinfo">
+                              <span class="listsinfoprice">
+                                  $ 45,000
+                              </span>
+                              <span class="listsinfoaddress">
+                                BMW 535I, NAVI, 2010, SEDAN
+                              </span>
+                            </span> 
+                            <span class="listsbottominfo">
+                                <mat-list class="listsbottom">
+                                    <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                    <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                    <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                                 </mat-list>
+                            </span> 
+                  </mat-list-item>
+                  <mat-list-item> 
+                              <span class="listsimgwrap"><img src="../../assets/images/carsimg6.jpg"></span>
+                              <span class="listsinfo">
+                                <span class="listsinfoprice">
+                                    $ 45,000
+                                </span>
+                                <span class="listsinfoaddress">
+                                  BMW 535I, NAVI, 2010, SEDAN
+                                </span>
+                              </span> 
+                              <span class="listsbottominfo">
+                                  <mat-list class="listsbottom">
+                                      <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                      <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                      <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                                   </mat-list>
+                              </span> 
+                  </mat-list-item>
+                  <mat-list-item> 
+                                <span class="listsimgwrap"><img src="../../assets/images/carsimg7.jpg"></span>
+                                <span class="listsinfo">
+                                  <span class="listsinfoprice">
+                                      $ 45,000
+                                  </span>
+                                  <span class="listsinfoaddress">
+                                   BMW 535I, BLUE, 2010, SUV
+                                  </span>
+                                </span> 
+                                <span class="listsbottominfo">
+                                    <mat-list class="listsbottom">
+                                        <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                        <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                        <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                                     </mat-list>
+                                </span> 
+                  </mat-list-item>
+                  <mat-list-item> 
+                                  <span class="listsimgwrap"><img src="../../assets/images/carsimg8.jpg"></span>
+                                  <span class="listsinfo">
+                                    <span class="listsinfoprice">
+                                        $ 45,000
+                                    </span>
+                                    <span class="listsinfoaddress">
+                                     BMW 535I, BLUE, 2010, SUV
+                                    </span>
+                                  </span> 
+                                  <span class="listsbottominfo">
+                                      <mat-list class="listsbottom">
+                                          <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                          <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                          <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                                       </mat-list>
+                                  </span> 
+                  </mat-list-item>
+               </mat-list>
+              <button mat-button class="btnblue sim-button" [routerLink]="['/pre-owned-list']">View all</button>
+            </span>
+          </ng-template>
+        </mat-tab>
+        <mat-tab>            
+            <ng-template mat-tab-label>
+              <h2>Online Inventory</h2>
+            </ng-template>           
+            <ng-template matTabContent>
+                <span class="mainwrappercontent"> 
+                    <span class="search-sec">                
+                        <h2 class="innertitle2"><img src="../../assets/images/preownedcarsicon.png"> Online Inventory</h2>
+                        <span class="mat-search-bar">
+                            <form class="example-form">
+                              <mat-form-field class="example-full-width">
+                                <span matPrefix></span>
+                                <input type="text" matInput placeholder="Make">
+                                <button mat-button>
+                                    <i class="material-icons">
+                                        search
+                                    </i>
+                                </button>
+                              </mat-form-field>  
+                              <mat-form-field class="example-full-width">
+                                <span matPrefix></span>
+                                <input type="text" matInput placeholder="Model">
+                                <button mat-button>
+                                    <i class="material-icons">
+                                        search
+                                    </i>
+                                </button>
+                              </mat-form-field>
+                              <mat-form-field class="example-full-width">
+                                <span matPrefix></span>
+                                <input type="text" matInput placeholder="Year">
+                                <button mat-button>
+                                    <i class="material-icons">
+                                        search
+                                    </i>
+                                </button>
+                              </mat-form-field>     
+                              <mat-form-field class="example-full-width">
+                                <span matPrefix></span>
+                                <input type="text" matInput placeholder="Type">
+                                <button mat-button>
+                                    <i class="material-icons">
+                                        search
+                                    </i>
+                                </button>
+                              </mat-form-field>                          
+                              </form>
+                        </span>
+                    </span>
+                  
+                  <mat-list class="lists">
+                      <mat-list-item> 
+                        <span class="listsimgwrap"><img src="../../assets/images/carsimg1.jpg"></span>
+                        <span class="listsinfo">
+                          <span class="listsinfoprice">
+                              $ 45,000
+                          </span>
+                          <span class="listsinfoaddress">
+                            BMW 535I, NAVI, 2010, SEDAN
+                          </span>
+                        </span> 
+                        <span class="listsbottominfo">
+                            <mat-list class="listsbottom">
+                                <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                             </mat-list>
+                        </span> 
+                      </mat-list-item>
+                      <mat-list-item> 
+                          <span class="listsimgwrap"><img src="../../assets/images/carsimg2.jpg"></span>
+                          <span class="listsinfo">
+                            <span class="listsinfoprice">
+                                $ 45,000
+                            </span>
+                            <span class="listsinfoaddress">
+                              BMW 535I, NAVI, 2010, SEDAN
+                            </span>
+                          </span> 
+                          <span class="listsbottominfo">
+                              <mat-list class="listsbottom">
+                                  <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                  <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                  <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                               </mat-list>
+                          </span> 
+                      </mat-list-item>
+                      <mat-list-item> 
+                            <span class="listsimgwrap"><img src="../../assets/images/carsimg3.jpg"></span>
+                            <span class="listsinfo">
+                              <span class="listsinfoprice">
+                                  $ 45,000
+                              </span>
+                              <span class="listsinfoaddress">
+                               BMW 535I, BLUE, 2010, SUV
+                              </span>
+                            </span> 
+                            <span class="listsbottominfo">
+                                <mat-list class="listsbottom">
+                                    <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                    <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                    <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                                 </mat-list>
+                            </span> 
+                      </mat-list-item>
+                      <mat-list-item> 
+                              <span class="listsimgwrap"><img src="../../assets/images/carsimg4.jpg"></span>
+                              <span class="listsinfo">
+                                <span class="listsinfoprice">
+                                    $ 45,000
+                                </span>
+                                <span class="listsinfoaddress">
+                                 BMW 535I, BLUE, 2010, SUV
+                                </span>
+                              </span> 
+                              <span class="listsbottominfo">
+                                  <mat-list class="listsbottom">
+                                      <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                      <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                      <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                                   </mat-list>
+                              </span> 
+                      </mat-list-item>
+                      <mat-list-item> 
+                                <span class="listsimgwrap"><img src="../../assets/images/carsimg5.jpg"></span>
+                                <span class="listsinfo">
+                                  <span class="listsinfoprice">
+                                      $ 45,000
+                                  </span>
+                                  <span class="listsinfoaddress">
+                                   BMW 535I, BLUE, 2010, SUV
+                                  </span>
+                                </span> 
+                                <span class="listsbottominfo">
+                                    <mat-list class="listsbottom">
+                                        <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                        <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                        <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                                     </mat-list>
+                                </span> 
+                      </mat-list-item>
+                      <mat-list-item> 
+                                  <span class="listsimgwrap"><img src="../../assets/images/carsimg6.jpg"></span>
+                                  <span class="listsinfo">
+                                    <span class="listsinfoprice">
+                                        $ 45,000
+                                    </span>
+                                    <span class="listsinfoaddress">
+                                      BMW 535I, NAVI, 2010, SEDAN
+                                    </span>
+                                  </span> 
+                                  <span class="listsbottominfo">
+                                      <mat-list class="listsbottom">
+                                          <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                          <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                          <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                                       </mat-list>
+                                  </span> 
+                      </mat-list-item>
+                      <mat-list-item> 
+                                    <span class="listsimgwrap"><img src="../../assets/images/carsimg7.jpg"></span>
+                                    <span class="listsinfo">
+                                      <span class="listsinfoprice">
+                                          $ 45,000
+                                      </span>
+                                      <span class="listsinfoaddress">
+                                        BMW 535I, NAVI, 2010, SEDAN
+                                      </span>
+                                    </span> 
+                                    <span class="listsbottominfo">
+                                        <mat-list class="listsbottom">
+                                            <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                            <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                            <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                                         </mat-list>
+                                    </span> 
+                      </mat-list-item>
+                      <mat-list-item> 
+                                      <span class="listsimgwrap"><img src="../../assets/images/carsimg8.jpg"></span>
+                                      <span class="listsinfo">
+                                        <span class="listsinfoprice">
+                                            $ 45,000
+                                        </span>
+                                        <span class="listsinfoaddress">
+                                          BMW 535I, NAVI, 2010, SEDAN
+                                        </span>
+                                      </span> 
+                                      <span class="listsbottominfo">
+                                          <mat-list class="listsbottom">
+                                              <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                                              <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                                              <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                                           </mat-list>
+                                      </span> 
+                      </mat-list-item>
+                   </mat-list>
+                   <button mat-button class="btnblue sim-button" [routerLink]="['/online-inventory-list']">View all</button>
+                   
+                </span>
+            </ng-template>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+              <h2>Search Inventory</h2>
+          </ng-template>
+          <ng-template matTabContent>
+            <span class="basicsearchinventorybg">
+                <span class="mainwrappercontent">     
+                    <span class="search-sec">                
+                        <h2 class="innertitle2"><img src="../../assets/images/preownedcarsicon.png"> Search Inventory</h2>
+                        <!-- <span class="mat-search-bar">
+                            <form class="example-form">
+                                <mat-form-field class="example-full-width">
+                                  <span matPrefix></span>
+                                  <input type="text" matInput placeholder="Color, Type, Year">
+                                  <button mat-button>
+                                      <i class="material-icons">
+                                          search
+                                      </i>
+                                  </button>                                  
+                                </mat-form-field>                          
+                              </form>
+                        </span> -->
+                    </span>
+                  
+                  <img src="../../../../assets/images/basic-inventory-search-home.png" style="width: 100%; display: block; margin: 0; padding: 0;">
+                  <span class="float-right">
+                    <button mat-button class="btnblue sim-button" [routerLink]="['/search-inventory-list']">Search</button>
+                  </span>
+                </span>
+            </span>              
+          </ng-template>
+        </mat-tab>          
+     </mat-tab-group> 
+</mat-card>
+
+<!-- <mat-card class="generalcls blog" style="padding: 0 !important;">  
+    <img src="../../../../assets/images/pro-home-block2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+</mat-card> -->
+
+<mat-card class="probidhomeblock2 generalcls ptb-40">
+    <span class="mainwrappercontent">
+      <span class="probidhomeblock2inner">
+        <mat-list role="list">
+          <mat-list-item role="listitem" class="bluebg">
+            <h2>Are you looking for a car?</h2>
+            <p>Our cars are delivered fully-registered with all requirements completed. We’ll deliver your car wherever you are.</p>
+            <button mat-button class="btnblue sim-button" [routerLink]="['/advance-inventory-search']">Learn More</button>
+            <img src="../../assets/images/searchcarcion.png">
+          </mat-list-item>
+          <mat-list-item role="listitem" class="orangebg">
+              <h2>Do You want to sell a car?</h2>
+              <p>What’s your car worth? Receive the absolute best value for your trade-in vehicle. We even handle all paperwork. Schedule your appointment today!</p>
+              <button mat-button class="btnblue sim-button" [routerLink]="['/advance-inventory-search']">Learn More</button>
+              <img src="../../assets/images/sellcarcion.png">
+          </mat-list-item>
+        </mat-list>
+      </span>
+    </span>
+</mat-card>
+
+<!-- <mat-card class="generalcls blog" style="padding: 0 !important;">  
+    <img src="../../../../assets/images/pro-home-block3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+</mat-card> -->
+
+<mat-card class="probidhomeblock3 generalcls ptb-40">
+  <span class="mainwrappercontent">
+      <mat-card-content >
+          <h2 class="innertitle2 txtwhite"><img src="../../assets/images/specialsicon.png"> Specials</h2>
+          <mat-list class="lists">
+              <mat-list-item> 
+                <span class="listsimgwrap"><img src="../../assets/images/carsimg1.jpg"></span>
+                <span class="listsinfo">
+                  <span class="listsinfoprice">
+                      $ 45,000
+                  </span>
+                  <span class="listsinfoaddress">
+                    BMW 535I, NAVI, 2010, SEDAN
+                  </span>
+                </span> 
+                <span class="listsbottominfo">
+                    <mat-list class="listsbottom">
+                        <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                        <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                        <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                     </mat-list>
+                </span> 
+              </mat-list-item>
+              <mat-list-item> 
+                  <span class="listsimgwrap"><img src="../../assets/images/carsimg2.jpg"></span>
+                  <span class="listsinfo">
+                    <span class="listsinfoprice">
+                        $ 56,000
+                    </span>
+                    <span class="listsinfoaddress">
+                      BMW 535I, NAVI, 2010, SEDAN
+                    </span>
+                  </span> 
+                  <span class="listsbottominfo">
+                      <mat-list class="listsbottom">
+                          <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                          <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                          <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                       </mat-list>
+                  </span> 
+              </mat-list-item>
+              <mat-list-item> 
+                    <span class="listsimgwrap"><img src="../../assets/images/carsimg3.jpg"></span>
+                    <span class="listsinfo">
+                      <span class="listsinfoprice">
+                          $ 85,000
+                      </span>
+                      <span class="listsinfoaddress">
+                        BMW 535I, NAVI, 2010, SEDAN
+                      </span>
+                    </span> 
+                    <span class="listsbottominfo">
+                        <mat-list class="listsbottom">
+                            <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
+                            <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
+                            <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
+                         </mat-list>
+                    </span> 
+              </mat-list-item>
+              <mat-list-item> 
+                  <span class="listsimgwholewrap"><img src="../../assets/images/probidhomeblock3adv.jpg"></span>                      
+              </mat-list-item>
+           </mat-list>
+           <button mat-button class="btnblue sim-button" [routerLink]="['/specials-list']">Learn More</button>
+      </mat-card-content>
+  </span>
+</mat-card>
+
+<!-- <mat-card class="generalcls blog" style="padding: 0 !important;"> 
+    <img src="../../../../assets/images/pro-home-block4.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+</mat-card> -->
+
+<mat-card class="probidhomeblock4 generalcls ptb-40">
+    <span class="mainwrappercontent">
+        <mat-card-content>
+            <h2 class="innertitle2"><img src="../../assets/images/whychooseusicon.png"> Why Choose Us</h2>
+            <mat-list class="lists">
+                <mat-list-item> 
+                  <span class="listsimgwrap"><img src="../../assets/images/whychooseusimg1.png"></span>
+                  <h3>FINANCING MADE EASY</h3>                  
+                  <p>Our stress-free finance department that can find financial solutions to save you money.</p> 
+                </mat-list-item>
+                <mat-list-item> 
+                  <span class="listsimgwrap"><img src="../../assets/images/whychooseusimg2.png"></span>   
+                  <h3>WIDE RANGE OF BRANDS</h3>               
+                  <p>With a robust selection of popular vehicles on hand, as well as leading vehicles from BMW and Ford.</p>
+                </mat-list-item>
+                <mat-list-item> 
+                    <span class="listsimgwrap"><img src="../../assets/images/whychooseusimg3.png"></span>     
+                    <h3>TRUSTED BY THOUSANDS</h3>             
+                    <p>10 new offers every day. 350 offers on site, trusted by a community of thousands of users.</p>
+                </mat-list-item>
+                <mat-list-item> 
+                    <span class="listsimgwrap"><img src="../../assets/images/whychooseusimg4.png"></span>     
+                    <h3>CAR SERVICE & MAINTENANCE</h3>             
+                    <p>Our service department maintain your car to stay safe on the road for many more years.</p>             
+                </mat-list-item>
+            </mat-list>
+            <button mat-button class="btnblue sim-button" [routerLink]="['/service']">Learn More</button>
+        </mat-card-content>        
+    </span>
+  </mat-card>
+
+  <!-- <mat-card class="generalcls blog" style="padding: 0 !important;">  
+      <img src="../../../../assets/images/pro-home-block5.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+  </mat-card> -->
+
+  <mat-card class="probidhomeblock5 generalcls ptb-40">
+    <span class="mainwrappercontent text-center">
+    <h2 class="innertitle2"><img src="../../assets/images/testimonialsicon.png"> Testimonials</h2>
+      <app-tesimonial></app-tesimonial>
+    </span>
+  </mat-card>
+
+  <!-- <mat-card class="generalcls testimonial" style="padding: 0 !important; text-align: center; padding-bottom: 40px !important;">  
+    <span class="mainwrappercontent">
+      <img src="../../../../assets/images/pro-home-block6.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+      <button mat-button class="btnblue sim-button" [routerLink]="['/testimonial']">Learn More</button>
+    </span>
+  </mat-card> -->
+
+  <mat-card class="probidhomeblock6 generalcls blog ptb-40">
+      <span class="mainwrappercontent text-center">
+          <h2 class="innertitle2"><img src="../../assets/images/blogicon.png"> Blog</h2>
+          <app-blog></app-blog>
+      </span>    
+  </mat-card>
+<!-- 
+  <mat-card class="generalcls blog" style="padding: 0 !important;">  
+      <img src="../../../../assets/images/pro-home-block7.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+  </mat-card> -->
+
+<!-- 
+ <app-service></app-service>      // service page
+
+<mat-card class="ptb-35 generalcls blog">     
+  <span class="mainwrappercontent">
+    <mat-card-title>Our Blogs</mat-card-title>
+    <mat-card-content class="bottom_blog">      
+      <span class="item_wrapper">
+        <mat-card-content class="item">
+          <span class="item_images">
+            <img src="https://cdn.pixabay.com/photo/2016/11/08/05/29/clinic-1807543__340.jpg">
+          </span>
+          <mat-card-content class="contentsection">
+            <mat-card-title class="inner_header">Title</mat-card-title>
+            <span class="author">
+              <span class="writer_image">
+                <img
+                  src="https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1">
+              </span>
+              <p class="authorName">author name</p>
+              <p class="date">date: </p>
+            </span>
+            <p class="description">
+              Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec
+              vehicula luctus nunc in...
+            </p>
+            <a class="next_page" routerLink="/"><i class="material-icons"> arrow_forward </i></a>
+          </mat-card-content>
+        </mat-card-content>
+  
+        <mat-card-content class="item">
+          <span class="item_images">
+            <img src="https://cdn.pixabay.com/photo/2016/07/24/21/01/thermometer-1539191__340.jpg">
+          </span>
+          <mat-card-content class="contentsection">
+            <mat-card-title class="inner_header">Title</mat-card-title>
+            <span class="author">
+              <span class="writer_image">
+                <img
+                  src="https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1">
+              </span>
+              <p class="authorName">author name</p>
+              <p class="date">date: </p>
+            </span>
+            <p class="description">
+              Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec
+              vehicula luctus nunc in...
+            </p>
+            <a class="next_page" routerLink="/"><i class="material-icons"> arrow_forward </i></a>
+          </mat-card-content>
+        </mat-card-content>
+  
+        <mat-card-content class="item">
+          <span class="item_images">
+            <img
+              src="https://www.brightfocus.org/sites/default/files/styles/full_width/public/gener-therapy-for-eye-disease-800.jpg?itok=GIRnrJj8">
+          </span>
+          <mat-card-content class="contentsection">
+            <mat-card-title class="inner_header">Title</mat-card-title>
+            <span class="author">
+              <span class="writer_image">
+                <img
+                  src="https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1">
+              </span>
+              <p class="authorName">author name</p>
+              <p class="date">date: </p>
+            </span>
+            <p class="description">
+              Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec
+              vehicula luctus nunc in...
+            </p>
+            <a class="next_page" routerLink="/"><i class="material-icons"> arrow_forward </i></a>
+          </mat-card-content>
+        </mat-card-content>
+  
+      </span>
+    </mat-card-content>
+  </span>
+</mat-card> -->
+<app-footer></app-footer>

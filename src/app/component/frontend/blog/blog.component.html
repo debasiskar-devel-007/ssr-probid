@@ -1,0 +1,38 @@
+<mat-card-content class="bottom_blog">    
+  <span class="item_wrapper">
+    <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval; let i=index">
+      <span class="item_images">
+        <img [src]="item.profile_picture">
+      </span>
+      <mat-card-content class="contentsection">
+        <mat-card-title class="inner_header">{{item.blogtitle}}</mat-card-title>
+        <span class="author">
+          <span class="authornmimg">
+            <span class="writer_image">
+              <img src="../../../../assets/images/blog-icon.png">
+            </span>
+            <p class="authorName">{{item.author}}</p>
+          </span>
+          <p class="date">Date: {{item.date_added}} </p>
+        </span>
+        <p class="description"><span [innerHtml]="item.description_html"></span></p>  
+        <a class="next_page"  (click)="blogdetail(item._id)" >read more</a>
+        <span class="blogsociallists">
+            <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
+            <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
+            <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
+            <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
+            <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
+            <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
+          </span>          
+      </mat-card-content>
+  </mat-card-content>
+   
+  </span>
+  <button mat-button class="btnblue sim-button" [routerLink]="['/bloglist']">View More</button>
+</mat-card-content>
+
+
+<!-- <lib-sharetools [Config]="ConfigData"></lib-sharetools> -->
+
+<!-- <lib-add-blog [config]="configAddEdit"></lib-add-blog> -->

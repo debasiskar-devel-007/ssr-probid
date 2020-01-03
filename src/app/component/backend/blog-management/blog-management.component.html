@@ -1,0 +1,46 @@
+<div class="adminwrappercls">
+    <app-header></app-header>
+        <div class="main-content-wrap">
+          <mat-card class="generalcls blog" style="padding: 0 !important;">  
+              <!-- <img src="../../../../assets/images/blogmang-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+              <mat-card-content class="adm_inner_banner manageblog">
+                  <mat-card-title class="adm_inner_title">Blog management</mat-card-title>
+                  <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. printer took a galley of type and scrambled it to make a type specimen book.</p>
+              </mat-card-content>
+              <mat-card-content class="bred_cram_wrapper">
+                  <a mat-list-item routerLinkActive="active"> Dashboard </a>
+                  <a mat-list-item routerLinkActive="active"> Manage Website </a>
+                  <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/blog-management'"> blog management </a>
+              </mat-card-content>
+              <mat-tab-group class="tabwrapper">
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <h2 class="innertitle2">Blogs List</h2>
+                        </ng-template>          
+                      <ng-template matTabContent>    
+                        <span class="bloglists">               
+                            <app-listing-blogs></app-listing-blogs>     
+                          <!-- <button mat-button class="btnblue sim-button" [routerLink]="['/']">View all</button> -->
+                        </span>
+                      </ng-template>
+                    </mat-tab>
+                    <mat-tab>            
+                        <ng-template mat-tab-label>
+                          <h2>Blog Catagory List</h2>
+                        </ng-template>           
+                        <ng-template matTabContent>
+                            <span class="blogcatlists"> 
+                                <app-listing-blogcat></app-listing-blogcat>     
+                               <!-- <button mat-button class="btnblue sim-button" [routerLink]="['/']">View all</button> -->                               
+                            </span>
+                        </ng-template>
+                    </mat-tab>
+                           
+                 </mat-tab-group> 
+
+
+              <!-- <img src="../../../../assets/images/blogmang-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+          </mat-card>
+        </div>
+    </div>
+<app-footer></app-footer>

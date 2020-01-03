@@ -1,0 +1,351 @@
+<mat-card class="signupnewtop-header">
+  <mat-card-content class="top-header">
+    <span class="logo">
+      <a [routerLink]="['/']"><img src="../../assets/images/logomain.png" class="landinglogoblock1"></a>
+    </span>
+    <span class="headerright">
+      <p>Consumer <span>PRE-ENROLLMENT</span></p>
+      <div class="socialblock">
+        <a href="https://www.linkedin.com/in/betoparedes" target="_blank"><img
+            src="../../assets/images/linkedin_circle.png"></a>
+        <a href="https://twitter.com/BetoCParedes " target="_blank"><img
+            src="../../assets/images/twitter_circle.png"></a>
+        <a href="https://www.facebook.com/betocparedes" target="_blank"><img
+            src="../../assets/images/facebook_circle.png"></a>
+        <div class="clear"></div>
+      </div>
+    </span>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="signupnewtop-banner">
+  <mat-card-content class="banner">
+
+      <img src="../../assets/images/customersignup-banner-home.jpg" alt="customer signup banner">
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="signupnew-form">
+    <mat-card-content class="formhome">
+      <span class="formhomeinner">
+             <form class="signupformdiv" [formGroup]="customerSignUpForm"  (ngSubmit)="customerSignUpFormSubmit()">
+                <!-- <mat-error class="error" *ngIf="msg != ''">{{msg}}</mat-error> -->
+                <mat-card-header class="formhomeinnertop">
+                    <h3>be A part of the</h3>
+                    <h2>revolution</h2>
+                </mat-card-header>    
+                <mat-card-content class="formhomeinnerbottom">
+                    <mat-form-field>
+                      <input matInput type="text" placeholder="First Name" formControlName="firstname" (blur)="inputUntouched('firstname')">
+                      <mat-error
+                        *ngIf="!customerSignUpForm.controls['firstname'].valid && customerSignUpForm.controls['firstname'].errors.required && customerSignUpForm.controls['firstname'].touched">
+                        First Name field can not be blank</mat-error>
+                    </mat-form-field>
+              
+              
+                    <mat-form-field>
+                      <input matInput type="text" placeholder="Last Name" formControlName="lastname" (blur)="inputUntouched('lastname')">
+                      <mat-error
+                        *ngIf="!customerSignUpForm.controls['lastname'].valid && customerSignUpForm.controls['lastname'].errors.required && customerSignUpForm.controls['lastname'].touched">
+                        Last Name field can not be blank</mat-error>
+                    </mat-form-field>
+              
+                    <mat-form-field>
+                      <input matInput type="text" placeholder="Email" formControlName="email" (blur)="inputUntouched('email')">
+                      <mat-error
+                        *ngIf="!customerSignUpForm.controls['email'].valid && customerSignUpForm.controls['email'].errors.required && customerSignUpForm.controls['email'].touched">
+                        Email field can not be blank</mat-error>
+                      <mat-error *ngIf="!customerSignUpForm.controls['email'].valid && !customerSignUpForm.controls['email'].errors.required">Email is
+                        not valid</mat-error>
+                    </mat-form-field>
+              
+                    <mat-form-field>
+                      <input matInput type="text" placeholder="Phone Number" formControlName="phone" (blur)="inputUntouched('phone')">
+                      <mat-error
+                        *ngIf="!customerSignUpForm.controls['phone'].valid && customerSignUpForm.controls['phone'].errors.required && customerSignUpForm.controls['phone'].touched">
+                        Phone Number field can not be blank</mat-error>
+                    </mat-form-field>
+        
+                    <mat-form-field>
+                      <input matInput placeholder="Password" type="password" formControlName="password" (blur)="inputUntouched('password')">
+                      <mat-error
+                        *ngIf="!customerSignUpForm.controls['password'].valid && customerSignUpForm.controls['password'].errors.required && customerSignUpForm.controls['password'].touched">
+                        Password field can not be blank</mat-error> 
+                    </mat-form-field>
+        
+                    <mat-form-field>
+                    <input matInput placeholder="Confirm Password" type="password" formControlName="conpass" (blur)="inputUntouched('conpass')">
+                    <mat-error  *ngIf="!customerSignUpForm.controls['conpass'].valid && customerSignUpForm.controls['conpass'].errors.required && customerSignUpForm.controls['conpass'].touched">
+                        Confirm Password field can not be blank</mat-error>
+                    <mat-error *ngIf="!customerSignUpForm.controls['conpass'].valid && customerSignUpForm.controls['conpass'].touched">Password does not match </mat-error>
+                    </mat-form-field>
+          
+                      <mat-form-field>
+                        <input matInput placeholder="Address" type="text" formControlName="address" (blur)="inputUntouched('address')">
+                        <mat-error
+                          *ngIf="!customerSignUpForm.controls['address'].valid && customerSignUpForm.controls['address'].errors.required && customerSignUpForm.controls['address'].touched">
+                          Address field can not be blank</mat-error>
+                      </mat-form-field>
+  
+                      <mat-form-field>
+                        <input matInput placeholder="Zip Code" type="text" formControlName="zip" (blur)="inputUntouched('zip')">
+                        <mat-error
+                          *ngIf="!customerSignUpForm.controls['zip'].valid && customerSignUpForm.controls['zip'].errors.required && customerSignUpForm.controls['zip'].touched">
+                          Zip field can not be blank</mat-error>
+                      </mat-form-field>
+        
+                      <mat-form-field>
+                        <mat-label>City</mat-label>
+                        <mat-select formControlName="city" (blur)="inputUntouched('city')">
+                          <mat-option *ngFor="let city of cityList" [value]="city.city">
+                            {{city.city}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error
+                          *ngIf="!customerSignUpForm.controls['city'].valid && customerSignUpForm.controls['city'].errors.required && customerSignUpForm.controls['city'].touched">
+                          City field can not be blank</mat-error>
+                      </mat-form-field>
+                      
+  
+                      <mat-form-field>
+                        <mat-label>State</mat-label>
+                        <mat-select formControlName="state" (blur)="inputUntouched('state')">
+                          <mat-option *ngFor="let state of stateList" [value]="state.abbreviation">
+                            {{state.name}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="!customerSignUpForm.controls['state'].valid && customerSignUpForm.controls['state'].errors.required && customerSignUpForm.controls['state'].touched">
+                            State field can not be blank</mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field>
+                        <mat-label>Assign SalesRep</mat-label>
+                        <mat-select formControlName="salesrep" (blur)="inputUntouched('salesrep')">
+                          <mat-option *ngFor="let rep of salesrepList" [value]="rep._id">
+                            {{rep.fullname}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="!customerSignUpForm.controls['salesrep'].valid && customerSignUpForm.controls['salesrep'].errors.required && customerSignUpForm.controls['salesrep'].touched">
+                            salesrep field can not be blank</mat-error>
+                      </mat-form-field>
+
+                      <span class="bottompart">
+                          <!-- [checked]="myModel" -->
+                          <mat-checkbox formControlName="check" class="example-margin">
+                            <label>Accept Terms And Conditions</label>
+                            <mat-label *ngIf="term_msg!=true">{{term_msg}}</mat-label>
+                          </mat-checkbox>
+                          <button mat-raised-button class="btn-lg">Sign Up</button>
+                      </span>
+              
+            </mat-card-content>
+          </form>
+      </span>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="revolutionwrapper">
+  <mat-card-content class="revolution">
+    <span class="revolutionleft">
+        <span class="revologo"><img src="../../assets/images/logo-probidauto-revolution.png"></span>
+        <span class="revocurve"><img src="../../assets/images/arrow-leftcurve-revolution.png"></span>
+        <span class="revoinfo"><h2>Obtain incredible benefits and industry-challenging prices by getting in early and registering with us for your used-car purchase.</h2></span>
+        <span class="revocarman"><img src="../../assets/images/logo-man-revolution.png"></span>
+    </span>
+    <span class="revolutionright">
+      <span class="revoinfo1 pull-right">
+        <h2>What’s more, you could even get the vehicle at less than the retail prices offered by most dealerships! All you have to do is let us know about the vehicle you want, and we will get the car to you at the best prices! <span>Our methodology is centred on allowing consumers to get their hands on the car of their choice with minimum fuss.</span>
+        </h2>
+      </span>
+      <span class="revomobile"><img src="../../assets/images/logo-mobile-revolution.png"></span>
+      <span class="revoinfo2 pull-right">
+        <h2>Our <span>Smart Dealer Dashboard</span> allows you to access and RSVP for your desired vehicle from the wide variety of choices offered by an incredible inventory, making it easy for you to get your hands on the car at retail prices, or even less!</h2>
+      </span>
+      <span class="revocurveright"><img src="../../assets/images/arrow-rightcurve-revolution.png"></span>
+    </span>
+    <span class="revolutionbottom text-center">
+      <h3>THIS IS THE <span>REVOLUTION</span> OF THE CAR BUYING PROCESS THAT YOU HAVE BEEN WAITING FOR!</h3>
+    </span>
+  </mat-card-content>
+</mat-card>    
+
+<mat-card class="benefitwrapper">
+  <span class="benefit">
+    <span class="benefittop">
+      <h2>The benefits you will gain through ProBidAuto.com are UNHEARD OF and are ground-breaking when it comes to purchasing from Used-Car Auctions:</h2>
+    </span>
+    <mat-card-content class="benefitbottom">
+      <mat-list>
+        <mat-item-list>Make hassle-free used-car purchases by not having to deal with multiple dealers or auction houses to get your desired car</mat-item-list>
+        <mat-item-list>Increased chances of getting the cars of your choice for purchase</mat-item-list>
+        <mat-item-list>A vast inventory to choose from, with variety in vehicle type, make, model, year, etc.</mat-item-list>
+        <mat-item-list>Incredible prices that match, or are less than industry retail prices</mat-item-list>
+        <mat-item-list>Great options for the more modernized “Instant-More Choice” younger consumers</mat-item-list>
+        <mat-item-list>Inventories added from multiple Used-Car Auctions to offer you a greater variety to choose from apart from our in-house inventory</mat-item-list>
+      </mat-list>
+
+      <span class="benefitsingle">
+          <mat-list class="list2">
+            <mat-item-list>You will receive alerts and notifications when new cars matching your requirements are added to the inventory, or when prices drop</mat-item-list>
+            <mat-item-list>Save thousands of dollars and loads of time by not having to browse through the inventories of multiple dealerships</mat-item-list>
+            <mat-item-list>Choose from hundreds of salespersons who will make your used-car-buying experience even more stress-free</mat-item-list>
+            <mat-item-list>Obtain great money-saving options through regular discounts and offers</mat-item-list>
+            <mat-item-list>Have access to regular newsletters informing you about the latest developments and trends in the Used-Car Auction industry</mat-item-list>
+          </mat-list>
+      </span>
+      <span class="clearfix"></span>
+      <span class="prerolldealer">
+        <h2>Although we do not display or reveal Auction Prices for any vehicle, Consumers have access to retail prices of the same vehicle. We strive to offer better prices than the retail prices through offers and discounts.</h2>
+      </span>
+      <span class="clearfix"></span>
+      <span class="btnjoin"><button class="btn-join" (click)="gotoenroll()">JOIN THE REVOLUTION</button></span>
+      <span class="imgbottom"><img src="../../assets/images/benefit-family.png"></span>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+<mat-card class="newmillinium">
+  <mat-card-content class="maincontentinner">
+    <span class="newmilliniummaintop">
+      <h3>New Millennium Used-Car Purchase Method</h3>
+    </span>
+    <span class="newmilliniummainbottom">
+        <span class="bottomleft">
+          <h3>You no longer have to go through the hassles of visiting Used-Car Dealerships or browsing through their inventories to get your hands on the vehicle of your choice.</h3>
+          <p><span>Our New Millennium Used-Car Purchase Method</span> has been developed while keeping CONSUMERS in mind, in order to give you the best advantages in the industry, while reducing YOUR workload drastically.</p>
+          <p><img src="../../assets/images/img-wealth.jpg"></p>
+        </span>
+        <span class="bottomright">
+          <h3>You can now approach the purchase of a used car with the peace of mind that you no longer have to go through the struggles of finding the precise car of your choice at Used-Car Dealerships. We include and display the vehicles available at large Used-Car Auctions in order to expand the inventory at your disposal.</h3>
+          <p>Through our virtual, state-of-the-art, real-time inventory viewership on our Smart Dealer Dashboard, you will be able to view all vehicles currently available, and RSVP for them. We will then work with the Auction houses to obtain your desired cars for you. <span>Our aim is simple – To Enable You to Walk Away, A Happy and Satisfied Customer!</span></p>
+          <p>Our methods enable us to reduce inventory costs, decrease inventory depreciation and substantially cut the costs for used-car sales. This allows us to offer competitive prices, which are at par with retail prices, if not less!</p>
+        </span>
+    </span>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="newmillinium">
+  <mat-card-content>
+    <span class="smartbid-main">
+      <span class="smartbidtop">
+        <img src="../../assets/images/smartbidbg.png" alt="">
+        <h3>SMART BID <span>DEALER</span> DASHBOARD</h3>
+        <p>With our sophisticated <span class="span1">SMART BID DEALER DASHBOARD</span>, dealerships can now sell more readily to their consumers and increase their profit margin. We masterfuly developed a <span class="span2">strategic relationship</span> that benefit all parties.</p>
+      </span>
+      <mat-list class="smartbidbottom">
+        
+        <mat-list-item class="text-center">
+            <span class="iconsmart"><img src="../../assets/images/bulb.png" alt=""></span>
+              <h4>Powerful <span> PLATFORM</span></h4>
+              <span class="clearfix"></span>
+              <p>Our Smart Dealer Dashboard is intuitive and innovative. Consumers can view, choose and bid for their desired choice of vehicles through their preferred salesperson with seamless ease and precision.</p>
+        </mat-list-item>
+
+        <mat-list-item class="text-center">
+          <span class="iconsmart"><img src="../../assets/images/service.png" alt=""></span>
+            <h4>Powerful <span> PARAMETERS</span></h4>
+            <p>Consumers are able to pre-set multiple parameters for their vehicle of choice. All cars at multiple auctions that match their set parameters are then displayed for them to make their choices. This offers them a wide range of vehicles to choose from.</p>
+        </mat-list-item>
+        <mat-list-item class="text-center">
+            <span class="iconsmart"><img src="../../assets/images/setup.png" alt=""></span>
+            <h4>Pre-approve <span>VEHICLES</span></h4>
+            <p>Pre-approved vehicles on offer for consumer purchase – Consumers can preview cars that match their preset parameters such as the make, model, year, mileage, and several others – which are still at auctions, and have not been added to our dealership lot yet, and RSVP for them. We would then obtain the vehicle from the auction house for them.</p>
+        </mat-list-item>
+        <mat-list-item class="text-center">
+            <span class="iconsmart"><img src="../../assets/images/deliver.png" alt=""></span>
+            <h4>consumer <span>QUALIFIER</span></h4>
+            <p>Based on set standards for consumers with our dealership, pre-qualified consumers can be eligible for special offers, discounts and prices for their used-car purchase. Some of the parameters affecting customer standards include credit scores, income level and much more.</p>
+        </mat-list-item>
+        <mat-list-item class="text-center">
+            <span class="iconsmart"><img src="../../assets/images/service2.png" alt=""></span>
+            <h4>Dealer <span>PROTECTION</span></h4>
+            <p>Consumers will enjoy all-round protection for their investments and the purchases they make for used cars. However, precautions will be taken to ensure that only serious buyers with clear intentions to buy used cars are entertained and given every priority over those that are simply on the platform to browse.</p>
+        </mat-list-item>
+        <mat-list-item class="text-center">
+            <div class="iconsmart"><img src="../../assets/images/setup2.png" alt=""></div>
+            <h4>Consumer <span>TRUST</span></h4>
+            <p>We put a great deal of emphasis and value on Consumer relationship and their experiences with ProBidAuto. Hence, we offer a $2,000 or a 2-month warranty for every car bought through the Probid Auto program. This ensures that consumers can enjoy a safe haven to fall back upon in case of complex issues in the initial months after purchase.</p>
+        </mat-list-item>
+      </mat-list>
+      <span class="clearfix"></span>
+    </span>
+  </mat-card-content>
+</mat-card>      
+
+
+<mat-card class="customerget">
+  <mat-card-content>
+    <h2>CONSUMERS WILL GET THE BEST PRICE FOR THEIR AUTO NEEDS AND NEVER HAVE TO BID ON A VEHICLE WITHOUT HAVING ASSURANCEs OF VEHICLE DELIVERY!</h2>
+  </mat-card-content>
+</mat-card>      
+
+
+<mat-card class="industryhungry">
+  <mat-card-content class="maincontentinner">
+    <span class="industryhungrytop">
+      <h3>AN INDUSTRY <span>HUNGRY</span> FOR CHANGE</h3>
+    </span>
+    <span class="industryhungrybottom">
+      <span class="hungrybottomleft">
+        <span class="hungrybottomleftinfo">
+          <h4>The Auto Industry breached <span>$1 Trillion</span> in total sales in 2018,</h4>
+          <p class="outer">which was marginally lower than 20 percent of total retail sales that happened within the country. The industry also accounts directly for at least 5 percent of all jobs in the country amounting to over $500 Billion annually. This also results in over $70 Billion being paid in taxes. Hence, the Auto Industry in the country is a major contributor to the nation’s GDP. Though this is such a vast industry with a strong command of overall retail sales, there is heavy reliance on consumer trends and tastes when it comes to automobile sales.</p>
+          <p class="inner">Did you know that Gen Y represents two of five car buyers with estimates of them purchasing 75 percent of vehicles by 2025?</p>
+          <p>Research has shown that members of the millennial generation want out of the car-buying experience. Members of Gen Y have grown up with the internet and online shopping, and so, naturally, they are looking for a similar experience when it comes to buying a car.</p>
+          <p>They use the internet more than any other consumer group. They want car shopping to be a low-pressure, high variety and an immediate results experience with no haggling. They want to have all the information they need upfront with no surprises. With the New Millennium Used-Car Purchase Method, we have developed a way to streamline the car buying process with our Gen-Y friendly auto auction software. This has allowed our consumers the freedom and capability of making their car purchases the way they want to.</p>
+          <h4>It is time for the industry to change tactics and incorporate methods and ideas that serve towards attracting the younger Americans.</h4>
+          <h2>WE ARE THAT CHANGE.</h2>
+        </span>
+      </span>
+      <span class="hungrybottomright"><img src="../../assets/images/mobilephone.png">
+       <span class="btnjoin"><button  class="btn-join" (click)="gotoenroll()">JOIN THE REVOLUTION</button></span>
+      </span>
+    </span>
+  </mat-card-content>
+</mat-card>
+
+
+
+<mat-card class="joinrevolution">
+  <mat-card-content class="maincontentinner">
+    <span class="joinrevolutionmain">
+      <span class="joinrevolutiontop text-center">
+        <h3>JOIN THE <span>REVOLUTION</span> IN CAR BUYING</h3>
+      </span>
+    <span class="joinrevolutioncontent">
+      <span class="bepartner1"><img src="../../assets/images/img-beapartner.png"></span>
+      <span class="joinrevolutioncontentleft">
+        <span class="joinrevolman"><img src="../../assets/images/joinrevolution-man.png"></span>
+      </span>
+      <span class="joinrevolutioncontentright">
+        <span class="revocontent">
+          <span class="revocontenttop">
+            <p>The way ProBidAuto is set up is so much more efficient, as consumers do not have to go searching for their desired cars across multiple Used-Car Auctions. They will be presented with REAL-TIME retail prices of auctioned cars from various auction houses, all under the same roof. Once they have accounted for their choices and decided on the prices, they simply need to push at the needle to get their hands on the car at retail prices, or even LESS!</p>
+          </span>
+          <span class="revocontentbottom">
+            <p>The ideal way to buy cars for the consumer is through ProBidAuto. The dealership will buy cars that already have potential buyers – this eliminates the high cost of maintaining and buying cars for the lot, allowing us to avoid placing high price-tags on the cars. Consumers won’t miss this anyway – the trend of buying cars is already turning to internet sales. This is the direction the industry is headed and we have only helped to bring it closer to you.</p>
+          </span>
+        </span>
+        <h3>This is the revolution of the car buying experience.</h3>
+        <h2>Enroll Now and Get:</h2>
+        <mat-list class="joinlists">
+          <mat-list-item>
+            <p><img src="../../assets/images/icon-list-tick.png"> Access to a vast inventory of cars from variable models, years, types, etc.</p>
+          </mat-list-item>
+          <mat-list-item>
+              <p><img src="../../assets/images/icon-list-tick.png"> Exciting offers, discounts and prices on your choice of vehicle</p>
+          </mat-list-item>
+        </mat-list>      
+        <span class="btnjoin text-right"><button  class="btn-join" (click)="gotoenroll()">JOIN THE REVOLUTION</button></span>
+      </span>
+      <span class="clearfix"></span>
+    </span>
+    </span>
+  </mat-card-content>
+</mat-card>
+
+
+<app-footer></app-footer>

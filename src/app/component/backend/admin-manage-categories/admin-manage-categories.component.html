@@ -1,0 +1,160 @@
+<div class="adminwrappercls">
+    <app-header></app-header>
+        <div class="main-content-wrap">
+          <mat-card class="generalcls blog" style="padding: 0 !important;">
+              <span *ngIf=" router.url === '/manage-type'">
+                <!-- <img src="../../../../assets/images/admin-manage-type_img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+                <mat-card-content class="adm_inner_banner managetype">
+                    <mat-card-title class="adm_inner_title">Manage Type</mat-card-title>
+                    <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </mat-card-content>
+                <mat-card-content class="bred_cram_wrapper">
+                    <a mat-list-item routerLinkActive="active"> Dashboard </a>
+                    <a mat-list-item routerLinkActive="active"> Manage Category </a>
+                    <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/manage-type'"> manage type list </a>
+                </mat-card-content>                
+                <span class="searchblock">
+                  <span class="searchblockwrapper">
+                    <span>
+                      <h2>Manage Type</h2>
+                    </span>
+                    <span>                        
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add Type</button>               
+                    </span>                      
+                  </span>                    
+                    <!-- <img src="../../../../assets/images/admin-manage-type_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+                </span>
+                <div class="tablediv">
+                  <lib-listing class="formfilterdiv" *ngIf="manage_type !=null && manage_type.length>0" 
+                    [datasource]="manage_type"    
+                    [skip]="manage_type_skip"                              
+                    [modify_header_array]="manage_type_modify_header"
+                    [jwttoken]="apiService.accesstoken" 
+                    [sourcedata]="tableNameForType"  
+                    [updateendpoint]="updateurl"   
+                    [statusarr]="statusarray"      
+                    [apiurl]="apiService.serverUrlDemo"   
+                    [editroute] = "editroutetype"    
+                    [deleteendpoint]="deleteurl" >                 
+                  </lib-listing>
+                </div>                
+                <!-- <img src="../../../../assets/images/admin-manage-type_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->              
+              </span>
+              <span *ngIf=" router.url === '/manage-make'">
+                <!-- <img src="../../../../assets/images/admin-manage-make_img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">                 -->
+                <mat-card-content class="adm_inner_banner managemake">
+                    <mat-card-title class="adm_inner_title">Manage Make</mat-card-title>
+                    <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </mat-card-content>
+                <mat-card-content class="bred_cram_wrapper">
+                    <a mat-list-item routerLinkActive="active"> Dashboard </a>
+                    <a mat-list-item routerLinkActive="active"> Manage Category </a>
+                    <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/manage-make'">Manage Make list </a>
+                </mat-card-content>
+                <span class="searchblock">
+                  <span class="searchblockwrapper">
+                    <span>
+                      <h2>Manage make</h2>
+                    </span>
+                    <span>
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add make</button>                        
+                    </span>                      
+                  </span>                    
+                    <!-- <img src="../../../../assets/images/admin-manage-make_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+                </span>
+                <div class="tablediv">
+                  <lib-listing *ngIf="manage_make !=null && manage_make.length>0" 
+                    [datasource]="manage_make"    
+                    [skip]="manage_make_skip"                              
+                    [modify_header_array]="manage_make_modify_header"
+                    [jwttoken]="apiService.accesstoken" 
+                    [sourcedata]="tableNameforMake"  
+                    [updateendpoint]="updateurl"   
+                    [statusarr]="statusarray"      
+                    [apiurl]="apiService.serverUrlDemo"   
+                    [editroute] = "editroutemake"       
+                    [deleteendpoint]="deleteurl">                                                                     
+                  </lib-listing>
+                </div>                
+                <!-- <img src="../../../../assets/images/admin-manage-make_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->              
+              </span>              
+              <span *ngIf=" router.url === '/manage-model'">
+                <!-- <img src="../../../../assets/images/admin-manage-model_img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">                 -->
+                <mat-card-content class="adm_inner_banner managemodel">
+                    <mat-card-title class="adm_inner_title">Manage Model</mat-card-title>
+                    <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </mat-card-content>
+                <mat-card-content class="bred_cram_wrapper">
+                    <a mat-list-item routerLinkActive="active"> Dashboard </a>
+                    <a mat-list-item routerLinkActive="active"> Manage Category </a>
+                    <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/manage-model'"> Manage Model list </a>
+                </mat-card-content>
+                <span class="searchblock">
+                  <span class="searchblockwrapper">
+                    <span>
+                      <h2>Manage model</h2>
+                    </span>
+                    <span>                       
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add model</button>                          
+                    </span>                      
+                  </span>                    
+                    <!-- <img src="../../../../assets/images/admin-manage-model_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+                </span>
+                <div class="tablediv">
+                  <lib-listing *ngIf="manage_model !=null && manage_model.length>0" 
+                    [datasource]="manage_model"    
+                    [skip]="manage_model_skip"                              
+                    [modify_header_array]="manage_model_modify_header"
+                    [jwttoken]="apiService.accesstoken" 
+                    [sourcedata]="tableNameForModel"  
+                    [updateendpoint]="updateurl"   
+                    [statusarr]="statusarray"      
+                    [apiurl]="apiService.serverUrlDemo" 
+                    [editroute] = "editroutemodel"         
+                    [deleteendpoint]="deleteurl" >                                                                     
+                  </lib-listing>
+                </div>                
+                <!-- <img src="../../../../assets/images/admin-manage-model_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->              
+              </span>              
+              <span *ngIf=" router.url === '/manage-year'">
+                <!-- <img src="../../../../assets/images/admin-manage-year_img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">                 -->
+                <mat-card-content class="adm_inner_banner manageyear">
+                    <mat-card-title class="adm_inner_title">Manage year</mat-card-title>
+                    <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </mat-card-content>
+                <mat-card-content class="bred_cram_wrapper">
+                    <a mat-list-item routerLinkActive="active"> Dashboard </a>
+                    <a mat-list-item routerLinkActive="active"> Manage Category </a>
+                    <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/manage-year'"> Manage Year list </a>
+                </mat-card-content>
+                <span class="searchblock">
+                  <span class="searchblockwrapper">
+                    <span>
+                      <h2>Manage year</h2>
+                    </span>
+                    <span>                      
+                      <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add year</button>  
+                    </span>                      
+                  </span>                    
+                    <!-- <img src="../../../../assets/images/admin-manage-year_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+                </span>
+                <div class="tablediv">
+                  <lib-listing *ngIf="manage_year !=null && manage_year.length>0" 
+                    [datasource]="manage_year"    
+                    [skip]="manage_year_skip"                              
+                    [modify_header_array]="manage_year_modify_header"
+                    [jwttoken]="apiService.accesstoken" 
+                    [sourcedata]="tableNameForYear"  
+                    [updateendpoint]="updateurl"   
+                    [statusarr]="statusarray"      
+                    [apiurl]="apiService.serverUrlDemo" 
+                    [editroute] = "editrouteyear"         
+                    [deleteendpoint]="deleteurl">                                                                   
+                  </lib-listing>
+                </div>
+                <!-- <img src="../../../../assets/images/admin-manage-year_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->              
+              </span>
+          </mat-card>
+        </div>
+    </div>
+  <app-footer></app-footer>

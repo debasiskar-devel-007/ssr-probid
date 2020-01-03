@@ -1,0 +1,7 @@
+.servicebg.mat-card{background:url(../../../../assets/images/servicebg.jpg) no-repeat center center !important;}
+
+
+
+@media only screen and (max-width:1024px) {
+.servicebg.mat-card {background: url(../../../../assets/images/servicebg.jpg) no-repeat left 30% center !important;}
+}

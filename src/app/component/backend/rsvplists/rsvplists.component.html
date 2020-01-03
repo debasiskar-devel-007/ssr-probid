@@ -1,0 +1,122 @@
+<div class="adminwrappercls">
+  <app-header></app-header>
+      <div class="main-content-wrap">
+        <mat-card class="generalcls blog" style="padding: 0 !important;">
+            <span>
+              <!-- <img src="../../../../assets/images/rsvplists-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+              <mat-card-content class="adm_inner_banner rsvpadmin">
+                  <mat-card-title class="adm_inner_title">RSVP LISTS</mat-card-title>
+                  <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </mat-card-content>
+              <mat-card-content class="bred_cram_wrapper">
+                  <a mat-list-item routerLinkActive="active"> Dashboard </a>
+                  <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/rsvp-admin'"> RSVP</a>
+              </mat-card-content>                
+              <span class="searchblock">
+                <span class="searchblockwrapper">
+                  <span>
+                    <h2>RSVP RESULT</h2>
+                  </span>
+                  <!-- <span>                        
+                      <button mat-button class="btnorange sim-button"><i class="material-icons">add</i> Add New</button>               
+                  </span>-->
+                </span>                    
+              </span>
+              <span class="rsvplistwrapper">
+                <span class="rsvplists">                  
+                  <span class="rsvplistsingle" *ngFor="let item of rsvp_list | slice:0:indexval ; let i=index">
+                    <span class="rsvplistsingleinner">
+                        <span class="rsvplistsingleleft">
+                            <span class="rsvpliststop">
+                              <span class="rsvplistimgwrapper">
+                                  <img *ngIf="item.media.photo_links[0] != null" [src]="item.media.photo_links[0]">
+                                  <img class="defaultimg" *ngIf="item.media.photo_links[0] == null" src="assets/images/no-image-default.jpg">
+                              </span>                        
+                            </span>
+                            <span class="rsvplistsbottom">
+                              <h2 (click)="rsvpDetail(item._id)">{{item.heading}}</h2>
+                              <span class="rsvplistsbottombtm">
+                               <span>Status</span>
+                               <span *ngIf="item.status == 2" class="btnactive">Rejected <span class="colorred"></span></span>
+                               <span *ngIf="item.status == 0" class="btnactive">Pending <span class="coloryellow"></span></span>
+                               <span *ngIf="item.status == 1" class="btnactive">Accepted <span class="colorgreen"></span></span>
+                              </span>
+                            </span>
+                          </span>
+                          <span class="rsvplistsingleright">
+                            <span class="rsvplisttypecontent">  
+                              <span class="deletecls" (click)="deleteRsvp(item,i)"><i class="material-icons">delete</i></span>
+                            
+                              <h2>User</h2>
+                              <span class="rsvplisttypecontentinfo">
+                                <span class="rsvplisttypeimgwrapper">
+                                  <!-- <img [src]="item.media.photo_links[0]"> -->
+                                  <img src="../../../../assets/images/imguser.jpg">
+                                  <span class="listscontentshape"></span>
+                                </span>
+                                <span class="listscontent">
+                                   <mat-list>
+                                     <mat-list-item><span class="labelcls">Name:</span> <span>{{item.added_for_fullname}}</span> </mat-list-item>
+                                     <mat-list-item><span class="labelcls">Email ID:</span> <span>{{item.added_for_email}}</span> </mat-list-item>
+                                     <mat-list-item><span class="labelcls">Phone:</span> <span>{{item.added_for_phone}}</span> </mat-list-item>
+                                   </mat-list>
+                                   
+                                </span>
+                              </span>
+                              <span class="rsvplisttypebottom">
+                                <span>Qualified for Finance: <span class="redcls">NO</span></span>
+                                <span>Job Ticket related to this car: <span class="greencls">[1]</span></span>
+                              </span>
+
+                            </span>
+                            <span class="rsvplisttypecontent">
+                                <h2>Salesrep</h2>
+                                <span class="rsvplisttypecontentinfo">
+                                    <span class="rsvplisttypeimgwrapper">
+                                      <!-- <img [src]="item.media.photo_links[0]"> -->
+                                      <img src="../../../../assets/images/imgsalesrep.jpg">
+                                      <span class="listscontentshape"></span>
+                                    </span>
+                                    <span class="listscontent">
+                                       <mat-list>
+                                         <mat-list-item><span>Name:</span> <span>{{item.added_by_fullname}}</span> </mat-list-item>
+                                         <mat-list-item><span>Email ID:</span> <span>{{item.added_by_email}}</span> </mat-list-item>
+                                         <mat-list-item><span>Phone:</span> <span>{{item.added_by_phone}}</span> </mat-list-item>
+                                       </mat-list>                                       
+                                      
+                                    </span>
+                                  </span>
+                                  <span class="rsvplisttypebottom">
+                                    <span>Commission: <span class="redcls">NO</span></span>
+                                    <span> 
+                                      <button mat-button class="btnblue greenbtn"
+                                       *ngIf="item.status == 0 || item.status == 2" 
+                                       (click)="changeStatus(item, 1)">Accepted</button>
+
+                                       <button mat-button class="btnblue greenbtn"
+                                       *ngIf="item.status == 1" (click)="openModale()">Accepted</button>
+
+                                       <button (click)="openModale()">jhjkhkhjh</button>
+                                      <button mat-button class="btnblue yellowbtn" *ngIf="item.status == 1 || item.status == 2" 
+                                      (click)="changeStatus(item, 0)">Pending</button>
+                                      <button mat-button class="btnblue redbtn" 
+                                      *ngIf="item.status == 0 || item.status == 1" (click)="changeStatus(item, 2)">Rejected</button>
+                                      <button mat-button class="btnblue" 
+                                      (click)="rsvpDetail(item._id)">Know More</button>
+                                    </span>                                   
+                                  </span>
+                            </span>                            
+                          </span>
+                    </span>
+                  </span>
+                </span>                
+              </span>  
+            </span>  
+        </mat-card>
+        <div>
+          <button mat-flat-button class="btnblue" type="button" *ngIf="rsvp_list !=null && indexval < rsvp_list.length" (click)="loadMoreRsvp() " >Load More</button>
+        </div>
+
+      </div>
+  </div>
+<app-footer></app-footer>

@@ -1,0 +1,40 @@
+<div class="bgmain gencls">
+    <div class="loginwrappernew">
+        <span>
+        <lib-login [fromTitle]="fromTitle" [fullUrl]="fullUrl" [forgetRouteingUrl]="forgetRouteingUrl" class="formgenrl login-form"
+            [signUpRouteingUrl]='signUpRouteingUrl' [routerStatus]="routerStatus" [endpoint]="endpoint" [logo]="logo" [buttonName]="buttonName" [defaultLoginUrl]="defaultLoginUrl"></lib-login>
+        </span>
+        <span class="signupwrapper">
+            <span class="signupsingle">
+                <span class="signupsingleinner">
+                    <p><span>Customer - Sign Up</span> today to browse hundreds & thousands of cars and locate the car of your dreams!!</p>
+                    <button class="btnblue" [routerLink]="['/customer-signup']">Customer Signup</button>
+                </span>
+            </span>
+            <span class="signupsingle">
+                <span class="signupsingleinner">
+                    <p><span>Sales Reps - Sign Up</span> today to create your rep profile and begin making massive commissions!!</p>
+                    <button class="btnblue" [routerLink]="['/salesrep-signup']">Sales Reps Signup</button>
+                </span>
+            </span>
+        </span>    
+    </div>    
+</div>
+
+<!-- <div class="bgmain gencls" *ngIf="router.url =='/salesrep-login'">   
+    <div class="loginwrappernew">
+        <lib-login [fromTitle]="fromTitle" [fullUrl]="fullUrl" [forgetRouteingUrl]="forgetRouteingUrl"
+        [signUpRouteingUrl]='signUpRouteingUrl' [routerStatus]="routerStatus" [endpoint]="endpoint" [logo]="logo" [buttonName]="buttonName" [defaultLoginUrl]="/salesrep-login"  class="formgenrl login-form"></lib-login>
+        
+    </div>
+</div>
+
+<div class="bgmain gencls" *ngIf="router.url =='/customer-login'">  
+    <div class="loginwrappernew">
+        <lib-login [fromTitle]="fromTitle" [fullUrl]="fullUrl" [forgetRouteingUrl]="forgetRouteingUrl"
+            [signUpRouteingUrl]='signUpRouteingUrl' [routerStatus]="routerStatus" [endpoint]="endpoint" [logo]="logo" [buttonName]="buttonName" [defaultLoginUrl]="/customer-login" class="formgenrl login-form"></lib-login>        
+    </div>
+</div> -->
+
+
+<!-- <lib-file-upload [config]="configData"></lib-file-upload> -->

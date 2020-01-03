@@ -1,0 +1,43 @@
+<div class="adminwrappercls">
+  <app-header></app-header>
+      <div class="main-content-wrap">
+        <mat-card class="generalcls blog" style="padding: 0 !important;">  
+            <img src="../../../../assets/images/salesreplists-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+            <span class="searchblock">
+                <span class="searchblockwrapper">
+                  <span>
+                    <h2>Birddog list</h2>
+                  </span>
+                  <span>
+                      
+                      <button mat-button class="btnorange sim-button" [routerLink]="['/add-birddog']"><i class="material-icons">add</i> Add Birddog</button>
+
+             
+                  </span>
+                    
+                </span>
+                  
+                  <!-- <img src="../../../../assets/images/admin-manage-type_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+              </span>
+        <div class="tablediv salesreptablediv">
+          
+        <lib-listing class="formfilterdiv mytranningcategory" *ngIf="birdDogList!=null && birdDogList.length>0" 
+          [datasource]="birdDogList"
+          [skip]="birdDogList_skip" 
+          [modify_header_array]="modify_header_array" 
+          [apiurl]="apiService.serverUrlDemo" 
+          [deleteendpoint]="deleteendpoint" 
+          [updateendpoint]="updateendpoint" 
+          [jwttoken]="apiService.accesstoken" 
+          [editroute]="editroute"
+          [sourcedata]="tablename"  
+          [statusarr]="statusarray" 
+          [detail_skip_array]="birdDogList_detail_skip" 
+          [searchendpoint]="searchendpoint"></lib-listing>
+
+          </div>
+        </mat-card>
+      </div>
+  
+  </div>
+<app-footer></app-footer>

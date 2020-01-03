@@ -1,0 +1,137 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner blogbg">
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <h1>Blogs</h1>
+    </mat-card-content>
+  </span>
+</mat-card>
+<mat-card class="innerpagetitle">
+  <span class="mainwrappercontent">
+    <mat-card-content class="bred_cram_wrapper">
+      <mat-list class="bred_cram_wrapper_list">
+        <mat-list-item routerLinkActive="active">
+          <a [routerLink]="'/home'"> home </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+        <mat-list-item routerLinkActive="active activebread">
+          <a [routerLink]="'/bloglist'"> Blog list </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+
+
+
+<mat-card class="ptb-40 generalcls blog bloglist">
+  <span class="mainwrappercontent">
+
+
+    <span class="bloglistinner">
+      <span class="bloglistswrapper"> 
+          <span class="search-sec">
+              <span class="mat-search-bar">
+                <form class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <span matPrefix></span>
+                        <input type="text" matInput placeholder="search by title, keyword">
+                        <button mat-button>
+                          <i class="material-icons">
+                            search
+                          </i>
+                        </button>
+                      </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <span matPrefix></span>
+                    <input type="text" matInput placeholder="search Category">
+                    <button mat-button>
+                      <i class="material-icons">
+                        search
+                      </i>
+                    </button>
+                  </mat-form-field>
+                </form>
+              </span>
+            </span>       
+        <mat-card-content class="bottom_blog">
+          <span class="item_wrapper">
+            <mat-card-content class="item" *ngFor="let item of bloglisting | slice:0:indexval ; let i=index">
+              <span class="item_images" (click)="blogdetail(item._id)">
+                <img [src]="item.profile_picture">
+              </span>
+              <mat-card-content class="contentsection">
+                <span class="bnticons" *ngFor="let vurl of item.credentials">
+                  <button *ngIf="vurl.video_url !='' && vurl.video_url !=null "
+                    (click)="openvideourl(vurl.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
+                </span>
+                <mat-card-title class="inner_header" (click)="blogdetail(item._id)">{{item.blogtitle}}</mat-card-title>
+                <span class="author">
+                  <span class="authornmimg">
+                    <span class="writer_image">
+                      <img src="../../../../assets/images/blog-icon.png">
+                    </span>
+                    <p class="authorName">{{item.author}}</p>
+                  </span>
+                  <p class="date">Date: {{item.date_added}} </p>
+                </span>
+                <p class="description"><span [innerHtml]="item.description_html"></span></p>
+                <!-- {{item.description_html}} -->
+                <a class="next_page" (click)="blogdetail(item._id)">read more</a>
+
+                <span class="blogsociallists absolute">
+                  <a class="sociallink fa fb">
+                    <fa name="facebook" class="fa-facebook"></fa>
+                  </a>
+                  <a class="sociallink fa twi">
+                    <fa name="twitter" class="fa-twitter"></fa>
+                  </a>
+                  <a class="sociallink fa pin">
+                    <fa name="pinterest" class="fa-pinterest"></fa>
+                  </a>
+                  
+                  <a class="sociallink fa lin">
+                    <fa name="linkedin" class="fa-linkedin"></fa>
+                  </a>
+                  <a class="sociallink fa env">
+                    <fa name="envelope" class="fa-envelope"></fa>
+                  </a>
+                  <a class="sociallink fa share">
+                    <fa name="share" class="fa-share"></fa>
+                  </a>
+                </span>
+              </mat-card-content>
+            </mat-card-content>
+          </span>
+          <button mat-button class="btnblue sim-button" *ngIf="bloglisting !=null && indexval < bloglisting.length"
+            (click)="blogloadmore()">Load More</button>
+        </mat-card-content>
+      </span>
+      <span class="categorywrapper">       
+          <h2>Categories ({{blogcategorycount}})</h2>
+          <mat-accordion class="category">
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+              *ngFor="let item of blogcategory">
+              <mat-expansion-panel-header>
+                <mat-panel-title (click)="openblog(item._id)">
+                  {{item.blogtitle}} ({{item.blogcount}}) &nbsp;
+                  <!-- <h4 >({{count}})</h4> -->
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <ng-container>
+                <span>
+                  <div class="categorysub" (click)="blog()" [ngClass]="{'active': blogcat }">
+                    <h5 class="inner_header"></h5>
+                  </div>
+                </span>
+              </ng-container>
+            </mat-expansion-panel>
+          </mat-accordion>
+      </span>
+    </span>
+  </span>
+</mat-card>
+
+<app-footer></app-footer>

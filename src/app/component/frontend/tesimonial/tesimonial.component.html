@@ -1,0 +1,17 @@
+
+      <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+        <div *ngFor="let image of TestimonialListArray;let i= index">
+          <span class="slide-image-wrapper">
+            <img class="slide-image" src="{{image.image}}" >
+          </span>
+          <span class="slide-text" (click)="showBut()">
+              <h1 class="title1 demo cursor">{{image.name}}</h1>
+              <p class="quatation demo cursor">
+                <span [innerHtml]="image.testimonial"></span>
+              </p>
+
+          </span>
+        </div>
+
+      </owl-carousel>
+      <button mat-button class="btnblue sim-button" (click)="btnClick();">View All</button>

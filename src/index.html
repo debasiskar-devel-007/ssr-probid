@@ -2,12 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ProbidSsr</title>
+  <title>Probid Auto</title>
+  <meta property="og:title" content="ProBid Auto - Car-Buying Made Easy!" />
+  <meta property="fb:app_id" content="2034821446556410" />
+  <meta property="og:keyword" content="ProBid Auto, Used Cars for Sale in USA, Buy Used Cars USA, Used Car Dealership the USA" />
+  <meta property="og:description" content="ProBid Auto offers the easiest and the most convenient way for car buyers to get their desired cars, listing Used Cars for Sale from multiple dealerships and major Auction houses around the USA." />
+  <meta property="og:url" content="https://dev.probidauto.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dev.probidauto.com/assets/images/logomain.png" />
   <base href="/">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="60x60" href="./assets/images/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./assets/images/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./assets/images/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+  <link rel="manifest" href="./assets/images/site.webmanifest">
+  <link rel="mask-icon" href="./assets/images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+  <script type='text/javascript' src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+
+  <script type='text/javascript' src="assets/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src='assets/js/moment.js'></script>
+  <script type='text/javascript' src='assets/js/moment-timezone.js'></script>
+  <script src="//cdn.ckeditor.com/4.7.1/full/ckeditor.js"></script>
+  <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- 
+  <script type="application/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+<script type="application/javascript" src="/node_modules/owl.carousel/dist/owl.carousel.js"></script> -->
+
+  
+
+  <!-- <link href="./assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  
+
+
+  <!-- <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/media.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/admin-style.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/admin-media.css" rel="stylesheet" type="text/css"> -->
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="loder_body" id="loder_body">
+    <div class="loder_wrapper">
+      <img src="assets/images/logomain.png">
+      <div class="loader"></div>
+    </div>
+  </div>
   <app-root></app-root>
 </body>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(event) {
+      /*VANILLA JAVASCRIPT*/
+      var element = document.getElementById("loder_body");
+      element.parentNode.removeChild(element);
+      /* OR WITH jQuery*/
+      $('#loder_body')
+          .fadeOut('slow');
+  });
+</script>
+
+
 </html>

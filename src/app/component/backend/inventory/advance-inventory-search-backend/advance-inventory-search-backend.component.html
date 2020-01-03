@@ -1,0 +1,519 @@
+<div class="adminwrappercls">
+  <app-header></app-header>
+  <span class="formblockwrapper">
+    <div class="main-content-wrap">
+      <mat-card-content class="adm_inner_banner">
+        <mat-card-title class="adm_inner_title">advance inventory search</mat-card-title>
+        <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      </mat-card-content>
+      <mat-card-content class="bred_cram_wrapper">
+        <a mat-list-item routerLinkActive="active"> Dashboard </a>
+        <a mat-list-item routerLinkActive="active activebread"> advance inventory search</a>
+      </mat-card-content>
+      <mat-card class="generalcls inventorysearch" style="padding: 0 !important;">
+        <!-- <img src="../../../../assets/images/advanceinventorysearchbackend-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+
+        <span class="searchblock">
+          <span class="searchblockwrapper">
+            <span>
+              <h2>advance inventory search</h2>
+            </span>
+            <span>
+              <button mat-button class="btnorange sim-button"><i class="material-icons">add</i> Add New</button>
+            </span>
+          </span>
+        </span>
+        <span class="formblock">
+          <form class="example-container" [formGroup]="advanceInventoryCustomerForm"
+            (ngSubmit)="advanceInventoryCustomerSearch()">
+            <span class="section1">
+              <span>
+                <span>
+
+                  <h4>Make:</h4>
+                  <mat-form-field>
+                    <input type="text" (keyup)="searchAutoComplete($event, 'make')" placeholder="Pick one make"
+                      aria-label="Number" matInput formControlName="make" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                      <mat-option *ngFor="let option of make_list" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                </span>
+                <span>
+
+
+                  <h4>Model:</h4>
+                  <mat-form-field>
+                    <input type="text" (keyup)="searchAutoComplete($event, 'model')" placeholder="Pick one make"
+                      aria-label="Number" matInput formControlName="model" [matAutocomplete]="automodel">
+                    <mat-autocomplete #automodel="matAutocomplete">
+                      <mat-option *ngFor="let option of model_list" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                </span>
+                <span>
+
+
+                  <h4>Vehicle Type:</h4>
+                  <mat-form-field>
+                  <mat-select formControlName="vehicle" placeholder="Pick one Vehicle">
+                    <mat-option value='Car'>Car</mat-option>
+                    <mat-option value='Truck'>Truck</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                </span>
+              </span>
+              <span>
+                <span>
+
+
+                  <h4>Year:</h4>
+                 <mat-form-field>
+                    <mat-select formControlName="year" placeholder="Year">
+                        <mat-option *ngFor="let yearval of year_list" [value]='yearval.year'>
+                          {{yearval.year}}
+                        </mat-option>
+                      </mat-select>
+                </mat-form-field> 
+                </span>
+                <span>
+                  <h4>Trim:</h4>
+                  <mat-form-field>
+                    <input type="text" (keyup)="searchAutoComplete($event, 'trim')" placeholder="Pick one trim"
+                      aria-label="Number" matInput formControlName="trim" [matAutocomplete]="autotrim">
+                    <mat-autocomplete #autotrim="matAutocomplete">
+                      <mat-option *ngFor="let option of trim_list" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                </span>
+                <span>
+                  <h4>VIN:</h4>
+                  <mat-form-field>
+                    <mat-select placeholder="VIN">
+                      <mat-option value="vin">VIN</mat-option>
+                      <mat-option value="vin1">vin1</mat-option>
+                      <mat-option value="vin2">vin2</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </span>
+              </span>
+              <span>
+                <span>
+                  <h4>State:</h4>
+                  <mat-form-field>
+                    <mat-select formControlName="state" placeholder="STATE">
+                      <mat-option *ngFor="let item of stateList" [value]="item.abbreviation">{{item.name}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </span>
+                <span>
+                  <h4>Zip:</h4>
+                  <mat-form-field>
+                    <input matInput type="ZIP" placeholder="ZIP">
+                  </mat-form-field>
+                </span>
+                <span>
+
+                </span>
+              </span>
+            </span>
+            <mat-card-title>Specifications</mat-card-title>
+            <span class="section2">
+              <span>
+                <span>
+                  <span class="doublecolumn">
+                    <h4>Odometer:</h4>
+                    <mat-form-field>
+                      <mat-select placeholder="No min">
+                        <mat-option value="Odometer">No min</mat-option>
+                        <mat-option value="Odometer1">Odometer 1</mat-option>
+                        <mat-option value="Odometer2">Odometer 2</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-select placeholder="No max">
+                        <mat-option value="nomax">No max</mat-option>
+                        <mat-option value="nomax1">nomax 1</mat-option>
+                        <mat-option value="nomax2">nomax 2</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <h4>Bid or Buy Now Price:</h4>
+                    <mat-form-field>
+                      <mat-select placeholder="No min">
+                        <mat-option value="bidorbuy">No min</mat-option>
+                        <mat-option value="bidorbuy1">Odometer 1</mat-option>
+                        <mat-option value="bidorbuy2">Odometer 2</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-select placeholder="No max">
+                        <mat-option value="bnomax">No max</mat-option>
+                        <mat-option value="bnomax1">nomax 1</mat-option>
+                        <mat-option value="bnomax2">nomax 2</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </span>
+                  <span class="column">
+                    <h4>Engine Type</h4>
+                    <mat-form-field>
+                      <mat-select placeholder="All">
+                        <mat-option value="ET">All</mat-option>
+                        <mat-option value="ET1">ET 1</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </span>
+                  <span class="column">
+                    <h4>Transmission:</h4>
+                    <mat-form-field>
+                      <mat-select placeholder="All">
+                        <mat-option value="transm1">Any Transmission</mat-option>
+                        <mat-option value="transm2">Manual</mat-option>
+                        <mat-option value="transm3">Automatic</mat-option>
+                        <mat-option value="transm4">Automanual</mat-option>
+                        <mat-option value="transm5">CVT</mat-option>
+                        <mat-option value="transm6">Other / Unknown</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </span>
+
+                  <!-- <span class="column">
+                              <h4>Top Type:</h4> 
+                              <mat-form-field>          
+                                  <mat-select placeholder="All">
+                                    <mat-option value="tt1">All</mat-option>
+                                    <mat-option value="tt1">All</mat-option>
+                                  </mat-select>
+                              </mat-form-field>
+                          </span>
+                          <span class="column">
+                              <h4>Interior Type:</h4> 
+                              <mat-form-field>         
+                                  <mat-select placeholder="All">
+                                    <mat-option value="it1">All</mat-option>
+                                    <mat-option value="it1">All</mat-option>
+                                  </mat-select>
+                              </mat-form-field>
+                          </span>                     -->
+                </span>
+              </span>
+              <span>
+                <span>
+                  <span class="column">
+                    <h4>Drive Train</h4>
+                    <mat-form-field>
+                      <mat-select placeholder="All">
+                        <mat-option value="DT">Any Drivetrain</mat-option>
+                        <mat-option value="DT1">4x2/2-wheel drive</mat-option>
+                        <mat-option value="DT2">4x4/4-wheel drive</mat-option>
+                        <mat-option value="DT3">AWD</mat-option>
+                        <mat-option value="DT4">FWD</mat-option>
+                        <mat-option value="DT5">RWD</mat-option>
+                        <mat-option value="DT6">Unknown</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </span>
+                  <span class="column">
+                    <h4>Fuel Type:</h4>
+                    <mat-form-field>
+                      <mat-select placeholder="All">
+                        <mat-option value="FT1">Any Fuel</mat-option>
+                        <mat-option value="FT2">Gasoline</mat-option>
+                        <mat-option value="FT2">E-85/Gasoline</mat-option>
+                        <mat-option value="FT2">Gasoline Hybrid</mat-option>
+                        <mat-option value="FT2">Diesel</mat-option>
+                        <mat-option value="FT2">Electric</mat-option>
+                        <mat-option value="FT2">Compressed Natural Gas</mat-option>
+                        <mat-option value="FT2">Unknown</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </span>
+
+                  <span class="column">
+                    <h4>Doors</h4>
+                    <mat-form-field>
+                      <mat-select placeholder="All">
+                        <mat-option value="Doors">All</mat-option>
+                        <mat-option value="Doors1">Doors 1</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </span>
+                  <span class="column">
+                    <h4>Cylinders</h4>
+                    <mat-form-field>
+                      <mat-select placeholder="All">
+                        <mat-option value="Doors">Any cylinder count</mat-option>
+                        <mat-option value="1cylinder">1-cylinder</mat-option>
+                        <mat-option value="2cylinder">2-cylinder</mat-option>
+                        <mat-option value="3cylinder">3-cylinder</mat-option>
+                        <mat-option value="4cylinder">4-cylinder</mat-option>
+                        <mat-option value="5cylinder">5-cylinder</mat-option>
+                        <mat-option value="6cylinder">6-cylinder</mat-option>
+                        <mat-option value="7cylinder">7-cylinder</mat-option>
+                        <mat-option value="8cylinder">8-cylinder</mat-option>
+                        <mat-option value="9cylinder">9-cylinder</mat-option>
+                        <mat-option value="10cylinder">10-cylinder</mat-option>
+                        <mat-option value="11cylinder">11-cylinder</mat-option>
+                        <mat-option value="12cylinder">12-cylinder</mat-option>
+                        <mat-option value="12cylinder">Unknown</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </span>
+
+                </span>
+              </span>
+              <span>
+                <span>
+                  <span class="column">
+                    <h4>Exterior Color</h4>
+                    <span class="textarea">
+                      <span class="textareainner">
+                        <mat-checkbox>All</mat-checkbox>
+                        <mat-checkbox>Beige</mat-checkbox>
+                        <mat-checkbox>Black</mat-checkbox>
+                        <mat-checkbox>Blue</mat-checkbox>
+                        <mat-checkbox>Brown</mat-checkbox>
+                      </span>
+
+                    </span>
+                  </span>
+                  <span class="column">
+                    <h4>Interior Color:</h4>
+                    <span class="textarea">
+                      <span class="textareainner">
+                        <mat-checkbox>All</mat-checkbox>
+                        <mat-checkbox>Beige</mat-checkbox>
+                        <mat-checkbox>Black</mat-checkbox>
+                        <mat-checkbox>Blue</mat-checkbox>
+                        <mat-checkbox>Brown</mat-checkbox>
+                      </span>
+                    </span>
+                  </span>
+
+                  <!-- <span class="doublecolumn fullwidth">
+                              <h4>Title Status</h4> 
+                              <mat-form-field>          
+                                  <mat-select placeholder="All">
+                                    <mat-option value="TSUS">All</mat-option> 
+                                    <mat-option value="TSUS1">TSUS 1</mat-option>
+                                  </mat-select>
+                              </mat-form-field>
+                          </span>  
+                          <span class="doublecolumn">
+                              <h4>Title State</h4> 
+                              <mat-form-field>          
+                                  <mat-select placeholder="All">
+                                    <mat-option value="TS">All</mat-option> 
+                                    <mat-option value="TS1">TS 1</mat-option>
+                                  </mat-select>
+                              </mat-form-field>
+                          </span>                 -->
+                </span>
+              </span>
+            </span>
+            <!-- <mat-card-title>Equipment</mat-card-title>
+                <span class="section3">       
+                    <mat-checkbox>3rd Row Seating</mat-checkbox>    
+                    <mat-checkbox>Alloy Wheels</mat-checkbox>    
+                    <mat-checkbox>Dual Climate Control</mat-checkbox>    
+                    <mat-checkbox>Navigation System</mat-checkbox>    
+                    <mat-checkbox>Airbag-Side Curtain</mat-checkbox>    
+                    <mat-checkbox>Backup Sensors</mat-checkbox> 
+                       
+                    <mat-checkbox>GPS</mat-checkbox>    
+                    <mat-checkbox>Power Door Locks</mat-checkbox>    
+                    <mat-checkbox>Air Bag-Side Impact Font</mat-checkbox>    
+                    <mat-checkbox>California Emissions</mat-checkbox>    
+                    <mat-checkbox>Heated Mirrors</mat-checkbox>    
+                    <mat-checkbox>Power Seats</mat-checkbox> 
+      
+                    <mat-checkbox>Air Bag-Side Impact Front/Back</mat-checkbox>    
+                    <mat-checkbox>Child Seat</mat-checkbox>    
+                    <mat-checkbox>Heated Seat Driver and Passenger</mat-checkbox>    
+                    <mat-checkbox>Power Windows</mat-checkbox>    
+                    <mat-checkbox>Air Conditioning</mat-checkbox>    
+                    <mat-checkbox>Cooled Seats</mat-checkbox>
+      
+                    <mat-checkbox>Heated Seat Driver</mat-checkbox>  
+                    <mat-checkbox>IN Telescope Wheel</mat-checkbox>
+                    <mat-checkbox>Airbags</mat-checkbox>
+                    <mat-checkbox>DVD</mat-checkbox>
+                    <mat-checkbox>Heated Seats</mat-checkbox>
+                    <mat-checkbox>Tinted Glass</mat-checkbox>  
+                  
+                </span> -->
+
+            <!-- <mat-card-title>Condition</mat-card-title>
+                <span class="section4">
+                  <span class="section4left">
+                      <mat-checkbox>Salvage</mat-checkbox>
+                      <mat-checkbox>Not As is</mat-checkbox>
+                      <mat-checkbox>With Condition Report</mat-checkbox>
+                      <mat-checkbox>Not Salvage</mat-checkbox>
+                      <mat-checkbox>With Photos</mat-checkbox>
+                      <mat-checkbox>With Seller Disclosure</mat-checkbox>
+                      <mat-checkbox>As Is</mat-checkbox>
+                      <mat-checkbox>Certified only</mat-checkbox>
+                  </span>
+                  <span class="section4right">
+      
+                  </span>             
+      
+                </span> -->
+
+
+            <!-- <mat-card-title>Auction</mat-card-title>
+                <span class="section5">
+                    <h4>Format</h4>
+                  <span>
+                    
+                    <span class="formatcls">
+                    <mat-checkbox>Buy Now</mat-checkbox>
+                    <mat-checkbox>Bid</mat-checkbox>
+                    <mat-checkbox>Floor Mat</mat-checkbox>
+                    <mat-checkbox>Make an oner</mat-checkbox>
+                    </span>
+                  </span>
+                  <span>
+                    <h4>Vehicles Ending Soon:</h4>
+                    <mat-select placeholder="(Choose Time Period)">
+                        <mat-option value="ves">(Choose Time Period)</mat-option>
+                        <mat-option value="ves1">(Choose Time Period)</mat-option>
+                        <mat-option value="ves2">(Choose Time Period)</mat-option>
+                      </mat-select>
+                    <h4>Newly Listed Vehicles:</h4>
+                    <mat-select placeholder="(Choose Time Period)">
+                        <mat-option value="nlv">(Choose Time Period)</mat-option>
+                        <mat-option value="nlv1">(Choose Time Period)</mat-option>
+                        <mat-option value="nlv2">(Choose Time Period)</mat-option>
+                      </mat-select>
+                  </span>
+                  <span class="sellerrating">
+                      <h4>Seller Rating:</h4>
+                      <span>
+                        <mat-select placeholder="All">
+                          <mat-option value="sr">All</mat-option>
+                          <mat-option value="sr1">1</mat-option>
+                          <mat-option value="sr2">2</mat-option>
+                        </mat-select>
+                        <mat-select placeholder="All">
+                            <mat-option value="sra">All</mat-option>
+                            <mat-option value="srb">1</mat-option>
+                            <mat-option value="src">2</mat-option>
+                        </mat-select>
+                      </span>
+                  </span>
+      
+                  <button mat-raised-button color="primary" type="submit"> Search</button>
+                </span> -->
+            <span class="buttonslist">
+              <button mat-raised-button color="primary" type="reset"> Reset</button>
+              <button mat-raised-button color="primary" type="submit"> Search</button>
+            </span>
+          </form>
+        </span>
+      </mat-card>
+
+      <span class="mainwrappercontent">
+        <mat-list class="rightcontent" *ngIf="search != null && search.length>=0">
+            <mat-list-item class="rightcontentrow" *ngFor="let item of search | slice:0:indexval; let i= index;">
+              <mat-card-content class="col-1-3">
+                <span class="as_imgwrapper">
+                    <span *ngIf="indexCount == i && indexCountForImg != null;then content else other_content"></span>    
+                    <ng-template #content>
+                      <img [src]="item.media.photo_links[indexCountForImg]">
+                    </ng-template>
+                    <ng-template #other_content>
+                      <img [src]="item.media.photo_links[0]">
+                    </ng-template>
+                    <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
+                </span>
+                <span class="as_sm_imgmainwrapper">
+                    <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                      <div class="sm-imgwrapper" *ngFor="let img of item.media.photo_links; let j= index">
+                          <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
+                          <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(i, j)">
+                      </div>
+                    </owl-carousel>
+                  
+                </span>
+                
+              </mat-card-content>
+              <mat-card-content class="col-1-7">
+                <span class="subrighrwrapper">
+                  <span class="sub-col-6">
+                    <span class="text-wrapper">
+                      <h2 *ngIf="item.heading != null">{{item.heading}}</h2>
+                      <h3 *ngIf="item.vin != null">VIN: {{item.vin}}</h3>
+  
+                      <p *ngIf="item.build.cylinders != null">{{item.build.cylinders}} Cylinders </p>
+                      <p *ngIf="item.build.vehicle_type != null">Vehicle Type: {{item.build.vehicle_type}}</p>
+                      <p *ngIf="item.build.transmission != null">Transmission: {{item.build.transmission}}</p>
+                      <p *ngIf="item.build.fuel_type != null"> Fuel: {{item.build.fuel_type}}</p>
+  
+                      <label id="example-radio-group-label">Pick your favorite season</label>
+                      <br>
+                      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                        [(ngModel)]="favoriteSeason">
+                        <mat-checkbox class="red"></mat-checkbox>
+                        <mat-checkbox class="black"></mat-checkbox>
+                        <mat-checkbox class="blue"></mat-checkbox>
+                        <mat-checkbox class="white"></mat-checkbox>
+                      </mat-radio-group>
+  
+                      <p *ngIf="item.build.body_type != null">Body Type: {{item.build.body_type}}</p>
+                    </span>
+                  </span>
+                  <span class="sub-col-4">
+                    <mat-card-content class="rrblock1" *ngIf="user_details != null && user_details.type != 'admin'">
+                      <span><button class="btnrsvp" (click)="rsvpSend(item)">RSVP</button></span>
+                      <button (click)="favorite(item)"><i class="material-icons"> favorite </i> ADD</button>
+                    </mat-card-content>
+                    <mat-card-content class="rrblock1 currentbidprice">
+                      <span class="text-wrapper" *ngIf="item.price != null">
+                        <p>Current Bid Price: </p>
+                        <h5>${{item.price}}</h5>
+                        <h6 *ngIf="item.build.engine != null"><strong>Engine Type</strong>
+                          <span>{{item.build.engine}}</span></h6>
+                      </span>
+                    </mat-card-content>
+                  </span>
+              </span>
+            </mat-card-content>
+            <span class="pa_blockfooter">
+              <mat-list *ngIf="item.build != null">
+                <mat-list-item class="pa_blockfooterlogo"> <img src="../../assets/images/logomain.png"> </mat-list-item>
+                <mat-list-item class="pa_blockfootertext"> <strong>Interior Color</strong> Black</mat-list-item>
+                <mat-list-item class="pa_blockfootertext" *ngIf="item.build.drivetrain != null"> <strong>Drive
+                    Train</strong> {{item.build.drivetrain}}</mat-list-item>
+                <mat-list-item class="pa_blockfootertext" *ngIf="item.build.year != null"> <strong>Year</strong>
+                  {{item.build.year}}</mat-list-item>
+                <mat-list-item class="pa_blockfootertext" *ngIf="item.build.make != null"> <strong>Make</strong>
+                  {{item.build.make}}</mat-list-item>
+                <mat-list-item class="pa_blockfootertext" *ngIf="item.build.model != null"> <strong>Model</strong>
+                  {{item.build.model}}</mat-list-item>
+                <mat-list-item class="pa_blockfootertext" *ngIf="item.build.body_type != null"> <strong>Type</strong>
+                  {{item.build.body_type}}</mat-list-item>
+              </mat-list>
+            </span>
+          </mat-list-item>
+        </mat-list>
+
+        <div style="display: block; text-align: right; ">
+          <mat-button type="button" class="btnblue" *ngIf="search !=null && indexval < search.length"
+            (click)="loadMoreSearchResult() ">Load More</mat-button>
+        </div>
+
+
+      </span>
+      
+
+    </div>
+  </span>
+</div>
+<app-footer></app-footer>

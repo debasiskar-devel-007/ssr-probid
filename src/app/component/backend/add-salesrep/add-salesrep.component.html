@@ -1,0 +1,179 @@
+<div class="adminwrappercls">
+  <app-header></app-header>
+
+  <div class="main-content-wrap">
+    <mat-card class="generalcls blog" style="padding: 0 !important;">
+      <img src="../../../../assets/images/salesreplists-dashboard-img1.jpg"
+        style="width: 100%; display: block; margin: 0; padding: 0;">
+      <span class="searchblock">
+        <span class="searchblockwrapper">
+          <span>
+            <h2>{{header_text}} </h2>
+          </span>
+
+        </span>
+
+        <!-- <img src="../../../../assets/images/admin-manage-type_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+      </span>
+
+
+      <mat-card>
+
+        <mat-card-content class="newform_css">
+
+          <form [formGroup]="addsalesrepForm" (ngSubmit)="addsalesrepFormSubmit()">
+            <mat-form-field>
+              <input matInput type="text" placeholder="First Name" formControlName="firstname"
+                (blur)="inputUntouched('firstname')">
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['firstname'].valid && addsalesrepForm.controls['firstname'].errors.required && addsalesrepForm.controls['firstname'].touched">
+                First Name field can not be blank</mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field>
+              <input matInput type="text" placeholder="Last Name" formControlName="lastname"
+                (blur)="inputUntouched('lastname')">
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['lastname'].valid && addsalesrepForm.controls['lastname'].errors.required && addsalesrepForm.controls['lastname'].touched">
+                Last Name field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput type="text" placeholder="Email" formControlName="email" (blur)="inputUntouched('email')">
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['email'].valid && addsalesrepForm.controls['email'].errors.required && addsalesrepForm.controls['email'].touched">
+                Email field can not be blank</mat-error>
+
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['email'].valid && !addsalesrepForm.controls['email'].errors.required">
+                Email is
+                not valid</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput type="text" placeholder="User Name" formControlName="username"
+                (blur)="inputUntouched('username')">
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['username'].valid && addsalesrepForm.controls['username'].errors.required && addsalesrepForm.controls['username'].touched">
+                User Name field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput type="text" placeholder="company name" formControlName="companyname"
+                (blur)="inputUntouched('companyname')">
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['companyname'].valid && addsalesrepForm.controls['companyname'].errors.required && addsalesrepForm.controls['companyname'].touched">
+                companyname field can not be blank</mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field>
+              <input matInput type="text" placeholder="Phone Number" formControlName="phone"
+                (blur)="inputUntouched('phone')">
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['phone'].valid && addsalesrepForm.controls['phone'].errors.required && addsalesrepForm.controls['phone'].touched">
+                Phone Number field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="router.url == '/add-salesrep'">
+              <input matInput placeholder="Password" type="password" formControlName="password"
+                (blur)="inputUntouched('password')">
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['password'].valid && addsalesrepForm.controls['password'].errors.required && addsalesrepForm.controls['password'].touched">
+                Password field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="router.url == '/add-salesrep'">
+              <input matInput placeholder="Confirm Password" type="password" formControlName="conpass"
+                (blur)="inputUntouched('conpass')">
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['conpass'].valid && addsalesrepForm.controls['conpass'].errors.required && addsalesrepForm.controls['conpass'].touched">
+                Confirm Password field can not be blank</mat-error>
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['conpass'].valid && addsalesrepForm.controls['conpass'].touched">
+                Password does not match </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Address" type="text" formControlName="address"
+                (blur)="inputUntouched('address')">
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['address'].valid && addsalesrepForm.controls['address'].errors.required && addsalesrepForm.controls['address'].touched">
+                Address field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Zip Code" type="text" formControlName="zip" (blur)="inputUntouched('zip')">
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['zip'].valid && addsalesrepForm.controls['zip'].errors.required && addsalesrepForm.controls['zip'].touched">
+                Zip field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>City</mat-label>
+              <mat-select formControlName="city" (blur)="inputUntouched('city')">
+                <mat-option *ngFor="let city of cityList" [value]="city.city">
+                  {{city.city}}
+                </mat-option>
+              </mat-select>
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['city'].valid && addsalesrepForm.controls['city'].errors.required && addsalesrepForm.controls['city'].touched">
+                City field can not be blank</mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field>
+              <mat-label>State</mat-label>
+              <mat-select formControlName="state" (blur)="inputUntouched('state')">
+                <mat-option *ngFor="let state of stateList" [value]="state.abbreviation">
+                  {{state.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error
+                *ngIf="!addsalesrepForm.controls['state'].valid && addsalesrepForm.controls['state'].errors.required && addsalesrepForm.controls['state'].touched">
+                State field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Select Time Zone</mat-label>
+              <mat-select formControlName="timezone" (blur)="inputUntouched('timezone')">
+                  <mat-option *ngFor="let time of timezone" [value]="time.value">
+                    {{time.value}}
+                  </mat-option>
+              </mat-select>
+              <!-- <mat-error
+              *ngIf="!addsalesrepForm.controls['timezone'].valid && addsalesrepForm.controls['timezone'].errors.required && addsalesrepForm.controls['timezone'].touched ">
+              timezone field can not be blank</mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Select Webiner</mat-label>
+            <mat-select formControlName="webiner">
+              <mat-option *ngFor="let state of stateList" [value]="state.abbreviation">
+                {{state.name}}
+              </mat-option>
+            </mat-select>
+            <!-- <mat-error
+              *ngIf="!addsalesrepForm.controls['webiner'].valid && addsalesrepForm.controls['webiner'].errors.required && addsalesrepForm.controls['webiner'].touched ">
+              webiner field can not be blank</mat-error> -->
+          </mat-form-field>
+         
+
+            <span class="bottompart">
+              <button mat-raised-button class="btn-lg">{{btn_text}}</button>
+              <button mat-raised-button class="btn-lg" type="reset">Reset</button>
+            </span>
+          </form>
+
+
+        </mat-card-content>
+
+      </mat-card>
+    </mat-card>
+  </div>
+
+
+
+</div>
+<app-footer></app-footer>

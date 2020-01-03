@@ -1,0 +1,34 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner preownedbg">
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <h1>Pre-owned</h1>
+    </mat-card-content>
+  </span>
+</mat-card>
+<mat-card class="innerpagetitle">
+  <span class="mainwrappercontent">
+      <mat-card-content class="bred_cram_wrapper">
+        <mat-list class="bred_cram_wrapper_list">
+          <mat-list-item routerLinkActive="active">
+              <a [routerLink]="'/home'"> home </a>
+            <span class="breadcrumb__divider" aria-hidden="true">›</span>
+          </mat-list-item>
+          <mat-list-item routerLinkActive="active activebread">
+            <a [routerLink]="'/pre-owned-list'"> Pre-owned </a>
+            <span class="breadcrumb__divider" aria-hidden="true">›</span>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+  </span>
+</mat-card>
+
+<mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">     
+    <p>
+      Pre-owned works!
+    </p>
+</mat-card>
+
+<app-footer></app-footer>
+
+

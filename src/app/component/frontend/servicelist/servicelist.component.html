@@ -1,0 +1,71 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner servicebg">
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <h1>services</h1>
+    </mat-card-content>
+  </span>
+</mat-card>
+<mat-card class="innerpagetitle">
+  <span class="mainwrappercontent">
+    <mat-card-content class="bred_cram_wrapper">
+      <mat-list class="bred_cram_wrapper_list">
+        <mat-list-item routerLinkActive="active">
+          <a> home </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+        <mat-list-item routerLinkActive="active activebread">
+          <a [routerLink]="'/service'"> service list </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+
+
+<!-- <mat-card class="ptb-35 generalcls servicewrapper" style="padding: 0 !important;">   
+    <img src="../../../../assets/images/service_blockimg1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+</mat-card> -->
+<mat-card class="ptb-35 generalcls servicewrappercontent">
+  <span class="mainwrappercontent">
+    <span class="servinfo">
+      <mat-card class="example-card servinfoinner">
+        <mat-card-header>
+          <mat-card-title>{{serv_list.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            <!-- Cars at competitive prices, unmatched anywhere else in the industry — prices that will definitely surprise you, and save you loads of $$$ in the process!<br><br>At ProBidAuto, we offer you the opportunity to buy your desired cars at the best prices. By getting rid of warehousing expenses, we are able to offer you prices that are unmatched anywhere else in the Online Auto Industry. With us, you get the cars you want and also make massive savings along the way.     -->
+
+            {{serv_list.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Go to Inventory</button>
+        </mat-card-actions>
+      </mat-card>
+      <span class="servinfoarrow"></span>
+    </span>
+    <span class="servlist">
+      <mat-list role="list">
+        <mat-list-item role="listitem" class="singleservice"
+          *ngFor="let srv of ServiceListArray | slice:0:indexval; let i=index"
+          [ngClass]="{'activecls': srv._id == serv_list._id }" (click)="servicelist(srv)">
+          <mat-card>
+            <div class="imagewrap">
+              <img src="{{srv.image}}" class="iconcls">
+            </div>
+            <mat-card-title>{{srv.name}}</mat-card-title>
+            <mat-card-content>{{srv.description}}</mat-card-content>
+          </mat-card>
+        </mat-list-item>
+      </mat-list>
+    </span>
+  </span>
+
+</mat-card>
+<button *ngIf="indexval.length > indexval" (click)="showMoreFunc()" mat-stroked-button class="btngeneral btngray">Show
+  more</button>
+<app-footer></app-footer>

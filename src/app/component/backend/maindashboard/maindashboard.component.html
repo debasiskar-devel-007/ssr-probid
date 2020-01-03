@@ -1,0 +1,788 @@
+<div class="adminwrappercls">
+  <app-header></app-header>
+      <div class="main-content-wrap">
+          <mat-card style="padding: 0 !important;">
+            <mat-card-content class="adm_inner_banner adminbannerdashnboard">
+                <mat-card-title class="adm_inner_title"><span>Welcome to</span> ProBid Auto</mat-card-title>
+                <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </mat-card-content>
+            <mat-card-content class="bred_cram_wrapper">
+                <a mat-list-item routerLinkActive="active activebread"> Dashboard </a>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="generalcls" style="padding: 0 !important;">  
+            <!-- <img src="../../../../assets/images/adm-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+            <mat-card-content class="adm_dashboard_block1">
+                <span class="adm_dashboard_block1_left">
+                    <span class="block1totalreviewwrapper">
+                        <mat-card-content class="block1totalreview">
+                            <span class="block1_single orangecolor">
+                                <span class="block1_single_content">
+                                    <h2>{{count.customer_count}}</h2>
+                                    <p>Customers</p>
+                                </span>
+                                <button mat-button [routerLink]="['/customer-list-admin']">view all</button>
+                                <span class="block1_single_icon">
+                                    <img src="../../../../assets/images/adm-dashboard-b1-icon1.png">
+                                </span>
+                            </span>
+                            <span class="block1_single bluecolor">
+                                <span class="block1_single_content">
+                                    <h2>{{count.salesrep_count}}</h2>
+                                    <p>Salesrep</p>
+                                </span>
+                                <button mat-button [routerLink]="['/salesrep-list-admin']">view all</button>
+                                <span class="block1_single_icon">
+                                    <img src="../../../../assets/images/adm-dashboard-b1-icon2.png">                                
+                                </span>
+                            </span>
+                            <span class="block1_single greencolor">
+                                <span class="block1_single_content">
+                                    <h2>{{count.birddog_count}}</h2>
+                                    <p>Birddogs</p>
+                                </span>
+                                <button mat-button [routerLink]="['/birddog-list']">view all</button>
+                                <span class="block1_single_icon">
+                                    <img src="../../../../assets/images/adm-dashboard-b1-icon3.png">
+                                </span>
+                            </span>
+                        </mat-card-content>
+                    </span>
+                    <!-- <span class="block1socialadvo">
+                        <mat-card-title class="sectionheader">Social Advo Banners</mat-card-title>
+                        <mat-list role="list" class="flexbox4column">
+                            <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let socialadvo of socialAdvLists; let i = index">
+                                <span class="block1socialadvosingleinner">
+                                    <span class="topblock">
+                                        <img src="{{socialadvo.image_URL}}">  
+                                      </span>
+                                      <span class="bottomblock">
+                                          <h2>{{socialadvo.title_name}}</h2>
+                                          <span class="blogsociallists">
+                                              <a class="sociallink fa fb">
+                                                <fa name="facebook" class="fa-facebook"></fa>
+                                              </a>
+                                              <a class="sociallink fa twi">
+                                                <fa name="twitter" class="fa-twitter"></fa>
+                                              </a>
+                                              <a class="sociallink fa tbl">
+                                                <fa name="tumblr" class="fa-tumblr"></fa>
+                                              </a>
+                                              <a class="sociallink fa lin">
+                                                <fa name="linkedin" class="fa-linkedin"></fa>
+                                              </a>
+                                              <a class="sociallink fa share">
+                                                <fa name="share" class="fa-share"></fa>
+                                              </a>
+                                            </span>
+                                      </span>
+                                </span>                                
+                            </mat-list-item>
+                        </mat-list>
+                        <span class="btnwrappercls">
+                            <button mat-button class="btnblue" [routerLink]="['/social-advo-admin']">View All</button>
+                        </span>
+                    </span> -->
+
+                    <span class="block1socialadvo">
+                      <mat-card-title class="sectionheader">Social Advo Banners</mat-card-title>
+                      <h2>facebook Banner</h2>
+                      <mat-list role="list" class="flexbox4column">
+                          <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let socialfacebookadvo of socialAdvFacebookLists | slice:0:socialadvoFBIndex; let i = index">                           
+                              <img src="{{socialfacebookadvo.image_URL}}">                                                             
+                          </mat-list-item>
+                      </mat-list>
+                      <h2>linkedin Banner</h2>
+                      <mat-list role="list" class="flexbox4column">
+                        <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let sociallinkedinadvo of socialAdvLinkedinLists | slice:0:socialadvoLDIndex; let i = index">                           
+                            <img src="{{sociallinkedinadvo.image_URL}}">                                                             
+                        </mat-list-item>
+                      </mat-list>
+                      <span class="btnwrappercls">
+                          <button mat-button class="btnblue" [routerLink]="['/social-advo-admin']">View All</button>
+                      </span>
+                  </span>
+                </span>
+                <span class="adm_dashboard_block1_right">
+                    <mat-card>
+                        <mat-card-title class="sectionheader">Current RSVP</mat-card-title>
+                        <mat-list role="list" class="flexbox1column">
+                            <mat-list-item role="listitem" class="rsvplistsingle" *ngFor="let item of rsvp_list | slice:0:rsvpIndex; let i = index">
+                              <span (click)="deleteAny(item,i,rsvp)" class="deletecls"><i class="material-icons">delete</i></span>
+                                <span class="rsvplistsingleinner">
+
+                                  
+                                    
+                                    <span class="rsvplistsingleleft">
+                                        <span class="rsvpliststop">
+                                          <span class="rsvplistimgwrapper">
+                                              <img *ngIf="item.media.photo_links[0] != null" [src]="item.media.photo_links[0]">
+                                              <img class="defaultimg" *ngIf="item.media.photo_links[0] == null" src="assets/images/no-image-default.jpg">
+                                          </span>                        
+                                        </span>
+                                        <span class="rsvplistsbottom">
+                                          <h2>{{item.heading}}</h2>
+                                          <span class="rsvplistsbottombtm">
+                                           <span>Status</span>
+                                           <span *ngIf="item.status == 2" class="btnactive">Rejected <span class="colorred"></span></span>
+                                           <span *ngIf="item.status == 0" class="btnactive">Pending <span class="coloryellow"></span></span>
+                                           <span *ngIf="item.status == 1" class="btnactive">Accepted <span class="colorgreen"></span></span>
+                                          </span>
+                                        </span>
+                                    </span>
+                                    <span class="rsvplistsingleright">
+                                        <span class="rsvplisttypecontent">
+                                          <h2>User</h2>
+                                          <span class="rsvplisttypecontentinfo">
+                                            <span class="rsvplisttypeimgwrapper">
+                                              <img src="../../../../assets/images/imguser.jpg">
+                                            </span>
+                                            <span class="listscontent">
+                                               <mat-list>
+                                                 <mat-list-item><span class="labelcls">Name:</span> <span>{{item.added_for_fullname}}</span> </mat-list-item>
+                                                 <mat-list-item><span class="labelcls">Email ID:</span> <span>{{item.added_for_email}}</span> </mat-list-item>
+                                                 <!-- <mat-list-item><span class="labelcls">Phone:</span> <span>{{item.added_for_phone}}</span> </mat-list-item> -->
+                                               </mat-list>
+                                               
+                                            </span>
+                                          </span>
+                                          <!-- <span class="rsvplisttypebottom">
+                                            <span>Qualified for Finance: <span class="redcls">NO</span></span>
+                                            <span>Job Ticket related to this car: <span class="greencls">[1]</span></span>
+                                          </span>             -->
+                                        </span>
+                                        <span class="rsvplisttypecontent">
+                                            <h2>Salesrep</h2>
+                                            <span class="rsvplisttypecontentinfo">
+                                                <span class="rsvplisttypeimgwrapper">
+                                                  <img src="../../../../assets/images/imgsalesrep.jpg">
+                                                </span>
+                                                <span class="listscontent">
+                                                   <mat-list>
+                                                     <mat-list-item><span>Name:</span> <span>{{item.added_by_fullname}}</span> </mat-list-item>
+                                                     <mat-list-item><span>Email ID:</span> <span>{{item.added_by_email}}</span> </mat-list-item>
+                                                     <!-- <mat-list-item><span>Phone:</span> <span>{{item.added_by_phone}}</span> </mat-list-item> -->
+                                                   </mat-list>  
+                                                </span>
+                                              </span>
+                                              <!-- <span class="rsvplisttypebottom">
+                                                <span>Commission: <span class="redcls">NO</span></span>
+                                                <span> 
+                                                  <button mat-button class="btnblue greenbtn" *ngIf="item.status == 0 || item.status == 2" (click)="changeStatus(item, 1)">Accepted</button>
+                                                  <button mat-button class="btnblue yellowbtn" *ngIf="item.status == 1 || item.status == 2" (click)="changeStatus(item, 0)">Pending</button>
+                                                  <button mat-button class="btnblue redbtn" *ngIf="item.status == 0 || item.status == 1" (click)="changeStatus(item, 2)">Rejected</button>
+                                                  <button mat-button class="btnblue">View All</button>
+                                                </span>                                   
+                                              </span> -->
+                                        </span>                            
+                                    </span>
+                                </span>                       
+                            </mat-list-item>
+                            
+                        </mat-list>
+                        <span class="btnwrappercls">
+                            <button mat-button class="btnblue" [routerLink]="['/rsvp-admin']">View All</button>
+                        </span>
+                        
+                    </mat-card>
+                </span>
+            </mat-card-content>
+            
+
+            <!-- <img src="../../../../assets/images/adm-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+
+            <mat-card-content class="adm_dashboard_block2">
+                <mat-card-title class="sectionheader">Save Search</mat-card-title>
+                <mat-list role="list" class="flexbox5column">
+                    <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let item of saveSearch_list | slice:0:saveSearchIndex; let i = index">
+
+                      
+                      <span (click)="deleteAny(item,i,save_search)" class="deletecls"><i class="material-icons">delete</i></span>
+
+                        <span class="block1socialadvosingleinner">
+                            <span class="topblock">
+                                <span class="rsvplistimgwrapper">
+                                    <img *ngIf="item.card_data.media.photo_links != null && item.card_data.media.photo_links[0] !=null && modalImg == ''" [src]="item.card_data.media.photo_links[0]">
+                                    <img *ngIf="modalImg != ''" [src]="modalImg">
+                                    <img *ngIf="item.card_data.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
+                                </span>
+                              </span>
+                              <span class="middleblock">
+                                <span class="pricecls" *ngIf="item.card_data.price != null">
+                                    ${{item.card_data.price}}
+                                </span>
+                                <span class="titlecls">
+                                  <span *ngIf="item.card_data.heading != null">{{item.card_data.heading}}</span>
+                                  <span></span>
+                                </span>
+                              </span>
+                              <span class="bottomblockss">                                  
+                                <mat-list *ngIf="item.card_data.build != null">
+                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> {{item.card_data.miles}}</mat-list-item>                                        
+                                    <mat-list-item class="pa_blockfootertext" *ngIf="item.card_data.build.drivetrain != null"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> {{item.card_data.build.drivetrain}}</mat-list-item>                                  
+                                   
+                                    <mat-list-item class="pa_blockfootertext" *ngIf="item.card_data.build.transmission != null"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> {{item.card_data.build.transmission}}</mat-list-item>
+                                  </mat-list>
+                              </span>
+                        </span>                                
+                    </mat-list-item>
+                </mat-list>
+                <span class="btnwrappercls">
+                    <button mat-button class="btnblue" [routerLink]="['/save-search-admin']">View All</button>
+                </span>
+            </mat-card-content>
+            
+
+            <!-- <img src="../../../../assets/images/adm-dashboard-img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+
+
+            <mat-card-content class="adm_dashboard_block3">
+                <mat-list class="flexbox2column">
+                    <mat-list-item class="listsingle">
+                        <span class="adm_dashboard_block3_inner">
+                            <h2>Upcoming appointment</h2>
+                            <div class="mat-elevation-z8">
+                                <div class="tablediv">
+                                    <table mat-table [dataSource]="upcomingAppoinementDataSource">
+
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="name">
+                                          <th mat-header-cell *matHeaderCellDef> Name </th>
+                                          <td mat-cell *matCellDef="let element"><span class="namewrapper"> <span class="image_URL_wrapper"><img src="{{element.image_URL}}"></span> <span class="nametxt">{{element.name}}</span> </span></td>
+                                        </ng-container>
+                                    
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="phoneNumber">
+                                          <th mat-header-cell *matHeaderCellDef>  Phone Number </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="date">
+                                          <th mat-header-cell *matHeaderCellDef> Date </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="repName">
+                                          <th mat-header-cell *matHeaderCellDef> Rep Name </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.repName}} </td>
+                                        </ng-container>
+
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="action">
+                                            <th mat-header-cell *matHeaderCellDef> Action </th>
+                                            <td mat-cell *matCellDef="let element"> <a class="btnorange"> {{element.action}}</a> </td>
+                                          </ng-container>
+                                    
+                                        <tr mat-header-row *matHeaderRowDef="UAColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: UAColumns;"></tr>
+                                    </table>
+                                    
+                                      <mat-paginator [pageSizeOptions]="[4, 10, 20]" showFirstLastButtons></mat-paginator>
+                                </div>                               
+                            </div>                           
+                        </span>
+                        <span class="btnwrappercls">
+                            <button mat-button class="btnblue" [routerLink]="['/my-appointment-admin']">View All</button>
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item class="listsingle">
+                        <span class="adm_dashboard_block3_inner">
+                            <h2>Job ticket</h2>
+                            <div class="mat-elevation-z8">
+                                <div class="tablediv">
+                                    <table mat-table [dataSource]="jobTicketDataSource">
+
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="ticket">
+                                          <th mat-header-cell *matHeaderCellDef> TICKET# </th>
+                                          <td mat-cell *matCellDef="let element">{{element.ticket}}</td>
+                                        </ng-container>
+                                    
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="repName">
+                                          <th mat-header-cell *matHeaderCellDef> REP NAME </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.repName}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="title">
+                                          <th mat-header-cell *matHeaderCellDef> TITLE </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="category">
+                                          <th mat-header-cell *matHeaderCellDef> CATEGORY </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+                                        </ng-container>
+
+                                         <!-- Symbol Column -->
+                                         <ng-container matColumnDef="status">
+                                            <th mat-header-cell *matHeaderCellDef> STATUS </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                                          </ng-container>
+
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="action">
+                                            <th mat-header-cell *matHeaderCellDef> Action </th>
+                                            <td mat-cell *matCellDef="let element"> <a class="btnorange"> {{element.action}}</a> </td>
+                                          </ng-container>
+                                    
+                                        <tr mat-header-row *matHeaderRowDef="JTColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: JTColumns;"></tr>
+                                    </table>
+                                    
+                                      <mat-paginator [pageSizeOptions]="[7, 12, 22]" showFirstLastButtons></mat-paginator>
+                                </div>
+                            </div>                           
+                        </span>                        
+                        <span class="btnwrappercls">
+                            <button mat-button class="btnblue" [routerLink]="['/job-ticket']">View All</button>
+                        </span>
+                    </mat-list-item>
+                </mat-list>               
+            </mat-card-content>
+
+            <!-- <img src="../../../../assets/images/adm-dashboard-img4.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+
+
+            <mat-card-content class="adm_dashboard_block4">
+                <mat-card-title class="sectionheader">Report</mat-card-title>
+                <span class="adm_dashboard_block4_inner">
+                    <mat-tab-group class="tabwrapper">
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <h2>Training</h2>                
+                            </ng-template>          
+                          <ng-template matTabContent>    
+                            <div class="mat-elevation-z8">
+                                <div class="tablediv">
+                                    <table mat-table [dataSource]="reportsDataSource">
+        
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="date_joined">
+                                          <th mat-header-cell *matHeaderCellDef> date joined </th>
+                                          <td mat-cell *matCellDef="let element">{{element.date_joined}}</td>
+                                        </ng-container>
+                                    
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="name">
+                                          <th mat-header-cell *matHeaderCellDef>  Full Name </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="email">
+                                          <th mat-header-cell *matHeaderCellDef> Email </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="phoneNumber">
+                                          <th mat-header-cell *matHeaderCellDef> phone Number </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+                                        </ng-container>
+        
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="trainingProgress">
+                                            <th mat-header-cell *matHeaderCellDef>  Training Progress </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.trainingProgress}} </td>
+                                        </ng-container>
+        
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="date_completed">
+                                            <th mat-header-cell *matHeaderCellDef> Date Completed </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.date_completed}} </td>
+                                          </ng-container>                                
+        
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="status">
+                                            <th mat-header-cell *matHeaderCellDef> Status </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                                          </ng-container>
+                                    
+                                        <tr mat-header-row *matHeaderRowDef="ReportColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: ReportColumns;"></tr>
+                                    </table>
+                                    
+                                      <mat-paginator [pageSizeOptions]="[4, 10, 20]" showFirstLastButtons></mat-paginator>
+                                </div>                               
+                            </div>  
+                            <span class="btnwrappercls">
+                                <button mat-button class="btnblue" [routerLink]="['/training-report']">View All</button>
+                              </span>
+                          </ng-template>
+                         
+                        </mat-tab>
+                        <mat-tab>            
+                            <ng-template mat-tab-label>
+                              <h2>Commission</h2>
+                            </ng-template>           
+                            <ng-template matTabContent>
+                                <div class="mat-elevation-z8">
+                                    <div class="tablediv">
+                                        <table mat-table [dataSource]="reportsDataSource">
+            
+                                            <!-- Position Column -->
+                                            <ng-container matColumnDef="date_joined">
+                                              <th mat-header-cell *matHeaderCellDef> date joined </th>
+                                              <td mat-cell *matCellDef="let element">{{element.date_joined}}</td>
+                                            </ng-container>
+                                        
+                                            <!-- Name Column -->
+                                            <ng-container matColumnDef="name">
+                                              <th mat-header-cell *matHeaderCellDef>  Full Name </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                            </ng-container>
+                                        
+                                            <!-- Weight Column -->
+                                            <ng-container matColumnDef="email">
+                                              <th mat-header-cell *matHeaderCellDef> Email </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                                            </ng-container>
+                                        
+                                            <!-- Symbol Column -->
+                                            <ng-container matColumnDef="phoneNumber">
+                                              <th mat-header-cell *matHeaderCellDef> phone Number </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+                                            </ng-container>
+            
+                                            <!-- Symbol Column -->
+                                            <ng-container matColumnDef="trainingProgress">
+                                                <th mat-header-cell *matHeaderCellDef>  Training Progress </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.trainingProgress}} </td>
+                                            </ng-container>
+            
+                                            <!-- Symbol Column -->
+                                            <ng-container matColumnDef="date_completed">
+                                                <th mat-header-cell *matHeaderCellDef> Date Completed </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.date_completed}} </td>
+                                              </ng-container>                                
+            
+                                            <!-- Symbol Column -->
+                                            <ng-container matColumnDef="status">
+                                                <th mat-header-cell *matHeaderCellDef> Status </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                                              </ng-container>
+                                        
+                                            <tr mat-header-row *matHeaderRowDef="ReportColumns"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: ReportColumns;"></tr>
+                                        </table>
+                                        
+                                          <mat-paginator [pageSizeOptions]="[4, 10, 20]" showFirstLastButtons></mat-paginator>
+                                    </div>                               
+                                </div>  
+                                <span class="btnwrappercls">
+                                    <button mat-button class="btnblue" [routerLink]="['/commission-report']">View All</button>
+                                </span>
+                            </ng-template>
+                            
+                        </mat-tab>
+                                
+                     </mat-tab-group> 
+                    
+                                            
+                </span>
+                
+            </mat-card-content>
+
+            <!-- <img src="../../../../assets/images/adm-dashboard-img5.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+        </mat-card>
+          <!-- <mat-card class="dashboard_block1">
+
+              <mat-card-content>
+          
+                  <h2>Welcome to ProBid Auto </h2>
+          
+                  <h3>Lorem Ipsum is simply dummy text of the printing and
+                      <br/>typesetting industry.</h3>
+          
+                  <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                      <br/>  <br/>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          
+                  <button>Lean More</button>
+          
+          
+              </mat-card-content>
+          
+              
+            
+          
+              <mat-card class="clear"></mat-card>
+            </mat-card>
+          
+          
+          
+          
+          <mat-card class="dashboard_block2">
+          
+              <mat-card-content>
+          
+                  <h2>Rep’s Information</h2>
+          
+                  <mat-card-subtitle>
+          
+                      <span class="dashboard_block2_img"><img src="../../../../assets/images/ami_demo_img1.jpg" alt="#"/></span>
+          
+                      <span class="dashboard_block2_text">
+          
+                          <ul>
+                              <li><label><span>First Name</span></label> <label><span>{{userCookies.firstname}}</span></label></li>
+                              <li><label><span>Last Name</span></label> <label><span>{{userCookies.lastname}}</span></label></li>
+                              <li><label><span>Contact Number</span></label> <label><span>0000000000</span></label></li>
+                              <li><label><span>Email Address</span></label> <label><span>{{userCookies.email}}</span></label></li>
+          
+                          </ul>
+          
+          
+          
+                      </span>
+          
+          
+          
+                      <mat-card class="clear"></mat-card>
+          
+                  </mat-card-subtitle>
+          
+          
+              </mat-card-content>
+          
+              <mat-card class="clear"></mat-card>
+          </mat-card>
+          
+          
+          
+          <mat-card class="dashboard_block3">
+          
+              <mat-card-content>
+          
+          
+                  <h2>RSVP</h2>
+                  <button class="viewlalalbtn3">View All</button>
+          
+                  <mat-card class="clear"></mat-card>
+          
+                  <mat-card-subtitle>
+          
+                      <span class="block3span1">RSVP on: <strong>09-04-2019</strong>  </span>
+                      <span class="block3span2">Status: <strong>Cancelled</strong></span>
+          
+                      <span class="clear"></span>
+          
+                      <span class="block3carblock">
+                      <img src="../../../../assets/images/carimg1.jpg" />
+          
+                      </span>
+          
+                      <span class="block3span3">RSVP by <strong> Lorem Ipsum</strong>   </span>
+                       <button>RSVP</button>
+          
+          
+                      <span class="clear"></span>
+          
+                  </mat-card-subtitle>
+                  <mat-card-subtitle>
+          
+                      <span class="block3span1">RSVP on: <strong>09-04-2019</strong>  </span>
+                      <span class="block3span2">Status: <strong>Cancelled</strong></span>
+                      <span class="clear"></span>
+          
+                      <span class="block3carblock">
+                      <img src="../../../../assets/images/carimg2.jpg" />
+          
+                      </span>
+          
+                      <span class="block3span3">RSVP by <strong> Lorem Ipsum</strong>   </span>
+                       <button>RSVP</button>
+          
+          
+                      <span class="clear"></span>
+          
+                  </mat-card-subtitle>
+                  <mat-card-subtitle>
+          
+                      <span class="block3span1">RSVP on: <strong>09-04-2019</strong>  </span>
+                      <span class="block3span2">Status: <strong>Cancelled</strong></span>
+                      <span class="clear"></span>
+          
+                      <span class="block3carblock">
+                      <img src="../../../../assets/images/carimg3.jpg" />
+          
+                      </span>
+          
+                      <span class="block3span3">RSVP by <strong> Lorem Ipsum</strong>   </span>
+                       <button>RSVP</button>
+          
+          
+                      <span class="clear"></span>
+          
+                  </mat-card-subtitle>
+                  <mat-card-subtitle>
+          
+                      <span class="block3span1">RSVP on: <strong>09-04-2019</strong>  </span>
+                      <span class="block3span2">Status: <strong>Cancelled</strong></span>
+                      <span class="clear"></span>
+          
+                      <span class="block3carblock">
+                      <img src="../../../../assets/images/carimg4.jpg" />
+          
+                      </span>
+          
+                      <span class="block3span3">RSVP by <strong> Lorem Ipsum</strong>   </span>
+                       <button>RSVP</button>
+          
+          
+                      <span class="clear"></span>
+          
+                  </mat-card-subtitle>
+          
+          
+                  <mat-card class="clear"></mat-card>
+          
+          
+              </mat-card-content>
+          
+          
+              <mat-card class="clear"></mat-card>
+          </mat-card>
+          
+          
+          <mat-card class="dashboard_block3 dashboard_block4">
+          
+              <mat-card-content>
+          
+          
+                  <h2>Favorites</h2>
+                  <button class="viewlalalbtn3">View All</button>
+          
+                  <mat-card class="clear"></mat-card>
+          
+                  <mat-card-subtitle>
+          
+          
+          
+                      <span class="clear"></span>
+          
+                      <span class="block3carblock">
+                           <img src="../../../../assets/images/ami_amin_blockcon3.png" class="starimgnew"/>
+          
+                      <img src="../../../../assets/images/carimg5.jpg" />
+          
+                      </span>
+          
+                      <span class="block3span3">TOYOTA CAMRY XSE 2016 </span>
+          
+                     <span class="d_block4_price">$ 25 000</span>
+          
+                      <label class="d_block4_label">
+                     <span>100 </span>
+                     <span> 45/56 </span>
+                     <span>Automatic</span>
+                      </label>
+          
+          
+          
+                      <span class="clear"></span>
+          
+                  </mat-card-subtitle>
+                  <mat-card-subtitle>
+          
+          
+          
+                      <span class="clear"></span>
+          
+                      <span class="block3carblock">
+                                 <img src="../../../../assets/images/ami_amin_blockcon3.png" class="starimgnew"/>
+                      <img src="../../../../assets/images/carimg6.jpg" />
+          
+                      </span>
+          
+                      <span class="block3span3">TOYOTA CAMRY XSE 2016 </span>
+          
+                      <span class="d_block4_price">$ 25 000</span>
+          
+                      <label class="d_block4_label">
+                          <span>100 </span>
+                          <span> 45/56 </span>
+                          <span>Automatic</span>
+                      </label>
+          
+          
+          
+                      <span class="clear"></span>
+          
+                  </mat-card-subtitle>
+          
+                  <mat-card-subtitle>
+          
+          
+          
+                      <span class="clear"></span>
+          
+                      <span class="block3carblock">
+                                 <img src="../../../../assets/images/ami_amin_blockcon3.png" class="starimgnew"/>
+                      <img src="../../../../assets/images/carimg7.jpg" />
+          
+                      </span>
+          
+                      <span class="block3span3">TOYOTA CAMRY XSE 2016 </span>
+          
+                      <span class="d_block4_price">$ 25 000</span>
+          
+                      <label class="d_block4_label">
+                          <span>100 </span>
+                          <span> 45/56 </span>
+                          <span>Automatic</span>
+                      </label>
+          
+          
+          
+                      <span class="clear"></span>
+          
+                  </mat-card-subtitle>
+          
+                  <mat-card-subtitle>
+          
+          
+          
+                      <span class="clear"></span>
+          
+                      <span class="block3carblock">
+          
+                                 <img src="../../../../assets/images/ami_amin_blockcon3.png" class="starimgnew"/>
+                      <img src="../../../../assets/images/carimg8.jpg" />
+          
+                      </span>
+          
+                      <span class="block3span3">TOYOTA CAMRY XSE 2016 </span>
+          
+                      <span class="d_block4_price">$ 25 000</span>
+          
+                      <label class="d_block4_label">
+                          <span>100 </span>
+                          <span> 45/56 </span>
+                          <span>Automatic</span>
+                      </label>
+          
+          
+          
+                      <span class="clear"></span>
+          
+                  </mat-card-subtitle>
+          
+          
+                  <mat-card class="clear"></mat-card>
+          
+          
+              </mat-card-content>
+          
+          
+              <mat-card class="clear"></mat-card>
+          </mat-card> -->
+      </div>
+  </div>
+  <app-footer></app-footer>

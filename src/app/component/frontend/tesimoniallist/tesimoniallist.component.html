@@ -1,0 +1,72 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner testimonialbg">
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <h1>Testimonials</h1>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+<mat-card class="innerpagetitle">
+  <span class="mainwrappercontent">
+    <mat-card-content class="bred_cram_wrapper">
+      <mat-list class="bred_cram_wrapper_list">
+        <mat-list-item routerLinkActive="active">
+          <a> home </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+        <mat-list-item routerLinkActive="active activebread">
+          <a [routerLink]="'/testimonial'"> Testimonial list </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+<mat-card class="ptb-35 generalcls testimonial">
+  <!-- <span class="mainwrappercontent">
+        <img src="../../../../assets/images/testimonial_blockimg1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+    </span> -->
+  <span class="mainwrappercontent">
+    <mat-list role="list">
+      <mat-list-item role="listitem" class="testimonialserv"
+        *ngFor="let testmon of TestimonialListArray | slice:0:indexval; let i=index">
+        <mat-card>
+          <span class="testiimgwarpper">
+            <img src="{{testmon.image}}" class="iconcls">
+          </span>
+          <mat-card-content class="testicontent">
+            <span class="bnticons">
+              <button *ngIf="testmon.video" (click)="showvideo()"><img
+                  src="../../../../assets/images/videoicon.png"></button>
+              <button *ngIf="testmon.audio" (click)="showaudio()"><img
+                  src="../../../../assets/images/audioicon.png"></button>
+            </span>
+            <span class="testibottomcontent">
+              <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
+            </span>
+            <!--<span class="rateingdiv">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </span>-->
+            <span class="quatation">
+              <p class="truncate" [ngClass]="{'truncate truncateopen':testmon._id == p_id }">
+                <span [innerHtml]="testmon.testimonial"></span>
+              </p>
+              <a *ngIf="testmon.testimonial != '' && testmon != '' && testmon.testimonial.length >= 254 "
+                [ngClass]="{'hide':testmon._id == p_id}" (click)="showmore(testmon)"> read more</a>
+            </span>
+          </mat-card-content>
+        </mat-card>
+      </mat-list-item>
+    </mat-list>
+    <button *ngIf="indexval.length > indexval" (click)="showMoreFunc()" mat-stroked-button
+      class="btngeneral btngray">Load more</button>
+  </span>
+</mat-card>
+
+<app-footer></app-footer>

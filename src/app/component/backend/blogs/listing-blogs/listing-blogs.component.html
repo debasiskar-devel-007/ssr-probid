@@ -1,0 +1,17 @@
+<app-adminheader>
+    <mat-card>
+        <span class="searchblock">
+            <span class="searchblockwrapper">
+                <span>
+                    <h2>Manage Blog</h2>
+                </span>
+                <span>
+                    <button mat-button class="btnorange sim-button" [routerLink]="['/blogs/add']"><i class="material-icons">add</i> Add New Blog</button>
+                </span>                    
+            </span>
+        </span>
+        <div class="tablediv">
+            <lib-listing-blogmanagementlib class="formfilterdiv" *ngIf="blogListConfig.datasource != null && blogListConfig.datasource.length > 0" [config]="blogListConfig"></lib-listing-blogmanagementlib>
+        </div>
+    </mat-card>
+</app-adminheader>

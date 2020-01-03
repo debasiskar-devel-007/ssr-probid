@@ -1,0 +1,19 @@
+<mat-card class="">
+    <!-- <mat-card-content class="formhome formhomealesrep"> -->
+      <span class="">
+             <form class="" [formGroup]="askForConfirmation"  (ngSubmit)="askForConfirmationSubmit()">
+                  <mat-card-header class="">
+                    <h2>Ask For Confirmation</h2>
+                </mat-card-header>    
+                <mat-card-content class="">
+                      <ck-editor formControlName="topPart" [config]="editorconfig">
+                      </ck-editor>
+                </mat-card-content>
+                <mat-dialog-actions >
+                  <button class="btnredcls" mat-button mat-dialog-close="no" cdkFocusInitial>Cancel</button>
+                  <button class="btnbluecls" mat-button mat-dialog-close="yes" (click)="askForConfirmationSubmit()" cdkFocusInitial>Confirm</button>
+                </mat-dialog-actions>
+             </form>
+      </span>
+    <!-- </mat-card-content> -->
+  </mat-card>

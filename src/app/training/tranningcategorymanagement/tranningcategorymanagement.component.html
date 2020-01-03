@@ -1,0 +1,38 @@
+<!-- <app-adminheader></app-adminheader> -->
+
+<div class="adminwrappercls">
+  <app-header></app-header>
+  <div class="main-content-wrap">
+    <mat-card class="generalcls blog" style="padding: 0 !important;">  
+        <span>
+          <!-- <img src="../../../../assets/images/managetraining-topbanner-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+          <mat-card-content class="adm_inner_banner managetraining">
+              <mat-card-title class="adm_inner_title">manage training</mat-card-title>
+              <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. printer took a galley of type and scrambled it to make a type specimen book.</p>
+          </mat-card-content>
+          <mat-card-content class="bred_cram_wrapper">
+              <a mat-list-item routerLinkActive="active"> Dashboard </a>
+              <a mat-list-item routerLinkActive="active"> Training Manager </a>
+              <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/addtrainings'"> manage training </a>
+          </mat-card-content>
+          <div class="tablediv trainingtablediv">
+            <app-listing  class="formfilterdiv mytranningcategory" templatetype="table" sourcetitle="Training" source="tranningcategory" [sourcecondition]="sourcecondition" [tabledatalis]="tabledatalis" menuval="Training Category List " [formdata]="formdata" [formsource]="datasource">
+            </app-listing>
+          </div>
+        </span>
+
+
+      <!-- <div class="s_getmyoffer_adminpanel">
+        <div class="s_getmyoffer_adminpanel_inner">
+          <div class="s_getmyoffer_adminpanel_inner_content_left">
+          </div>
+          <div class="s_getmyoffer_adminpanel_inner_content_right tranningcategorylist">              
+          </div>
+        </div>
+      </div> -->
+    </mat-card>
+  </div>
+</div>
+<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
+

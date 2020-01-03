@@ -1,0 +1,97 @@
+
+<div class="generalmodalcls">
+    <div class="modal-content">
+        <div class="logowrapperouter">
+            <div class="logowrapper">
+                <img src="../../assets/images/logomain.png">
+            </div>
+        </div>       
+        <h2>SUBSCRIBE TO OUR NEWSLETTER </h2>
+
+        <h3>Join our Subscribers List to get the latest news, updates and special offers directly in your inbox. </h3>
+        <form [formGroup]="myformnews" (submit)="donewsSubmit()">
+           <mat-form-field>
+                <input matInput placeholder="Name"  [formControl]="myformnews.controls['fullname']"  (blur)="inputUntouch(myformnews,'fullname')">
+           </mat-form-field>
+            <mat-error   *ngIf="!myformnews.controls['fullname'].valid && myformnews.controls['fullname'].touched" class="errortext">Name field can not be blank</mat-error >
+    
+           <mat-form-field>
+               <input matInput placeholder="Email" readonly  [formControl]="myformnews.controls['email']">
+           </mat-form-field>
+    
+    
+            <mat-error *ngIf="myformnews.controls['email'].touched && !myformnews.controls['email'].valid
+               && myformnews.controls['email'].errors.required">
+                Email field can not be blank</mat-error>
+            <mat-error *ngIf="myformnews.controls['email'].touched && !myformnews.controls['email'].valid
+                    && myformnews.controls['email'].errors.pattern">
+    
+                Email is not Valid</mat-error>
+    
+           <mat-form-field>
+           <input matInput placeholder="Phone no."  [formControl]="myformnews.controls['phone']" (blur)="inputUntouch(myformnews,'phone')">
+           </mat-form-field>
+            <mat-error *ngIf="!myformnews.controls['phone'].valid && myformnews.controls['phone'].touched" class="errortext">Phone no field can not be blank</mat-error >
+    
+           <mat-form-field>
+               <input matInput placeholder="Company Name"  [formControl]="myformnews.controls['company']" (blur)="inputUntouch(myformnews,'company')">
+           </mat-form-field>
+            <mat-error *ngIf="!myformnews.controls['company'].valid && myformnews.controls['company'].touched" class="errortext">Company Name field can not be blank</mat-error >
+          
+                <mat-form-field style="display: none!important;">
+                    <input matInput placeholder="Group"  [formControl]="myformnews.controls['group']"   >
+                </mat-form-field>
+          
+                <button mat-button class="btnredcls" >Submit</button>
+       </form>
+    </div>
+</div>
+
+<!-- 
+
+<mat-card class="newsletter_modal">
+
+    <h2>SUBSCRIBE TO OUR NEWSLETTER </h2>
+
+    <h3>Join our Subscribers List to get the latest news, updates and special offers directly in your inbox. </h3>
+    <form [formGroup]="myformnews" (submit)="donewsSubmit()">
+       <mat-form-field>
+            <input matInput placeholder="Name"  [formControl]="myformnews.controls['fullname']"  (blur)="inputUntouch(myformnews,'fullname')">
+       </mat-form-field>
+        <mat-error   *ngIf="!myformnews.controls['fullname'].valid && myformnews.controls['fullname'].touched" class="errortext">Name field can not be blank</mat-error >
+
+       <mat-form-field>
+           <input matInput placeholder="Email" readonly  [formControl]="myformnews.controls['email']">
+       </mat-form-field>
+
+
+        <mat-error *ngIf="myformnews.controls['email'].touched && !myformnews.controls['email'].valid
+           && myformnews.controls['email'].errors.required">
+            Email field can not be blank</mat-error>
+        <mat-error *ngIf="myformnews.controls['email'].touched && !myformnews.controls['email'].valid
+                && myformnews.controls['email'].errors.pattern">
+
+            Email is not Valid</mat-error>
+
+       <mat-form-field>
+       <input matInput placeholder="Phone no."  [formControl]="myformnews.controls['phone']" (blur)="inputUntouch(myformnews,'phone')">
+       </mat-form-field>
+        <mat-error   *ngIf="!myformnews.controls['phone'].valid && myformnews.controls['phone'].touched" class="errortext">Phone no field can not be blank</mat-error >
+
+       <mat-form-field>
+           <input matInput placeholder="Company Name"  [formControl]="myformnews.controls['company']" (blur)="inputUntouch(myformnews,'company')">
+       </mat-form-field>
+        <mat-error   *ngIf="!myformnews.controls['company'].valid && myformnews.controls['company'].touched" class="errortext">Company Name field can not be blank</mat-error >
+      
+            <mat-form-field style="display: none!important;">
+                <input matInput placeholder="Group"  [formControl]="myformnews.controls['group']"   >
+            </mat-form-field>
+      
+            <button mat-button >Submit</button>
+
+
+
+
+   </form>
+
+  </mat-card> -->

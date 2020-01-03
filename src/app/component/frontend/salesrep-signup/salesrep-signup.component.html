@@ -1,0 +1,256 @@
+<mat-card class="signupnewtop-header" id="header2">
+    <mat-card-content class="top-header">
+      <span class="logo">
+        <a [routerLink]="['/']"><img src="../../assets/images/logomain.png" class="landinglogoblock1"></a>
+      </span>
+      <span class="headerright">
+        <p>BECOME A <span>PROBIDAUTO CERTIFIED AUTO SALES PROFESSIONAL</span> AND SELL CARS TO YOUR AUDIENCE FROM THE UPCOMING AUCTIONS!</p>
+        <div class="socialblock">
+            <a href="https://www.linkedin.com/in/betoparedes" target="_blank"><img src="../../assets/images/linkedin_circle.png"></a>
+            <a href="https://twitter.com/BetoCParedes " target="_blank"><img src="../../assets/images/twitter_circle.png"></a>
+            <a href="https://www.facebook.com/betocparedes" target="_blank"><img src="../../assets/images/facebook_circle.png"></a>
+            <div class="clear"></div>
+          </div>
+      </span>
+    </mat-card-content>
+  </mat-card>
+  
+<mat-card class="signupnewtop-banner">
+    <mat-card-content class="banner">
+        <img src="../../assets/images/img-sales-rep-banner.jpg" alt="sales signup banner">
+    </mat-card-content>
+</mat-card>
+  
+<mat-card class="signupnew-form">
+    <mat-card-content class="formhome formhomealesrep">
+      <span class="formhomeinner">
+             <form class="signupformdiv" [formGroup]="salesSignUpForm"  (ngSubmit)="salesSignUpFormSubmit()">
+                <!-- <mat-error class="error" *ngIf="msg != ''">{{msg}}</mat-error> -->
+                <mat-card-header class="formhomeinnertop">
+                    <h2>revolution</h2>                    
+                    <h3>Fill out the following and you will get access to an immediate opportunity call with ProbidAuto and be signed up to our onboarding webinar to get you started!</h3>
+                </mat-card-header>    
+                <mat-card-content class="formhomeinnerbottom">
+                    
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="First Name" formControlName="firstname" (blur)="inputUntouched('firstname')">
+                        <mat-error
+                          *ngIf="!salesSignUpForm.controls['firstname'].valid && salesSignUpForm.controls['firstname'].errors.required && salesSignUpForm.controls['firstname'].touched">
+                          First Name field can not be blank</mat-error>
+                      </mat-form-field>
+                
+                
+                      <mat-form-field>
+                        <input matInput type="text" placeholder="Last Name" formControlName="lastname" (blur)="inputUntouched('lastname')">
+                        <mat-error
+                          *ngIf="!salesSignUpForm.controls['lastname'].valid && salesSignUpForm.controls['lastname'].errors.required && salesSignUpForm.controls['lastname'].touched">
+                          Last Name field can not be blank</mat-error>
+                      </mat-form-field>
+          
+                      <mat-form-field>
+                        <input matInput type="text" placeholder="User Name" formControlName="username" (blur)="inputUntouched('username')">
+                        <mat-error
+                          *ngIf="!salesSignUpForm.controls['username'].valid && salesSignUpForm.controls['username'].errors.required && salesSignUpForm.controls['username'].touched">
+                          UserName field can not be blank</mat-error>
+                      </mat-form-field>
+                
+                      <mat-form-field>
+                        <input matInput type="text" placeholder="Email" formControlName="email" (blur)="inputUntouched('email')">
+                        <mat-error
+                          *ngIf="!salesSignUpForm.controls['email'].valid && salesSignUpForm.controls['email'].errors.required && salesSignUpForm.controls['email'].touched">
+                          Email field can not be blank</mat-error>
+                        <mat-error *ngIf="!salesSignUpForm.controls['email'].valid && !salesSignUpForm.controls['email'].errors.required">Email is
+                          not valid</mat-error>
+                      </mat-form-field>
+                
+                      <mat-form-field>
+                        <input matInput type="text" placeholder="Phone Number" formControlName="phone" (blur)="inputUntouched('phone')">
+                        <mat-error
+                          *ngIf="!salesSignUpForm.controls['phone'].valid && salesSignUpForm.controls['phone'].errors.required && salesSignUpForm.controls['phone'].touched">
+                          Phone Number field can not be blank</mat-error>
+                      </mat-form-field>
+          
+                      <mat-form-field>
+                        <input matInput type="text" placeholder="Company Name" formControlName="companyname" (blur)="inputUntouched('companyname')">
+                        <mat-error
+                          *ngIf="!salesSignUpForm.controls['companyname'].valid && salesSignUpForm.controls['companyname'].errors.required && salesSignUpForm.controls['companyname'].touched">
+                          Company Name field can not be blank</mat-error>
+                      </mat-form-field>
+          
+                      <mat-form-field>
+                <input matInput placeholder="Password" type="password" formControlName="password" (blur)="inputUntouched('password')">
+                <mat-error
+                  *ngIf="!salesSignUpForm.controls['password'].valid && salesSignUpForm.controls['password'].errors.required && salesSignUpForm.controls['password'].touched">
+                  Password field can not be blank</mat-error> 
+              </mat-form-field>
+          
+              <mat-form-field>
+              <input matInput placeholder="Confirm password" type="password" formControlName="conpass" (blur)="inputUntouched('conpass')">
+              <mat-error  *ngIf="!salesSignUpForm.controls['conpass'].valid && salesSignUpForm.controls['conpass'].errors.required && salesSignUpForm.controls['conpass'].touched">
+                Confirm Password field can not be blank</mat-error>
+            <mat-error *ngIf="!salesSignUpForm.controls['conpass'].valid && salesSignUpForm.controls['conpass'].touched">Password does not match </mat-error>
+              </mat-form-field>
+          
+                      <mat-form-field>
+                        <input matInput placeholder="Address" type="text" formControlName="address" (blur)="inputUntouched('address')">
+                        <mat-error
+                          *ngIf="!salesSignUpForm.controls['address'].valid && salesSignUpForm.controls['address'].errors.required && salesSignUpForm.controls['address'].touched">
+                          Address field can not be blank</mat-error>
+                      </mat-form-field>
+          
+                      <mat-form-field>
+                        <input matInput placeholder="Zip Code" type="text" formControlName="zip" (blur)="inputUntouched('zip')">
+                        <mat-error
+                          *ngIf="!salesSignUpForm.controls['zip'].valid && salesSignUpForm.controls['zip'].errors.required && salesSignUpForm.controls['zip'].touched">
+                          Zip field can not be blank</mat-error>
+                      </mat-form-field>
+                
+                      <mat-form-field>
+                        <mat-label>City</mat-label>
+                        <mat-select formControlName="city" (blur)="inputUntouched('city')">
+                          <mat-option *ngFor="let city of cityList" [value]="city.city">
+                            {{city.city}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error
+                          *ngIf="!salesSignUpForm.controls['city'].valid && salesSignUpForm.controls['city'].errors.required && salesSignUpForm.controls['city'].touched">
+                          City field can not be blank</mat-error>
+                      </mat-form-field>
+                      
+          
+                      <mat-form-field>
+                      <mat-label>State</mat-label>
+                      <mat-select formControlName="state" (blur)="inputUntouched('state')">
+                        <mat-option *ngFor="let state of stateList" [value]="state.abbreviation">
+                          {{state.name}}
+                        </mat-option>
+                      </mat-select>
+                      <mat-error
+                          *ngIf="!salesSignUpForm.controls['state'].valid && salesSignUpForm.controls['state'].errors.required && salesSignUpForm.controls['state'].touched">
+                          State field can not be blank</mat-error>
+                    </mat-form-field>
+          
+                    <mat-form-field>
+                      <mat-label>Select TimeZone</mat-label>
+                      <mat-select formControlName="timezone">
+                        <mat-option *ngFor="let time of timezone" [value]="time.value">
+                          {{time.value}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+          
+                    <mat-form-field>
+                      <mat-label>Select Webiner</mat-label>
+                      <mat-select formControlName="webiner">
+                        <mat-option *ngFor="let state of stateList" [value]="state.abbreviation">
+                          {{state.name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <span class="bottompart">
+                        <!-- [checked]="myModel" -->
+                      <mat-checkbox formControlName="check" class="example-margin">  
+                        <label>Accept Terms And Conditions</label>
+                      </mat-checkbox>
+                      <mat-label *ngIf="term_msg!=true">{{term_msg}}</mat-label>
+                      <button mat-raised-button class="btn-lg">Sign Up</button>
+                    </span>
+              
+            </mat-card-content>
+          </form>
+      </span>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="formblock_bottomtextnew">
+    <mat-card-content class="container_wrapper">
+       <mat-card class="container_wrapper_text">
+          <h4>NO STARTUP COSTS <span>3 EASY STEPS</span></h4>          
+          <span><strong>1</strong> Use our incredible search to find cars from thousands of inventories.</span> 
+          <span><strong>2</strong> RSVP autos for your customers and send them in for us to bid on.</span> 
+          <span><strong>3</strong> Once we win the car you will be paid a commission for the sale!</span>
+          <h6><label><b>We are</b></label> your number <b><label>1 source</label></b> of car sales commissions!</h6>
+       </mat-card>
+    </mat-card-content>
+ </mat-card>
+
+<mat-card class="benefittopwrapper">
+  <span class="benefittop">
+      <h2>THIS IS THE INCREDIBLE OPPORTUNITY YOU HAVE BEEN SEEKING. WE HAVE BEEN SUCCESSFULLY FINDING CARS AT THE AUCTIONS FOR OUR CLIENTS FOR YEARS.  NOW IT IS YOUR TURN TO TAKE ADVANTAGE OF WHAT WE DO FOR YOUR FRIENDS, FAMILY AND FUTURE CUSTOMERS!</h2>
+  </span> 
+</mat-card>
+
+<mat-card class="associate_new_con1">
+  <mat-card-content class="associate_new_con1_wrapper">
+      <span class="associate_new_con1_left">         
+          <p>Experience and proof of value is something rare and difficult to develop in the marketplace. You must deal with this on all levels when presenting an opportunity. You as an automotive sales professional must build credibility with your customers and we have the program that will make that possible. With our dynamic online auto search interface, you will win business!
+             <br><br>
+             Not only will you be able to show vehicles that are coming up in the auctions for your customers, but you can give them all the details right here on ProBidAuto.  We only display green lighted vehicles and cars that we know are quality.  You can be assured that there is an RSVP for us to go win the bid that your customer is going to be very satisfied with their purchase.
+          </p>
+       </span>
+       <span class="associate_new_con1_right">
+          <span class="as_video-container">
+             <h2>Review Full Opportunity</h2>
+             <span class="video-container">               
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/CpP1M9TXFcQ?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+             </span>
+          </span>
+          <span class="as_video-container">
+             <h2>Onboarding and Relationship</h2>
+             <span class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/iAHqwbWbxlk?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+             </span>
+          </span>
+       </span>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="associate_new_con5">
+  <mat-card-content class="associate_new_con5_wrapper">
+    <span class="associate_new_con5_text">
+          <h2>THE FEATURES OF OUR SOFTWARE THAT <span>YOU HAVE ACCESS WERE BUILD</span> TO SUPPORT YOUR SALES</h2>
+          <p>Being sales professionals and a dealership ourselves we know how important the customer experience really is. With ProBidAuto you will get all the tools you need to really get out and win with your potential market of car buyers.</p>
+          <h2>OUR INCREDIBLE SOFTWARE TOOLS INCLUDE:</h2>
+          <span class="associate_new_con5_text_blockdiv">
+             <table width="100%">
+              <tbody>
+                  <tr>
+                    <td>A dashboard <label>for you to add customers</label></td>
+                    <td>Data search <label>with advanced search</label></td>
+                    <td>Fast data search <label>features</label></td>
+                  </tr>
+                  <tr>
+                      <td>Auto selection <label>for RSVP bids</label></td>
+                      <td>Financing <label>submissions for loans</label></td>
+                      <td>Customer favorites <label>auto match tech</label></td>
+                  </tr>
+                  <tr>
+                    <td>Commission reports <label>updated weekly</label></td>
+                    <td>Incredible training <label>on our system</label></td>
+                    <td>Social marketing tools <label>access</label></td>
+                  </tr>
+                </tbody>
+              </table>
+             <h3>WE GIVE YOU EVERYTHING YOU NEED TO OPERATE THIS LIKE YOUR OWN HOME-BASED BUSINESS! <span>NOTHING LIKE THIS HAS EVER EXISTED IN THE AUTOMOTIVE INDUSTRY. AS A CAR SALE PRO YOU WIN!</span>
+             </h3>
+             <a href="javascript:void(0)" class="associate_new_con5_link" (click)="gotoenroll()">Get Started</a>
+          </span>
+    </span>
+  </mat-card-content>
+  <span class="imgbottom"><img src="../../assets/images/img-car-new.png"></span>
+</mat-card> 
+
+<mat-card class="associate_new_con6">
+  <mat-card-content class="associate_new_con6_wrapper">
+    <span class="associate_new_con6_wrapper_body">
+      <span class="associate_new_con6_text">
+        <h2>Make Incredible Commissions TODAY!!</h2>
+        <p>Get Started right away to introduce your Customers to a vast and expansive inventory of used cars. Help them choose and get the cars of their desire and make incredible money along the way by way of attractive Commissions and deals!!</p>
+        <a href="javascript:void(0)" class="associate_new_con6_link" (click)="gotoenroll()">Get Started!</a>
+      </span>
+    </span>
+  </mat-card-content>
+</mat-card>
+
+
+<app-footer></app-footer>

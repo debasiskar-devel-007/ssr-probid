@@ -1,0 +1,87 @@
+@media only screen and (max-width: 1620px) {
+    .topmenulist .navigation-left .nav-item .mat-list-item-content {padding: 0 4px;}
+}
+@media only screen and (max-width: 1540px) {
+    .topmenulist .navigation-left .nav-item .mat-list-item-content {padding: 0 0px;}
+}
+    
+@media only screen and (max-width: 1350px) {
+    .topblock .mat-list .mat-list-item .mat-list-item-content button{margin:0;padding:0 10px}
+    .topmenulist .navigation-left a {font-size: 13px; padding: 0px 10px;}
+    .admcls .header .toolbar-row .logo {width: 150px;}
+}
+
+@media only screen and (max-width: 1300px) {
+    .topmenulist .navigation-left a {font-size: 12px;padding: 0px 4px;}
+}
+
+@media only screen and (max-width: 1280px) {
+    .topmenulist .navigation-left .nav-item .mat-list-item-content {padding: 0 6px;}
+}
+
+@media only screen and (max-width: 1199px) {
+    .tablediv {margin-top: 0;}
+    .bloglists .tablediv .searchbar, .blogcatlists .tablediv .searchbar {padding-right: 9px !important; background: #70daee;}
+    .tablediv .searchbar{padding-right: 9px !important; background: #70daee;}
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 0 !important;}
+    .topmenulist{display: none;}
+}
+
+@media only screen and (max-width: 991px) {
+    .tablediv table td{text-align: right !important;}
+    .tabblock .tablists ul li.nav-item a.nav-link {font-size: 20px; line-height: 24px;  padding: 15px 15px;}
+    .tablediv table td.tablebuttondiv{border:0px !important;border-bottom: 0px solid #ffffff !important;}
+    .tablediv table td.norecordfound{border:0px !important;border-bottom: 0px solid #ffffff !important; font-size: 16px;}
+    .tablediv table td.norecordfound{border:0px !important;border-bottom: 0px solid #ffffff !important; font-size: 16px;}
+    .tablediv table td.tablebuttondiv{ padding-left: 0px !important;}
+    .tablediv table td.empycell{border:0px !important;border-bottom: 0px solid #ffffff !important; display: none;}
+    .tablediv table tr:last-child td.empycell {border-bottom: 0px solid #ddd !important;}
+    .tablediv table tr:last-child td {border-bottom: 0px solid #ddd !important;}
+    .newcheckboxdiv {text-align: left; float: right;}
+    .tablediv table th, .tablediv table td {border-bottom: 1px solid #646464 !important;}
+    .tablediv table td {padding: 10px;}
+    .tablediv.affiliatetree table.mat-table tr:nth-child(even){background-color: #353434;}
+    .n-audiodeadeline_admin_header .n-audiodeadeline_admin_header_user .n-audiodeadeline_user {width: 37px; height: auto;}
+    .tablediv.affiliatetree table th, .tablediv.affiliatetree table td {width: 100%;}
+    .n-socialsinglepostcontentinner {padding: 0px; width: 48.33%;margin: .5% 1%;}
+    .n-sponsorblocklists {justify-content: center;}
+    .tablediv table td.text-center {text-align: right !important;}
+    .tablediv .btnedit, .tablediv .btndelete, .tablediv .btnedit:hover, .tablediv .btndelete:hover {display: inline-block; float: none; margin-left: auto; margin-right: auto;}
+    .tablediv table {border: 0;}
+    .tablediv table caption {font-size: 1.3em;}
+    .tablediv table thead {border: none;clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;}
+    .tablediv table tr {border-bottom: 0px solid #ddd; width: 100%; margin-bottom: .625em;}
+    .tablediv table td {border-bottom: 1px solid #ddd; display: inline-block; width: 100%;font-size: 13px; text-align: right; padding-left: 25%;}
+    .adminlisttable .whitebtnlists {text-align: right!important;}
+    .tablediv table td button, .tablediv table td button:hover{float: right;}
+    .tablediv table td:first-child::before {content: attr(data-label) !important; float: left;  font-weight: bold; text-transform: uppercase; text-align: left; margin-left: -18px;
+     color: #000;}
+    .adminlisttable.adminlisttabledashboard .tablediv table tr {display: table-row !important;}
+    .tablediv table td:last-child::before {content: attr(data-label) !important; float: left; font-weight: bold; text-transform: uppercase; text-align: left; color: #000;}
+    .tablediv table td::after {content: attr(data-label);float: left;font-weight: bold; text-transform: uppercase; text-align: left; margin-left: -33%; color: #000;}
+    .tablediv .mytranningcategory .admin_table_wrapper table td::before {content: attr(datalabel) !important; float: left;font-weight: bold;text-transform: uppercase; text-align: left;
+    margin-left: 0%; color: #000;}
+    .tablediv table td::before {content: attr(title); float: left; font-weight: bold; text-transform: uppercase; text-align: left;margin-left: -33%;color: #000;}
+    .tablediv table td:last-child {border-bottom: 0;} 
+}
+
+@media only screen and (max-width: 1080px) {
+    .clearmenu{clear:both;overflow:hidden;background:none!important;border:none!important;box-shadow:none!important;margin:0!important;padding:0!important;border-radius:0!important;display:block!important}
+    .topblock .mat-list{display:block;float:none;margin:22px auto;padding:0;clear:both;width:586px}
+}
+   
+@media only screen and (max-width: 667px) {
+    .topmenudevider2{display:block;width:30px;height:78px;float:left}
+    .topmenudevider2 .dehazeicon{color:#fb4a32;display:block;margin:24px 0 0!important;font-size:30px;cursor:pointer}
+    .topblock .mat-list{margin:0 auto;height:0;width:0;position:absolute;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-o-transition:all .2s linear;transition:all .2s linear}
+    .topblock .mat-list .mat-list-item{display:block;float:none;width:auto;margin:0;padding:0;height:auto;color:#fff!important;background:#222!important;text-align:center}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button{margin:0;padding:5px;height:auto;line-height:32px;font-size:16px!important;color:#fff!important;text-align:center;border-bottom:solid 1px #ccc!important}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button:hover{color:#fff!important;background:#dc4430!important}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button.active{color:#fff!important;background:#dc4430!important}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button:last-of-type{border:none}
+}
+
+@media only screen and (max-width: 540px) {
+    .headerlogo{width:100%;float:none;background:#222!important;padding:10px 2px;display:block}
+    .headerlogo img{width:auto;max-width:90%}
+}

@@ -1,0 +1,272 @@
+<mat-card class="searchlistblock" *ngIf=" router.url ==='/pre-owned-list'">
+  <app-header></app-header>
+  <mat-card class="innerpagebanner preownedlistbg">
+    <span class="mainwrappercontent">
+      <mat-card-content>
+        <h1>pre owned list</h1>
+      </mat-card-content>
+    </span>
+  </mat-card>
+
+<mat-card class="topborder"></mat-card>
+<mat-card>
+  <span class="precontainer">
+    <mat-list class="prmainwrapper">
+      <mat-list-item class="col-1-2">
+        <img src="../../../../assets/images/pa_pr_leftblock.png">
+      </mat-list-item>
+      <mat-list-item class="col-1-8">
+        <img src="../../../../assets/images/pa_pr_righttitle.png">
+        <mat-list class="rightcontent">
+          <mat-list-item class="rightcontentrow">
+            <mat-card-content class="col-1-3">
+              <span class="as_imgwrapper">
+                <img src="../../../../assets/images/searchlist_image_m1.png">
+              </span>
+              <span class="as_sm_imgmainwrapper">
+                <span class="sm-imgwrapper"><img src="../../../../assets/images/searchlist_image_s1.png"></span>
+                <span class="sm-imgwrapper"><img src="../../../../assets/images/searchlist_image_s2.png"></span>
+                <span class="sm-imgwrapper"><img src="../../../../assets/images/searchlist_image_s3.png"></span>
+                <span class="sm-imgwrapper"><img src="../../../../assets/images/searchlist_image_s4.png"></span>
+              </span>
+            </mat-card-content>
+            <mat-card-content class="col-1-7">
+              <span class="subrighrwrapper">
+                <span class="sub-col-6">
+                  <span class="text-wrapper">
+                    <h2>2017 ACURA RDX TECH PKG</h2>
+                    <h3>VIN: 1C4GP64L6YB******</h3>
+
+                    <p>6 Cylinders | Auto</p>
+                    <p>Vehicle Type: AUTOMOBILE</p>
+                      <p>Transmission: AUTOMATIC</p>
+                      <p> Fuel: GAS</p>
+
+                      <label id="example-radio-group-label">Pick your favorite season</label>
+                      <br>
+                      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
+                        <mat-checkbox class="red"></mat-checkbox>
+                        <mat-checkbox class="black"></mat-checkbox>
+                        <mat-checkbox class="blue"></mat-checkbox>
+                        <mat-checkbox class="white"></mat-checkbox>
+                      </mat-radio-group>
+
+                      <p>Body Style: EXTENDED</p>
+                  </span>
+                </span>
+                <span class="sub-col-4">
+                  <mat-card-content class="rrblock1">
+                    <h1>RSVP</h1>
+                    <button><i class="material-icons"> favorite_border </i> ADD</button>
+                  </mat-card-content>
+                  <mat-card-content class="rrblock1 currentbidprice">
+                    <span class="text-wrapper">
+                      <p>Current Bid Price: </p>
+                      <h5>$1500</h5>
+                      <h6><strong>Engine Type</strong> 3.8L 6</h6>
+                    </span>
+                  </mat-card-content>
+                </span>
+              </span>
+            </mat-card-content>
+            <span class="pa_blockfooter">
+                <mat-list>
+                    <mat-list-item class="pa_blockfooterlogo"> <img src="../../assets/images/logomain.png"> </mat-list-item>
+                    <mat-list-item class="pa_blockfootertext"> <strong>Interior Color</strong> Black</mat-list-item>                                        
+                    <mat-list-item class="pa_blockfootertext"> <strong>Drive Train</strong> AWD</mat-list-item>
+                    <mat-list-item class="pa_blockfootertext"> <strong>Year</strong> 2017</mat-list-item>
+                    <mat-list-item class="pa_blockfootertext"> <strong>Make</strong> Acura</mat-list-item>
+                    <mat-list-item class="pa_blockfootertext"> <strong>Model</strong> RDX TECH</mat-list-item>
+                    <mat-list-item class="pa_blockfootertext"> <strong>Type</strong> Hatchback</mat-list-item>
+                   </mat-list>
+            </span>
+          </mat-list-item>
+         </mat-list>
+      </mat-list-item>
+     </mat-list>
+  </span>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <mat-card class="innerpagetitle">
+    <span class="mainwrappercontent">
+      <mat-card-content class="bred_cram_wrapper">
+        <mat-list class="bred_cram_wrapper_list">
+          <mat-list-item routerLinkActive="active">
+            <a [routerLink]="'/home'"> home </a>
+            <span class="breadcrumb__divider" aria-hidden="true">›</span>
+          </mat-list-item>
+          <mat-list-item routerLinkActive="active activebread">
+            <a [routerLink]="'/pre-owned-list'"> pre owned list </a>
+            <span class="breadcrumb__divider" aria-hidden="true">›</span>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </span>
+  </mat-card>
+
+  <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">
+    <!-- <span class="mainwrappercontent"> 
+        <p>
+            pre owned list
+        </p>
+      </span> -->
+    <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+  </mat-card>
+
+  <app-footer></app-footer>
+</mat-card>
+
+<mat-card class="searchlistblock" *ngIf="router.url ==='/online-inventory-list'">
+  <app-header></app-header>
+  <mat-card class="innerpagebanner onlineinventorylistbg">
+    <span class="mainwrappercontent">
+      <mat-card-content>
+        <h1>online inventory list</h1>
+      </mat-card-content>
+    </span>
+  </mat-card>
+  <!-- <mat-card class="innerpagetitle">
+      <span class="mainwrappercontent">
+        <mat-card-content>
+          <h2>online inventory list</h2>
+        </mat-card-content>
+      </span>
+    </mat-card> -->
+
+  <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">
+    <!-- <span class="mainwrappercontent">
+          <p>online inventory list</p>
+        </span> -->
+    <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+  </mat-card>
+
+  <app-footer></app-footer>
+</mat-card>
+
+<mat-card class="searchlistblock" *ngIf="router.url === '/search-inventory-list'">
+  <app-header></app-header>
+  <mat-card class="innerpagebanner searchinventorylistbg">
+    <span class="mainwrappercontent">
+      <mat-card-content>
+        <h1>search inventory list</h1>
+      </mat-card-content>
+    </span>
+  </mat-card>
+  <!-- <mat-card class="innerpagetitle">
+      <span class="mainwrappercontent">
+        <mat-card-content>
+          <h2>search inventory list</h2>
+        </mat-card-content>
+      </span>
+    </mat-card> -->
+
+  <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">
+    <!-- <span class="mainwrappercontent">
+            <p>search inventory list</p>
+        </span> -->
+    <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+  </mat-card>
+
+  <app-footer></app-footer>
+</mat-card>
+
+<mat-card class="searchlistblock" *ngIf=" router.url ==='/specials-list'">
+  <app-header></app-header>
+  <mat-card class="innerpagebanner specialslistbg">
+    <span class="mainwrappercontent">
+      <mat-card-content>
+        <h1>Specials lists</h1>
+      </mat-card-content>
+    </span>
+  </mat-card>
+  <!-- <mat-card class="innerpagetitle">
+      <span class="mainwrappercontent">
+        <mat-card-content>
+          <h2>pre owned list</h2>
+        </mat-card-content>
+      </span>
+    </mat-card> -->
+
+  <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">
+    <!-- <span class="mainwrappercontent"> 
+          <p>
+              pre owned list
+          </p>
+        </span> -->
+    <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+  </mat-card>
+
+  <app-footer></app-footer>
+</mat-card>

@@ -1,0 +1,81 @@
+<mat-sidenav #leftSidenav mode="side" class="leftSidenav" [fixedInViewport]="true" [fixedTopGap]="80">
+
+    <mat-list class="navigation-left">
+        <mat-list-item class="nav-item active" (click)="open(1)">
+            <a class="nav-item-hold">
+                <img src="../../../assets/images/admin_link1.png">
+                <!-- <span class="nav-text">Home</span> -->
+            </a>
+            <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item" (click)="open(2)">
+            <a class="nav-item-hold">
+                    <img src="../../../assets/images/admin_link2.png">
+                    <!-- <span class="nav-text">Home</span> -->
+            </a>
+            <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item">
+            <a class="nav-item-hold" href="#">
+                    <img src="../../../assets/images/admin_link3.png">
+                    <!-- <span class="nav-text">Home</span> -->
+            </a>
+            <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item">
+            <a class="nav-item-hold" href="#">
+                    <img src="../../../assets/images/admin_link4.png">
+                    <!-- <span class="nav-text">Home</span> -->
+            </a>
+            <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item">
+            <a class="nav-item-hold" href="#">
+                    <img src="../../../assets/images/admin_link5.png">
+                    <!-- <span class="nav-text">Home</span> -->
+            </a>
+            <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item">
+            <a class="nav-item-hold" href="#">
+                    <img src="../../../assets/images/admin_link6.png">
+                    <!-- <span class="nav-text">Home</span> -->
+            </a>
+            <div class="triangle"></div>
+        </mat-list-item>
+    </mat-list>
+
+    <div class="sidebar-left-secondary">
+        <mat-list class="childNav" *ngIf = "status==1">            
+            <mat-list-item>
+                <a href="#" class="">
+                    <i class="nav-icon i-Clock-3"></i>
+                    <span class="item-name">Version 1</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a href="#" class="">
+                    <i class="nav-icon i-Clock-4"></i>
+                    <span class="item-name">Version 2</span>
+                </a>
+            </mat-list-item>
+        </mat-list>
+
+        <mat-list class="childNav" *ngIf = "status==2">           
+            <mat-list-item>
+                <a href="#" class="">
+                    <i class="nav-icon i-Clock-3"></i>
+                    <span class="item-name">Version 3</span>
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a href="#" class="">
+                    <i class="nav-icon i-Clock-4"></i>
+                    <span class="item-name">Version 4</span>
+                </a>
+            </mat-list-item>
+        </mat-list>
+
+    </div>
+
+</mat-sidenav>
